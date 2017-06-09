@@ -212,4 +212,75 @@ More and More of IE driver is being moved to sit upon the same Automation qw Fir
 \subsection*{Dealing with the combinatorial Explosion}
 There is always challenge to minimize cost of maintenance with X browsers supporting Y languages , it would be trap of maintaining X*Y implementations. There can be a way to reduce the number of language that web driver support. It’s always better to write automation scripts in the same language that they work on. There is also a way of reducing the supported browser but it will also not be a feasible solution
 
+\section*{The Remote Driver}
+Remote driver is the one of the mechanism to reduce the cost of maintaining web Driver by providing a uniform interface that language binding can code against. Remote driver is used where need to communicate with browser instance that’s running out of process. RPC mechanism is divided into two: transport and encoding. First iteration of the design was developed as a part of Firefox driver. 
+
+Mozilla, and therefore Firefox, was always seen as being a multi-platform application by its developers. Inspired by Microsoft's COM Mozilla created a framework that allowed components to be built and bolted together called XPCOM (cross-platform COM).  IDL declares XPCOM interface, language binding for C and other languages  and JavaScript as well as other languages are available. It's possible to make use of XPCOM objects in Firefox extensions because of the XPCOM consisting of JavaScript.
+ There are hardly any libraries available for custom protocol, so it has to be built from the ground up for every language that we wanted to support. When we were sending only text line oriented protocol was fine but when sending images started it was tedious.It became very obvious, that original RPC mechanism wasn't practical. Alternative for this was widely spread: HTTP. 
+
+
+\includegraphics[scale=1]{FireFoxDriver}
+The Firefox driver is implemented as a Firefox extension, the basic design of which is shown in Figure above . HTTP server has been embedded into it. Writing HTTP servers in XPCOM wasn't one of our core areas to work on, so when the opportunity arose we replaced it with a basic HTTPD written by Mozilla themselves. Requests are received by the HTTPD and almost straight away passed to a dispatcher object.
+
+List of supported URLs are iterated  using dispatcher, attempting to find one that matches the request. This matching is done with knowledge of the variable interpolation that went on in the client side. Once an exact match is found, including the verb being used, a JSON object, representing the command to execute, is constructed. In our case it looks like:
+\begin{verbatim}
+{
+  'name': 'getElementAttribute',
+  'sessionId': { 'value': 'XXX' },
+  'parameters': {
+    'id': 'some_opaque_key',
+    'name': 'rows'
+  }
+}
+
+\end{verbatim}
+This is then passed as a JSON string to a custom XPCOM component we've written called the CommandProcessor. Here's the code:
+\begin{verbatim}
+var jsonResponseString = JSON.stringify(json);
+var callback = function(jsonResponseString) {
+  var jsonResponse = JSON.parse(jsonResponseString);
+
+  if (jsonResponse.status != ErrorCode.SUCCESS) {
+    response.setStatus(Response.INTERNAL_ERROR);
+  }
+
+  response.setContentType('application/json');
+  response.setBody(jsonResponseString);
+  response.commit();
+};
+// Dispatch the command.
+Components.classes['@googlecode.com/webdriver/command-processor;1'].
+    getService(Components.interfaces.nsICommandProcessor).
+    execute(jsonString, callback);
+
+\end{verbatim}
+Object above in code is converted into JSON string. A callback to the execute method that causes the HTTP response to be sent is passed.
+
+The “name” is been looked by execute method of the command processor which determines which function to call. The first parameter given to this implementing function is a "respond" object, which encapsulates not only the possible values that might be sent, but also has a method that allows the response to be dispatched back to the user and mechanisms to find out information about the DOM. The second parameter is the value of the parameters object seen above (in this case, id and name). The advantage of this scheme is that each function has a uniform interface that mirrors the structure used on the client side. This means that the mental models used for thinking about the code on each side are similar. Here's the underlying implementation of getAttribute,
+\begin{verbatim}
+FirefoxDriver.prototype.getElementAttribute = function(respond, parameters) {
+  var element = Utils.getElementAt(parameters.id,
+                                  respond.session.getDocument());
+  var attributeName = parameters.name;
+
+  respond.value = webdriver.element.getAttribute(element, attributeName);
+  respond.send();
+};
+
+\end{verbatim}
+The first line simply looks up the element referred to by the opaque ID in a cache, In order to make element references consistent. In the Firefox driver, opaque ID is a UUID and the "cache" is simply a map. The getElementAt method checks whether referred to element is both known and attached to the DOM. If either check fails, the ID is removed from the cache (if necessary) and an exception is thrown and returned to the user.
+
+The second line from the end makes use of the browser automation atoms discussed earlier, this time compiled as a monolithic script and loaded as part of the extension.
+In last line, the send method is called. Simple check is done that only send a respone once before it calls the callback given to execute method. The response is sent back to the user in the form of a JSON string, which is decanted into an object that looks:
+
+\begin{verbatim}
+{
+  'value': '7',
+  'status': 0,
+  'sessionId': 'XXX'
+}
+\end{verbatim}
+This suggests that browsing the web in a copy of Firefox with the WebDriver extension installed is a seriously bad idea as it makes it trivially easy for someone to remotely control the browser.
+Behind the scenes, there is a DOM messenger, waiting for the webdriverCommand this reads the serialized JSON object and calls the execute method on the command processor. This time, the callback is one that simply sets the response attribute on the document element and then fires the expected webdriverResponse event.
+
 \end{document}
