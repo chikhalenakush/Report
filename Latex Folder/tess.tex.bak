@@ -3,6 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \graphicspath{ {images/} }
+\usepackage{graphicx}
 \begin{document}
 
 \begingroup
@@ -144,5 +145,71 @@ To increase the throughput of crawling, web crawler can be distributed over mult
 
 Snapshots of batch crawling can be assembled using Web crawlers. To perform incremental or continuous crawling where the resources of the crawler are divided between downloading newly discovered pages. For making good Incremental crawling requires few changes to the major data structures of crawlers. DUE should support deletion of URLs that are no longer valid. If URL are priotrized in frontier, the priority of a previously downloaded URL should be dependent on a model of the page’s temporal behavior based on past observations. Other factors such as page quality are also taken into account.
 
+\section*{Selenium}
+There are numerous browser automation tools available but the one, which outperforms others and could be found open source is Selenium. Selenium is a browser automation tool; mostly it is used to simulate user interaction on web applications. The browser control is automated so that repetitive tasks can be automated. Looking at the overview of Selenium, it is a combination of selenium IDE, selenium Web driver and selenium gird. Selenium grid helps to use the selenium APIs to control browser instances distributed over a grid of machines. Selenium IDE is an extension for Firefox used to record and playback tests. Selenium uses lot of Jargon.
+
+\begin{enumerate} [label=(\alph*)]
+\item Selenium core uses lot of JavaScript that control the browser.
+\item Selenium WebDriver binds both language binding and individual browser controlling core.
+\item Selenium RC is used for language binding.
+\end{enumerate}
+
+Advantages of Selenium:
+\begin{enumerate} [label=(\alph*)]
+\item Opensource tool
+\item No licensing cost
+\item Customize according to our requirement
+\end{enumerate}
+
+Disadvantage of selenium:
+\begin{enumerate} [label=(\alph*)]
+\item	There can be cases when selenium fails to recognize objects
+\item Online support for selenium is very less
+\end{enumerate}
+
+Variant of selenium:
+\begin{enumerate} [label=(\alph*)]
+\item Selenium IDE
+\item Selenium Core
+\item Selenium Remote Control
+\item Selenium Grid
+\end{enumerate}
+
+\section*{WebDriver Design}
+WebDriver’s API is also called as  “object-based”. The interfaces are clearly defined and try to manage singe responsibility and hence rather than modelling every single possible HTML Tag we have only one WebElement interface.
+
+\begin{verbatim}
+WebDriver driver = new FirefoxDriver();
+driver.<user hits space>
+driver.findElement(<user hits space>)
+driver.findElement(By.id("some_id"));
+\end{verbatim}
+
+\section*{IEDriver}
+IE browser is constructed of a number of COM interfaces working in concert. Javascript window is an IHTMLWindow.document is an instance of the COM interface  IHTMLDocument. Good thing about IE is that if COM classes works with IE6 it will still continue to work with IE9.
+
+One of the major forces of IE design is that it does not need to have installer. So if there are no installer, there are consequences to this choice. IDE drivers built for selenium are tightly integrated with C\# . Even though c\# would be an attractive language to do the bulk of the coding in, it is not an good option. Something native for the communication to IE and hence C++ as we don’t need to use primary Interloop Assemblies (PIAs). Since we would need to run an installer in order to make that DLL available, we would link our library for communication with IE.
+
+\includegraphics[scale=1]{IEDriver}
+
+Looking at the diagram IE’ COM Automation interfaces are being used and hence to make it easier to manage raw interfaces are wrapped with set of C++ classes that closely mirrored WebDriver API. For Java classes to communicate with C++ JNI is being used. This approach works well with java being only client language but could be very difficult if every other language would require to change the underlying library. So this was not the correct way for abstraction. Every other language had a mechanism of calling down straight C code. In c\# it is PInvoke, In ruby it is FFI, python has ctypes and Java it is JNA(Java Native Architecture. API has to be exposed to lowest common denominator and it was done by taking object model and flattening it, using a simple two or three letter prefix to indicate the "home interface" of the method: "wd" for "WebDriver" and "wde" for WebDriver Element.
+
+\includegraphics[scale=1]{IEDrivermodified}
+
+On the Java side, we exposed this library of functions via an interface, which we then adapted to make it look like the normal object-oriented interface presented by WebDriver. For example, the Java definition of the \textit{getAttribute} method looks like:
+\begin{verbatim}
+public String getAttribute(String name) {
+PointerByReference wrapper = new PointerByReference();
+int result = lib.wdeGetAttribute(parent.getDriverPointer(), element,
+ new WString(name), wrapper);
+errors.verifyErrorCode(result, "get attribute of");
+return wrapper.getValue() == null ? null : new
+StringWrapper(lib, wrapper).toString();
+}
+\end{verbatim}
+More and More of IE driver is being moved to sit upon the same Automation qw Firefox. To achieve it we compile each of the atoms as c++ header file, exposing each function as constant. At last, we only have Interaction of API’s in native code and rely on the atoms as much as possible.
+
+\subsection*{Dealing with the combinatorial Explosion}
+There is always challenge to minimize cost of maintenance with X browsers supporting Y languages , it would be trap of maintaining X*Y implementations. There can be a way to reduce the number of language that web driver support. It’s always better to write automation scripts in the same language that they work on. There is also a way of reducing the supported browser but it will also not be a feasible solution
 
 \end{document}

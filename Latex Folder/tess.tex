@@ -3,6 +3,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \graphicspath{ {images/} }
+\usepackage{graphicx}
 \begin{document}
 
 \begingroup
@@ -144,5 +145,142 @@ To increase the throughput of crawling, web crawler can be distributed over mult
 
 Snapshots of batch crawling can be assembled using Web crawlers. To perform incremental or continuous crawling where the resources of the crawler are divided between downloading newly discovered pages. For making good Incremental crawling requires few changes to the major data structures of crawlers. DUE should support deletion of URLs that are no longer valid. If URL are priotrized in frontier, the priority of a previously downloaded URL should be dependent on a model of the page’s temporal behavior based on past observations. Other factors such as page quality are also taken into account.
 
+\section*{Selenium}
+There are numerous browser automation tools available but the one, which outperforms others and could be found open source is Selenium. Selenium is a browser automation tool; mostly it is used to simulate user interaction on web applications. The browser control is automated so that repetitive tasks can be automated. Looking at the overview of Selenium, it is a combination of selenium IDE, selenium Web driver and selenium gird. Selenium grid helps to use the selenium APIs to control browser instances distributed over a grid of machines. Selenium IDE is an extension for Firefox used to record and playback tests. Selenium uses lot of Jargon.
+
+\begin{enumerate} [label=(\alph*)]
+\item Selenium core uses lot of JavaScript that control the browser.
+\item Selenium WebDriver binds both language binding and individual browser controlling core.
+\item Selenium RC is used for language binding.
+\end{enumerate}
+
+Advantages of Selenium:
+\begin{enumerate} [label=(\alph*)]
+\item Opensource tool
+\item No licensing cost
+\item Customize according to our requirement
+\end{enumerate}
+
+Disadvantage of selenium:
+\begin{enumerate} [label=(\alph*)]
+\item	There can be cases when selenium fails to recognize objects
+\item Online support for selenium is very less
+\end{enumerate}
+
+Variant of selenium:
+\begin{enumerate} [label=(\alph*)]
+\item Selenium IDE
+\item Selenium Core
+\item Selenium Remote Control
+\item Selenium Grid
+\end{enumerate}
+
+\section*{WebDriver Design}
+WebDriver’s API is also called as  “object-based”. The interfaces are clearly defined and try to manage singe responsibility and hence rather than modelling every single possible HTML Tag we have only one WebElement interface.
+
+\begin{verbatim}
+WebDriver driver = new FirefoxDriver();
+driver.<user hits space>
+driver.findElement(<user hits space>)
+driver.findElement(By.id("some_id"));
+\end{verbatim}
+
+\section*{IEDriver}
+IE browser is constructed of a number of COM interfaces working in concert. Javascript window is an IHTMLWindow.document is an instance of the COM interface  IHTMLDocument. Good thing about IE is that if COM classes works with IE6 it will still continue to work with IE9.
+
+One of the major forces of IE design is that it does not need to have installer. So if there are no installer, there are consequences to this choice. IDE drivers built for selenium are tightly integrated with C\# . Even though c\# would be an attractive language to do the bulk of the coding in, it is not an good option. Something native for the communication to IE and hence C++ as we don’t need to use primary Interloop Assemblies (PIAs). Since we would need to run an installer in order to make that DLL available, we would link our library for communication with IE.
+
+\includegraphics[scale=1]{IEDriver}
+
+Looking at the diagram IE’ COM Automation interfaces are being used and hence to make it easier to manage raw interfaces are wrapped with set of C++ classes that closely mirrored WebDriver API. For Java classes to communicate with C++ JNI is being used. This approach works well with java being only client language but could be very difficult if every other language would require to change the underlying library. So this was not the correct way for abstraction. Every other language had a mechanism of calling down straight C code. In c\# it is PInvoke, In ruby it is FFI, python has ctypes and Java it is JNA(Java Native Architecture. API has to be exposed to lowest common denominator and it was done by taking object model and flattening it, using a simple two or three letter prefix to indicate the "home interface" of the method: "wd" for "WebDriver" and "wde" for WebDriver Element.
+
+\includegraphics[scale=1]{IEDrivermodified}
+
+On the Java side, we exposed this library of functions via an interface, which we then adapted to make it look like the normal object-oriented interface presented by WebDriver. For example, the Java definition of the \textit{getAttribute} method looks like:
+\begin{verbatim}
+public String getAttribute(String name) {
+PointerByReference wrapper = new PointerByReference();
+int result = lib.wdeGetAttribute(parent.getDriverPointer(), element,
+ new WString(name), wrapper);
+errors.verifyErrorCode(result, "get attribute of");
+return wrapper.getValue() == null ? null : new
+StringWrapper(lib, wrapper).toString();
+}
+\end{verbatim}
+More and More of IE driver is being moved to sit upon the same Automation qw Firefox. To achieve it we compile each of the atoms as c++ header file, exposing each function as constant. At last, we only have Interaction of API’s in native code and rely on the atoms as much as possible.
+
+\subsection*{Dealing with the combinatorial Explosion}
+There is always challenge to minimize cost of maintenance with X browsers supporting Y languages , it would be trap of maintaining X*Y implementations. There can be a way to reduce the number of language that web driver support. It’s always better to write automation scripts in the same language that they work on. There is also a way of reducing the supported browser but it will also not be a feasible solution
+
+\section*{The Remote Driver}
+Remote driver is the one of the mechanism to reduce the cost of maintaining web Driver by providing a uniform interface that language binding can code against. Remote driver is used where need to communicate with browser instance that’s running out of process. RPC mechanism is divided into two: transport and encoding. First iteration of the design was developed as a part of Firefox driver. 
+
+Mozilla, and therefore Firefox, was always seen as being a multi-platform application by its developers. In order to facilitate the development, Mozilla created a framework inspired by Microsoft's COM that allowed components to be built and bolted together called XPCOM (cross-platform COM). An XPCOM interface is declared using IDL, and there are language bindings for C and Javascript as well as other languages. Because XPCOM is used to construct Firefox, and because XPCOM has Javascript bindings, it's possible to make use of XPCOM objects in Firefox extensions.
+
+Although futzing with custom encoding protocols over raw sockets is a fun way to pass the time, it has several drawbacks. There were no widely available libraries for the custom protocol, so it needed to be implemented from the ground up for every language that we wanted to support. This requirement to implement more code would make it less likely that generous Open Source contributors would participate in the development of new language bindings. Also, although a line-oriented protocol was fine when we were only sending text-based data around, it brought problems when we wanted to send images (such as screenshots) around.
+
+It became very obvious, very quickly that this original RPC mechanism wasn't practical. Fortunately, there was a well-known transport that has widespread adoption and support in almost every language that would allow us to do what we wanted: HTTP. Below is the diagram of the firefox Driver Architecture
+
+\includegraphics[scale=1]{FireFoxDriver}
+The Firefox driver is implemented as a Firefox extension, the basic design of which is shown in Figure 16.4. Somewhat unusually, it has an embedded HTTP server. Although originally we used one that we had built ourselves, writing HTTP servers in XPCOM wasn't one of our core competencies, so when the opportunity arose we replaced it with a basic HTTPD written by Mozilla themselves. Requests are received by the HTTPD and almost straight away passed to a dispatcher object.
+
+The dispatcher takes the request and iterates over a known list of supported URLs, attempting to find one that matches the request. This matching is done with knowledge of the variable interpolation that went on in the client side. Once an exact match is found, including the verb being used, a JSON object, representing the command to execute, is constructed. In our case it looks like:
+\begin{verbatim}
+{
+  'name': 'getElementAttribute',
+  'sessionId': { 'value': 'XXX' },
+  'parameters': {
+    'id': 'some_opaque_key',
+    'name': 'rows'
+  }
+}
+
+\end{verbatim}
+This is then passed as a JSON string to a custom XPCOM component we've written called the CommandProcessor. Here's the code:
+\begin{verbatim}
+var jsonResponseString = JSON.stringify(json);
+var callback = function(jsonResponseString) {
+  var jsonResponse = JSON.parse(jsonResponseString);
+
+  if (jsonResponse.status != ErrorCode.SUCCESS) {
+    response.setStatus(Response.INTERNAL_ERROR);
+  }
+
+  response.setContentType('application/json');
+  response.setBody(jsonResponseString);
+  response.commit();
+};
+// Dispatch the command.
+Components.classes['@googlecode.com/webdriver/command-processor;1'].
+    getService(Components.interfaces.nsICommandProcessor).
+    execute(jsonString, callback);
+
+\end{verbatim}
+There's quite a lot of code here, but there are two key points. First, we converted the object above to a JSON string. Secondly, we pass a callback to the execute method that causes the HTTP response to be sent.
+The execute method of the command processor looks up the "name" to determine which function to call, which it then does. The first parameter given to this implementing function is a "respond" object (so called because it was originally just the function used to send the response back to the user), which encapsulates not only the possible values that might be sent, but also has a method that allows the response to be dispatched back to the user and mechanisms to find out information about the DOM. The second parameter is the value of the parameters object seen above (in this case, id and name). The advantage of this scheme is that each function has a uniform interface that mirrors the structure used on the client side. This means that the mental models used for thinking about the code on each side are similar. Here's the underlying implementation of getAttribute
+\begin{verbatim}
+FirefoxDriver.prototype.getElementAttribute = function(respond, parameters) {
+  var element = Utils.getElementAt(parameters.id,
+                                  respond.session.getDocument());
+  var attributeName = parameters.name;
+
+  respond.value = webdriver.element.getAttribute(element, attributeName);
+  respond.send();
+};
+
+\end{verbatim}
+In order to make element references consistent, the first line simply looks up the element referred to by the opaque ID in a cache. In the Firefox driver, that opaque ID is a UUID and the "cache" is simply a map. The getElementAt method also checks to see if the referred to element is both known and attached to the DOM. If either check fails, the ID is removed from the cache (if necessary) and an exception is thrown and returned to the user.
+
+The second line from the end makes use of the browser automation atoms discussed earlier, this time compiled as a monolithic script and loaded as part of the extension.
+In the final line, the send method is called. This does a simple check to ensure that we only send a response once before it calls the callback given to the execute method. The response is sent back to the user in the form of a JSON string, which is decanted into an object that looks like (assuming that getAttribute returned "7", meaning the element wasn't found):
+\begin{verbatim}
+{
+  'value': '7',
+  'status': 0,
+  'sessionId': 'XXX'
+}
+\end{verbatim}
+This suggests that browsing the web in a copy of Firefox with the WebDriver extension installed is a seriously bad idea as it makes it trivially easy for someone to remotely control the browser.
+Behind the scenes, there is a DOM messenger, waiting for the webdriverCommand this reads the serialized JSON object and calls the execute method on the command processor. This time, the callback is one that simply sets the response attribute on the document element and then fires the expected webdriverResponse event.
 
 \end{document}
