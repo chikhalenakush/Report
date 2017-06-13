@@ -284,5 +284,244 @@ In last line, the send method is called. Simple check is done that only send a r
 Browsing the web in a copy of Firefox with the WebDriver extension installed will result in a bad security feature as it makes it trivially easy for someone to remotely control the browser.
 There is a DOM messenger, waiting for the webdriver Command that reads the serialized JSON object and calls the execute method on the command processor. The callback is one that simply sets the response attribute on the document element and then fires the expected webdriverResponse event.
 
+\section*{Implementation}
+In this section, we discuss in detail about the implementation of our proposed solution. First we discuss about the technologies which are used to solve our problem and reason for selecting it , then we proceed with the pre-configuration requirements for our implementations. This include using the IDE, using the external libraries and installing the .Exe file to run the software. Then we divide the problem definition into sub parts and describe the solution in detail for each of the part separately. This section also includes the algorithms and assumptions used for solving the problem.
+\subsection*{Technologies}
+Let us redefine the aim of this thesis, if we talk in layman’s term the work in this thesis tries to extract bulk amount of data from website without actually visiting it. At the same time, we try to upload data to server from local machine using Website and it’s applet as an interface. In addition, we are trying to segregate data using data slicing algorithm and save it to local disk or database. Most of the work mentioned above is some way or other related to Web and Web technologies. Thorough knowledge of web technologies such as HTML, CSS, DOM object, XML, TCP protocol is required.
+
+To extract data from a website without visiting it lies between methodology of Data scraping and Data crawling. Data crawling refers to downloading pages from the website, where as data scraping involves extracting data from various sources including web. To crawl a large amount of data mostly done with Data Crawling whereas with Data scrapping scale has not major impact. Most important point here in our is deduplication of an essential part, Data crawling takes into consideration deduplication, with data scrapping it is not an essential part. Data crawler needs only crawl agent to crawl/download a page, whereas data scrapping needs crawl agent and parser. Taking into consideration both the ways of extracting data and the most suitable use case for our work we went ahead with Data crawling as it was most relevant such as high scale data, only crawl agent and deduplication.
+
+To crawl data we need libraries, which support and handle DOM objects with HTML tags. There are many programing languages, which support and contains needed libraries to handle DOM objects but as this project is going to be a part of larger framework, which uses Java, we have considered using Java as a programming language. In Java, we have used Jsoup as external library, which helps in crawling and extracting data. Jsoup is a Java library for working with real world HTML. It provides a very convenient API for extracting and manipulating data. Jsoup implements the WHATWG HTML5 specification and parses HTML to the same DOM. Most important it is an open source project under MIT license. It helps to
+\begin{enumerate} [label=(\alph*)]
+\item Scrape and parse HTML from a URL, file or string
+\item Manipulate HTML elements, attributes and text.
+\item Output HTML
+\item Find and extract data using DOM traversal
+\item Clean user-submitted content against a safe white list, to prevent XSS attacks.
+\end{enumerate}
+
+Example to Fetch Wikipedia homepage, parse it to a DOM and select the headlines from the In the news section into a list of Elements
+\begin{verbatim}
+Document doc = Jsoup.connect("http://en.wikipedia.org/").get();
+Elements newsHeadlines = doc.select("#mp-itn b a");
+\end{verbatim}
+To upload data from local Machine to Server using Applet as an interface, we use web browser automation. The reason for web browser automation is minimizing user interaction with going to website and clicking on button. All this manual steps has been overtaken by web browser automation. There are number of automation tools available such as Kantu, QF-Test, Sahi, SOAtest, iMacros, Selenium and so on. Kantu uses only screenshots as scripting language, QF-Test uses visual scripting, Jython and Groovy as scripting language. Sahi uses it’s own Sahi script whereas Selenium supports Ruby, Java, NodeJS, PHP, Perl, Python, Groovy as scripting language. In addition, the web driver provided by Selenium for IE is very reliable, sophisticated and most important it is Open source. Because of added advantage, selenium was chosen to work on.
+
+\section*{Data slicing}
+
+\section*{Configuration of external libraries and drivers}
+In this section we discuss about the basic configurations and prerequisites required for our implementation.
+\subsection*{Driver configuration}
+
+In this section we talk about the integration of Internet Explorer driver into Project folder or adding it to Jar file and using it to launch web browser automation. To upload data from local machine to Server Java applet is being used as interface. “A Java applet is a special kind of Java program that a browser enabled with Java technology can download from the internet and run. An applet is typically embedded inside a web page and runs in the context of a browser. An applet must be a subclass of the java.applet.Applet class. The Applet class provides the standard interface between the applet and the browser environment.”- http://docs.oracle.com/javase/tutorial/deployment/applet/
+
+With the latest version of every browser such as Chrome, Firefox, Opera and Internet Explorer. It is only IE that enables and allows to run Java applet. With this constraint, we have a dependency of running our Selenium web browser automation only on IE and hence we have used IE web driver for it. To run IE web browser automation, it has to be available on very machine. To avoid this high dependency on user running this native java application and need to install IE driver manually. We have added inbuilt IEdriver to our project. This is same with Jar file. Jar file itself contains IEdriver. If any user runs jar file the jar file will first be extracted to folder and then Java program itself will search for location where jar is being extracted and will get the path of IEdriver. This path will later help in running web driver as shown below
+\begin{verbatim}
+File file = new File("C:/Selenium/iexploredriver.exe");
+System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
+WebDriver driver = new InternetExplorerDriver();
+\end{verbatim}
+
+There might be case with IE browser automation running slow or unexpected behavior. This happened after Microsoft made efforts to reduce the attack surface presented by malicious web sites, IE7 introduced something called Protected mode, which leveraged Mandatory Integrity Control in Windows Vista to prevent actins initiated IE, usually initiated by JavaScript, from being able to access the operating system the way it could in prior releases. While this was generally a welcome development for most users of IE, it created all manner of problems for automating IE.
+When you cross into or out of Protected Mode by, say, navigating from an internal intranet website to one on the internet, IE has to create a new process, because it cannot change the Mandatory Integrity Control level of the existing process. Moreover, in IE versions after 7, it's not always obvious that a Protected Mode boundary has been crossed, since IE tries to present a better user experience by seamlessly merging the browser window of the new process with the already opened browser window. This under-the-covers process switching also means that any references pointing to IE's COM objects before the Protected Mode boundary crossing are left pointing to objects that are no longer used by IE after the boundary crossing.Hence to avoid unexpected behavior and make IE web automation smooth, small change in IE settings is required as below
+\begin{enumerate} [label=(\alph*)]
+\item Open IE
+\item Go to Tools $\rightarrow$ {Internet Options} $\rightarrow$ {Security}
+\item Set all zones (Internet, Local intranet, Trusted sites, Restricted sites) to the same protected mode, enabled or disabled should not matter
+\end{enumerate}
+External Libraries:
+\begin{enumerate} [label=(\alph*)]
+\item TO crawl data Jsoup as Java Native library is used.
+\item To make browser automation, Selenium as Java native library is used.
+\item To run Test cases for crawling and data upload, Junit as test framework is used. 
+\item To make a GUI based application JavaFx framework is used.
+\item To make entire project command line with different flags, Apache Commons CLI is used. 
+\end{enumerate}
+JavaFx is a software platform for developing desktop applications that are available for number of different devices. JavaFX tends to replace swing Framework as standard GUI library. JavaFX is a set of graphics and media packages that enables developers to design, create, test, debug, and deploy rich client applications that operate consistently across diverse platforms. JavaFX application code can reference API’s from any Java library as it is written as a Java API. JavaFX applications can use Java API libraries to access native system capabilities and connect to server-based middleware applications.
+
+Junit is important in the development of test-driven deployment and is one of a family of unit testing frameworks. Junit is linked as a JAR at compile time; the framework resides under package org.junit for Junit4. We have used Junit4 for our testing purpose.
+
+The Apache Commons CLI library provides an API for parsing command line options passed to programs. It's also able to print help messages detailing the options available for a command line tool. The Commons Proper is a place for collaboration and sharing, where developers from throughout the Apache community can work together on projects to be shared by Apache projects and Apache users.
+
+\subsection*{Implementation}
+In this section, we discuss about our approach to our topic developing Native java application, which can be easily added into another project/framework. We divide the problem into three parts, first with crawling data and extracting CSV files from it. Second with uploading data and making automation of web browser. Third with generating data with series of event i.e. data slicing.
+
+Data crawling:
+In our application for crawling, we used Jsoup as Native java library. Algorithm for Downloading CSV File\\
+\\
+	Step 1: Ask for User Credentials.\\
+	Step 2: Verify User credentials\\
+	Step 3: If User credentials are correct go to next step\\
+			Else, go to Step1.\\
+	Step 4: Ask for Start date and End date\\
+	Step 5: Verify start and end date using Rule for dates\\
+	Step 6:If start dates and end dates are correct, go to next step else go to step4\\
+	Step 7: Ask for Path to save CSV file\\
+Step8:Download CSV using details from step 2,4 and 7.\\
+		End
+\\
+
+The Rule for correct dates are as follows.
+\begin{enumerate} [label=(\alph*)]
+\item Date format should be DD/MM/YYYY
+\item Start date and end date should not be before 01/01/1998
+\item End date should not be greater than start date
+\item Start date and end date shall not be greater than Today’s date.
+\item Start date and end date should be valid
+\end{enumerate}
+First we check if the user entered login details are correct or not by passing these values as below
+\begin{verbatim}
+Connection.Response res = 
+Jsoup.connect("https://carelink.minimed.eu/patient/j_security_check")
+					.data("j_username",username).
+					data("j_password", password).method(Connection.Method.POST).execute();
+loginCookies = res.cookies();
+\end{verbatim}
+Login user seesion cookies will be saved into global variables.
+If the above statement is yields positive result then in next step using HTML document the particular link for Downloading document is retrieved as below
+https://carelink.minimed.eu/patient/main/selectCSV.do
+
+If the rules for dates are correct and login is successful, next step is to download CSV file with above details. Below is the code for downloading file. Global variable, which saved session cookies are used here for validating user and start date and end date, are added.
+\begin{verbatim}
+Connection.Response ReportDocument = Jsoup
+					.connect("https://carelink.minimed.eu/patient/main/selectCSV.do
+					?t=11?t=11?t=11?t=11").timeout(60000)
+					.ignoreContentType(false).userAgent(UserAgent).cookies(loginCookies)
+					.header("Content-Type", "text/csv; charset=UTF-8")
+					.header("accept", "text/html,application/
+					xhtml+xml,application/xml;q=0.9,*/*;q=0.8")
+					.header("Content-length", "101").data("report", "11").data("listSeparator", ",")
+					// .data("customerID","50577452") // customer Id can be
+					// optional.
+					.data("datePicker2", startDate) // start date
+					.data("datePicker1", endDate) // End date
+					.header("X-Requested-With",
+					 "XMLHttpRequest").method(Connection.Method.GET).execute();
+\end{verbatim}
+CSV file is saved to user entered path with below code.
+\begin{verbatim}
+String userHome = “PathforCSV”;
+			String outputFolder = userHome + File.separator + "careLink-Export";
+			
+			System.out.println("File will be saved to location
+			 Cre " + userHome + " with name: " + "\"careLink-Export"
+			
+					+ (new Date().getTime()) + ".csv\"");
+			PrintWriter pw1 = new PrintWriter(new
+			 File(outputFolder + (new Date().getTime()) + ".csv"));
+			pw1.write(ReportDocument.body());
+			pw1.close();
+			System.out.println("Export Sucessfull!");
+\end{verbatim}
+
+\section*{Applet Wrapper}
+Applet wrapper functionality is used here to automate web browser, which helps in uploading data from USB to server using browser. As we cannot take applet out of web browser and run it as a standalone application, because it uses signed certificate with login cookies used from browser. We have tried to simulate user behavior so that browser would be opened automatically and given user input, the clicking of web pages and update would happen. Algorithm used for automation is below.
+
+Before running below Algorithm, check
+To avoid unexpected behavior and make IE web automation smooth, small change in IE settings is required as below
+\begin{enumerate} [label=(\alph*)]
+\item Open IE
+\item Go to Tools $\rightarrow$ {Internet Options} $\rightarrow$ {Security}
+\item Set all zones (Internet, Local intranet, trusted sites, restricted sites) to the same protected mode, enabled or disabled should not matter
+\end{enumerate}
+
+Input: User Credentials,SN Number and device
+Output: Run IE browser with user simulated options.
+	If Given user credentials are true then
+		If SN number and device is true then
+				Run IE browser with automated task
+		Else
+			Reenter device and SN number
+	Else
+		Throw error;
+	Pass;
+
+
+To run IEwebdriver, IEWebdriver.exe has to be available in system. Programmatically we have added IEWebdriver.exe so that dependency is reduced for user to add external file.
+There might be case with IE browser automation running slow or unexpected behavior. This happened after Microsoft made efforts to reduce the attack surface presented by malicious web sites, IE7 introduced something called protected mode, which leveraged Mandatory Integrity Control in Windows Vista to prevent actins initiated IE, usually initiated by JavaScript, from being able to access the operating system the way it could in prior releases. While this was generally a welcome development for most users of IE, it created all manner of problems for automating IE.
+
+Below is the code use to check if program ran from Jar file
+\begin{verbatim}
+// checking if program is ran from Jar
+if (location.startsWith("rsrc:") || location.endsWith
+(".jar"&& !new File(location.substring(location.
+indexOf(':') + 1)).isDirectory()) {
+logger.info("(Inside Method Startmagic) Running from Jar file ");
+// Program ran from Jar
+if (url.toString().contains(".jar")) {
+int index = url.toString().lastIndexOf(".jar");// split("jar")[0];
+String urlBeforeJarr = url.toString().substring(0, index); // get	// string // before	// .jar// Exampe
+int index2 = urlBeforeJarr.toString().lastIndexOf("/");
+String JarFileNameWithoutJar = urlBeforeJarr.substring
+(urlBeforeJarr.lastIndexOf("/") + 1); // Only	
+String jarName = JarFileNameWithoutJar + ".jar";
+urlBeforeJarr = urlBeforeJarr.replace("jar:file:/", "");
+java.util.jar.JarFile jarFile = new java.util.jar.JarFile(
+new java.io.File(urlBeforeJarr + ".jar")); // jar
+java.util.Enumeration<java.util.jar.JarEntry> enu = jarFile.entries();
+						while (enu.hasMoreElements()) {
+							String userHome = System.getProperty("user.home");
+
+				
+
+							destExtractJarDir = userHome + "/extractjar/"; // abc
+																			// is
+																			// my
+																			// destination
+																			// directory
+							java.util.jar.JarEntry je = enu.nextElement();
+
+							java.io.File fl = new java.io.File(destExtractJarDir, je.getName());
+
+							Boolean checkForExtractedFile = false;
+
+							if (fl.exists())
+								// boolean checkForExtractedFile = new
+								// File(destExtractJarDir,"IEDriverServer.exe").
+								exists();
+								checkForExtractedFile = new File(destExtractJarDir, "IEDriverServer.exe").exists();
+
+							if (checkForExtractedFile) {
+								
+							} else {
+								
+								if (!fl.exists()) {
+									fl.getParentFile().mkdirs();
+									fl = new java.io.File(destExtractJarDir, je.getName());
+								}
+								if (je.isDirectory()) {
+									continue;
+								}
+								java.io.InputStream is = jarFile.getInputStream(je);
+								java.io.FileOutputStream fo = new java.io.FileOutputStream(fl);
+								while (is.available() > 0) {
+									fo.write(is.read());
+								}
+								fo.close();
+								is.close();
+
+							}
+							
+						}
+						
+
+					}
+					logger.info("(Inside Method Startmagic) Setthing IEDriver path from Extracted Jar ");
+					fileWhereIEDriverislocated = new File(destExtractJarDir + "/IEDriverServer.exe");
+				}
+
+destExtractJarDir contains IEDriverServer.exe which is then added to system property with below code
+if (fileWhereIEDriverislocated.exists()) {
+					System.setProperty("webdriver.ie.driver", fileWhereIEDriverislocated.getAbsolutePath());
+
+					driver = new InternetExplorerDriver(capabilities);
+
+					driver.manage().window().maximize();
+					driver.get("https://carelink.minimed.eu/patient/entry.jsp?bhcp=1");
+				} else {
+					JOptionPane.showMessageDialog(null, "IEDriver is not selected");
+					return;
+				}
+\end{verbatim}
 
 \end{document}
