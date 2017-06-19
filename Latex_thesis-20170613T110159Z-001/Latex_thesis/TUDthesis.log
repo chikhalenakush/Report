@@ -1,0 +1,1778 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2016.9.12)  19 JUN 2017 14:51
+entering extended mode
+**./TUDthesis.tex
+(TUDthesis.tex
+LaTeX2e <2016/03/31> patch level 3
+Babel <3.9r> and hyphenation patterns for 75 language(s) loaded.
+(tudthesis.cls
+Document Class: tudthesis 2009/05/15 0.96 Joe Werner's TUD-Design-Manual packag
+e
+("C:\Program Files\MiKTeX 2.9\tex\latex\xkeyval\xkeyval.sty"
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\xkeyval\xkeyval.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\xkeyval\xkvutils.tex"
+\XKV@toks=\toks14
+\XKV@tempa@toks=\toks15
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\xkeyval\keyval.tex"))
+\XKV@depth=\count79
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+Class tudthesis Info: Unknown option 'article`. Pass to tudreport class. on inp
+ut line 37.
+Class tudthesis Info: Unknown option 'colorback`. Pass to tudreport class. on i
+nput line 37.
+Class tudthesis Info: Unknown option 'accentcolor=tud9c`. Pass to tudreport cla
+ss. on input line 37.
+Class tudthesis Info: Unknown option 'twoside`. Pass to tudreport class. on inp
+ut line 37.
+Class tudthesis Info: Unknown option '11pt`. Pass to tudreport class. on input 
+line 37.
+
+(tudreport.cls
+Document Class: tudreport 2009/11/17 1.13 Clemens von Loewenich's and Joe Werne
+r's TUD-Design package
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
+)
+Class tudreport Info: Option `paper=a4report' selected. on input line 146.
+Class tudreport Info: Unknown option 'twoside`. Pass to KOMA-Script class. on i
+nput line 148.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\koma-script\scrartcl.cls"
+Document Class: scrartcl 2017/04/13 v3.23 KOMA-Script document class (article)
+("C:\Program Files\MiKTeX 2.9\tex\latex\koma-script\scrkbase.sty"
+Package: scrkbase 2017/04/13 v3.23 KOMA-Script package (KOMA-Script-dependent b
+asics and keyval usage)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\koma-script\scrbase.sty"
+Package: scrbase 2017/04/13 v3.23 KOMA-Script package (KOMA-Script-independent 
+basics and keyval usage)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\koma-script\scrlfile.sty"
+Package: scrlfile 2017/04/13 v3.23 KOMA-Script package (loading files)
+
+Package scrlfile, 2017/04/13 v3.23 KOMA-Script package (loading files)
+                  Copyright (C) Markus Kohm
+
+))) ("C:\Program Files\MiKTeX 2.9\tex\latex\koma-script\tocbasic.sty"
+Package: tocbasic 2017/04/13 v3.23 KOMA-Script package (handling toc-files)
+\scr@dte@tocline@numberwidth=\skip41
+\scr@dte@tocline@numbox=\box26
+)
+Package tocbasic Info: omitting babel extension for `toc'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `toc' on input line 131.
+Package tocbasic Info: omitting babel extension for `lof'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `lof' on input line 133.
+Package tocbasic Info: omitting babel extension for `lot'
+(tocbasic)             because of feature `nobabel' available
+(tocbasic)             for `lot' on input line 134.
+Class scrartcl Info: File `scrsize11pt.clo' used instead of
+(scrartcl)           file `scrsize11.clo' to setup font sizes on input line 205
+9.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\koma-script\scrsize11pt.clo"
+File: scrsize11pt.clo 2017/04/13 v3.23 KOMA-Script font size class option (11pt
+)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\koma-script\typearea.sty"
+Package: typearea 2017/04/13 v3.23 KOMA-Script package (type area)
+\ta@bcor=\skip42
+\ta@div=\count80
+\ta@hblk=\skip43
+\ta@vblk=\skip44
+\ta@temp=\skip45
+\footheight=\skip46
+Package typearea Info: These are the values describing the layout:
+(typearea)             DIV  = 10
+(typearea)             BCOR = 0.0pt
+(typearea)             \paperwidth      = 597.50793pt
+(typearea)              \textwidth      = 418.25555pt
+(typearea)              DIV departure   = -6%
+(typearea)              \evensidemargin = 47.2316pt
+(typearea)              \oddsidemargin  = -12.5192pt
+(typearea)             \paperheight     = 845.04694pt
+(typearea)              \textheight     = 595.80026pt
+(typearea)              \topmargin      = -25.16531pt
+(typearea)              \headheight     = 17.0pt
+(typearea)              \headsep        = 20.40001pt
+(typearea)              \topskip        = 11.0pt
+(typearea)              \footskip       = 47.6pt
+(typearea)              \baselineskip   = 13.6pt
+(typearea)              on input line 1647.
+)
+\c@part=\count81
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\scr@dte@part@maxnumwidth=\skip47
+\scr@dte@section@maxnumwidth=\skip48
+\scr@dte@subsection@maxnumwidth=\skip49
+\scr@dte@subsubsection@maxnumwidth=\skip50
+\scr@dte@paragraph@maxnumwidth=\skip51
+\scr@dte@subparagraph@maxnumwidth=\skip52
+LaTeX Info: Redefining \textsubscript on input line 4094.
+\abovecaptionskip=\skip53
+\belowcaptionskip=\skip54
+\c@pti@nb@sid@b@x=\box27
+\c@figure=\count87
+\c@table=\count88
+Class scrartcl Info: Redefining `\numberline' on input line 5233.
+\bibindent=\dimen102
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\calc.sty"
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count89
+\calc@Bcount=\count90
+\calc@Adimen=\dimen103
+\calc@Bdimen=\dimen104
+\calc@Askip=\skip55
+\calc@Bskip=\skip56
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count91
+\calc@Cskip=\skip57
+) (tudcolours.sty
+Package: tudcolours 2009/03/12 1.9 Clemens von Loewenich's and Joe Werner's TUD
+-Design package
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\xcolor\xcolor.sty"
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\color.cfg"
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Package option `override' ignored on input line 216.
+Package xcolor Info: Driver file: pdftex.def on input line 225.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-def\pdftex.def"
+File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count92
+)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
+)
+(tudcolours.cfg
+File: tudcolours.cfg 2008/12/03
+) (tudcolours.def
+File: tudcolours.def 2008/12/03
+)) (tudreprt_fonts.sty
+Package: tudreprt_fonts 2009/00/18 1.11 Clemens von Loewenich's and Joe Werner'
+s TUD-Design package
+ (tudfonts.sty
+Package: tudfonts 2009/09/18 1.12 Clemens von Loewenich's and Joe Werner's TUD-
+Design package
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+Package: fontenc 2017/01/24 v2.0c Standard LaTeX package
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.def"
+File: t1enc.def 2017/01/24 v2.0c Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\textcomp.sty"
+Package: textcomp 2017/01/24 v2.0c Standard LaTeX package
+Package textcomp Info: Sub-encoding information:
+(textcomp)               5 = only ISO-Adobe without \textcurrency
+(textcomp)               4 = 5 + \texteuro
+(textcomp)               3 = 4 + \textohm
+(textcomp)               2 = 3 + \textestimated + \textcurrency
+(textcomp)               1 = TS1 - \textcircled - \t
+(textcomp)               0 = TS1 (full)
+(textcomp)             Font families with sub-encoding setting implement
+(textcomp)             only a restricted character set as indicated.
+(textcomp)             Family '?' is the default used for unknown fonts.
+(textcomp)             See the documentation for details.
+Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 79.
+Package textcomp Info: Changing ? sub-encoding to TS1/4 on input line 80.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1enc.def"
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+)
+LaTeX Info: Redefining \oldstylenums on input line 334.
+Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 349.
+Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 350.
+Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 351.
+Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 352.
+Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 353.
+Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 354.
+Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 355.
+Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 356.
+Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 357.
+Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 358.
+Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 359.
+Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 360.
+Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 361.
+Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 362.
+Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 363.
+Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 364.
+Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 365.
+Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 366.
+Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 367.
+Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 368.
+Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 369.
+Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 370.
+Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 371.
+Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 372.
+
+Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 373.
+Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 374.
+Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 375.
+Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 376.
+Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 377.
+Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 378.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 379.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 380.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 381.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 382.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 383.
+Package textcomp Info: Setting lmtt sub-encoding to TS1/0 on input line 384.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 385.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 386.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 387.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 388.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 389.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 390.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 391.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 392.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 393.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 394.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 395.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 396.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 397.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 398.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 399.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 400.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 401.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 402.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 403.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 404.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 405.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 406.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 407.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 408.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 409.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\fix-cm.sty"
+Package: fix-cm 2015/01/14 v1.1t fixes to LaTeX
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ts1enc.def"
+File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding TS1 on input line 47.
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\mathdesign\mathdesign.sty"
+Package: mathdesign 2013/08/29 v2.31 Math Design Project
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\mathdesign\mdbch\mdbch.cfg")
+("C:\Program Files\MiKTeX 2.9\tex\latex\mathdesign\mdbch\mdbch.sty"
+Package: mdbch 2013/08/29 v2.31 bitstream bitstream charter + mdbch (Math Desig
+n Project)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\mathdesign\mdfont.def"
+File: mdfont.def 2013/08/29 v2.31 (Math Design Project)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\mathdesign\mdsffont.def"
+File: mdsffont.def 2013/08/29 v2.31 (Math Design Project)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\mathdesign\mdttfont.def"
+File: mdttfont.def 2013/08/29 v2.31 (Math Design Project)
+)
+\symmdcal=\mathgroup4
+LaTeX Font Info:    Overwriting symbol font `mdcal' in version `bold'
+(Font)                  OMS/mdbch/m/n --> OMS/mdbch/b/n on input line 97.
+\symmdscr=\mathgroup5
+LaTeX Font Info:    Overwriting symbol font `mdscr' in version `bold'
+(Font)                  OMS/mdbch/m/n --> OMS/mdbch/b/n on input line 103.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/xmdeuf/m/n --> U/xmdeuf/b/n on input line 110.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT1/mdbch/m/n on input line 121.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/mdbch/m/it on input line 122.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/mdbch/m/n on input line 123.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/mdbch/m/n on input line 124.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT1/mdbch/b/n on input line 126.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/mdbch/b/it on input line 127.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/mdbch/b/n on input line 128.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
+(Font)                  OMX/cmex/m/n --> OMX/mdbch/b/n on input line 129.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
+(Font)                  OT1/mdbch/m/n --> T1/mdbch/m/n on input line 131.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> T1/mdbch/b/n on input line 132.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> T1/mdbch/m/it on input line 133.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> T1/cmss/m/n on input line 134.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/m/n on input line 135.
+LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
+(Font)                  OT1/mdbch/b/n --> T1/mdbch/b/n on input line 137.
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
+(Font)                  OT1/cmr/bx/n --> T1/mdbch/b/n on input line 138.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> T1/mdbch/b/it on input line 139.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> T1/cmss/b/n on input line 140.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
+(Font)                  OT1/cmtt/m/n --> T1/cmtt/b/n on input line 141.
+\symlettersupright=\mathgroup6
+LaTeX Font Info:    Overwriting symbol font `lettersupright' in version `bold'
+(Font)                  OML/mdbch/m/n --> OML/mdbch/b/n on input line 144.
+LaTeX Font Info:    Redeclaring math alphabet \mathrm on input line 145.
+LaTeX Font Info:    Overwriting math alphabet `\mathcal' in version `normal'
+(Font)                  OMS/mdbch/m/n --> OMS/mdbch/m/n on input line 167.
+LaTeX Font Info:    Try loading font information for T1+mdbch on input line 186
+.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\mathdesign\mdbch\t1mdbch.fd"
+File: t1mdbch.fd 2013/08/29 Fontinst v1.933 font definitions for T1/mdbch.
+)
+LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
+(Font)              scaled to size 10.51207pt on input line 186.
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 449.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 450.
+\symmathdesignA=\mathgroup7
+LaTeX Font Info:    Overwriting symbol font `mathdesignA' in version `bold'
+(Font)                  MDA/mdbch/m/n --> MDA/mdbch/b/n on input line 491.
+\symmathdesignB=\mathgroup8
+LaTeX Font Info:    Overwriting symbol font `mathdesignB' in version `bold'
+(Font)                  MDB/mdbch/m/n --> MDB/mdbch/b/n on input line 498.
+\@emptytoks=\toks16
+LaTeX Font Info:    Redeclaring math accent \widetilde on input line 532.
+LaTeX Font Info:    Redeclaring math accent \widehat on input line 533.
+\rulethickness=\skip58
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\fontenc.sty"
+Package: fontenc 2017/01/24 v2.0c Standard LaTeX package
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\t1enc.def"
+File: t1enc.def 2017/01/24 v2.0c Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+)))
+\symutopiasymbol=\mathgroup9
+LaTeX Font Info:    Overwriting math alphabet `\mathmb' in version `normal'
+(Font)                  T1/5ch/mb/n --> T1/5ch/mb/n on input line 34.
+LaTeX Font Info:    Overwriting math alphabet `\mathmb' in version `bold'
+(Font)                  T1/5ch/mb/n --> T1/5ch/mb/n on input line 35.
+LaTeX Info: Redefining \em on input line 37.
+\fontheight=\skip59
+\fontdepth=\skip60
+\fontstrutbox=\box28
+LaTeX Info: Redefining \LaTeX on input line 108.
+)
+LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
+(Font)              scaled to size 10.56007pt on input line 239.
+)
+\TUD@headfootsep=\skip61
+ (tudpage.sty
+Package: tudpage 2009/08/11 1.10 Clemens von Loewenich's and Joe Werner's TUD-D
+esign package
+
+(tudpaper.sty
+Package: tudpaper 2009/01/28 1.9 Clemens von Loewenich's and Joe Werner's TUD-D
+esign package
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2016/10/09 v1.0u Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics-cfg\graphics.cfg"
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+)
+\Gin@req@height=\dimen105
+\Gin@req@width=\dimen106
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\eso-pic\eso-pic.sty"
+Package: eso-pic 2015/07/21 v2.0g eso-pic (RN)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\atbegshi.sty"
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.sty"
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+)))
+\TUD@logo@height=\skip62
+\TUD@logo@leftskip=\skip63
+\TUD@sep@top=\skip64
+\TUD@sep@left=\skip65
+\TUD@sep@right=\skip66
+\TUD@sep@bottom=\skip67
+\TUD@titlepos=\skip68
+\TUD@titlebox@sep@left=\skip69
+\TUD@titlebox@sep@right=\skip70
+\TUD@titlebox@sep@bottom=\skip71
+\TUD@subtitlebox@sep=\skip72
+\TUD@textwidth=\skip73
+\TUD@cols@width=\skip74
+\TUD@cols@sep=\skip75
+\c@TUD@cols@n=\count93
+ (tudrules.sty
+Package: tudrules 2008/10/09 1.6 Clemens von Loewenich's and Joe Werner's TUD-D
+esign package
+\TUD@indentbar@height=\skip76
+\TUD@indentbar@depth=\skip77
+\TUD@indentbar@totalheight=\skip78
+\@TUD@indentbar@width=\skip79
+\@TUD@largeruleheight=\skip80
+\@TUD@smallruleheight=\skip81
+\@TUD@rulesep=\skip82
+\@TUD@ruleheight=\skip83
+)
+\TUD@indentbarheight=\skip84
+("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.sty"
+Package: geometry 2010/09/12 v5.6 Page Geometry
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ifvtex.sty"
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+\Gm@cnth=\count94
+\Gm@cntv=\count95
+\c@Gm@tempcnt=\count96
+\Gm@bindingoffset=\dimen107
+\Gm@wd@mp=\dimen108
+\Gm@odd@mp=\dimen109
+\Gm@even@mp=\dimen110
+\Gm@layoutwidth=\dimen111
+\Gm@layoutheight=\dimen112
+\Gm@layouthoffset=\dimen113
+\Gm@layoutvoffset=\dimen114
+\Gm@dimlist=\toks17
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\geometry\geometry.cfg")))
+\TUD@footparindent=\skip85
+
+
+Class scrartcl Warning: Usage of package `fancyhdr' together
+(scrartcl)              with a KOMA-Script class is not recommended.
+(scrartcl)              I'd suggest to use 
+(scrartcl)              package `scrlayer-scrpage'.
+(scrartcl)              Nevertheless, using requested
+(scrartcl)              package `fancyhdr' on input line 47.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.sty"
+Package: fancyhdr 2016/10/11 v3.9 Extensive control of page headers and footers
+
+\f@nch@headwidth=\skip86
+\f@nch@O@elh=\skip87
+\f@nch@O@erh=\skip88
+\f@nch@O@olh=\skip89
+\f@nch@O@orh=\skip90
+\f@nch@O@elf=\skip91
+\f@nch@O@erf=\skip92
+\f@nch@O@olf=\skip93
+\f@nch@O@orf=\skip94
+))
+(tudheading.sty
+Package: tudheading 2009/12/31 1.17 Clemens von Loewenich's and Joe Werner's TU
+D-Design package
+
+
+Class scrartcl Warning: Usage of package `titlesec' together
+(scrartcl)              with a KOMA-Script class is not recommended.
+(scrartcl)              I'd suggest to use the package only
+(scrartcl)              if you really need it, because it breaks several
+(scrartcl)              KOMA-Script features, i.e., option `headings' and
+(scrartcl)              the extended optional argument of the section
+(scrartcl)              commands.
+(scrartcl)              Nevertheless, using requested
+(scrartcl)              package `titlesec' on input line 12.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\titlesec\titlesec.sty"
+Package: titlesec 2016/03/21 v2.10.2 Sectioning titles
+\ttl@box=\box29
+\beforetitleunit=\skip95
+\aftertitleunit=\skip96
+\ttl@plus=\dimen115
+\ttl@minus=\dimen116
+\ttl@toksa=\toks18
+\titlewidth=\dimen117
+\titlewidthlast=\dimen118
+\titlewidthfirst=\dimen119
+
+
+Package titlesec Warning: Non standard sectioning command detected
+(titlesec)                Using default spacing and no format.
+
+
+Package titlesec Warning: Non standard sectioning command detected
+(titlesec)                Using default spacing and no format.
+
+
+Package titlesec Warning: Non standard sectioning command detected
+(titlesec)                Using default spacing and no format.
+
+
+Package titlesec Warning: Non standard sectioning command detected
+(titlesec)                Using default spacing and no format.
+
+
+Package titlesec Warning: Non standard sectioning command detected
+(titlesec)                Using default spacing and no format.
+
+)
+
+Class scrartcl Warning: Activating an ugly workaround for a missing
+(scrartcl)              feature of package `titlesec` on input line 12.
+
+\c@seclinedepth=\count97
+\TUD@chapter@diff@height=\skip97
+LaTeX Font Info:    Font shape `T1/mdbch/m/n' will be
+(Font)              scaled to size 11.13608pt on input line 75.
+\@TUD@above@headskip=\skip98
+\@TUD@below@headskip=\skip99
+(tudheading.def
+File: tudheading.def 2009/07/14
+\TUD@part@tmp@height=\skip100
+\TUD@part@tmp@depth=\skip101
+\@TUD@partbox=\box30
+)
+\TUD@parind=\skip102
+\TUD@chapind=\skip103
+\TUD@secind=\skip104
+\TUD@subsecind=\skip105
+\TUD@subsubsecind=\skip106
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\titlesec\block.tss"
+File: block.tss 2016/03/15
+))
+(tudredef.sty
+Package: tudredef 2010/04/10 1.2 Clemens von Loewenich's and Joe Werner's TUD-D
+esign package
+\TUD@abstract@count=\count98
+) (tudreprt_title.sty
+Package: tudreprt_title 2014/09/20 1.12 Clemens von Loewenich's and Joe Werner'
+s TUD-Design package
+\TUD@sponsorlogo=\box31
+\TUD@titleskip=\skip107
+)) (tudthess_title.sty
+Package: tudthess_title 2010/03/22 0.99 Joe Werner's TUD-Design-Manual package
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2016/11/05 v2.16a AMS math features
+\@mathmargin=\skip108
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01 AMS text
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks19
+\ex@=\dimen120
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen121
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count99
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count100
+\leftroot@=\count101
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count102
+\DOTSCASE@=\count103
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box32
+\strutbox@=\box33
+\big@size=\dimen122
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count104
+\c@MaxMatrixCols=\count105
+\dotsspace@=\muskip10
+\c@parentequation=\count106
+\dspbrk@lvl=\count107
+\tag@help=\toks20
+\row@=\count108
+\column@=\count109
+\maxfields@=\count110
+\andhelp@=\toks21
+\eqnshift@=\dimen123
+\alignsep@=\dimen124
+\tagshift@=\dimen125
+\tagwidth@=\dimen126
+\totwidth@=\dimen127
+\lineht@=\dimen128
+\@envbody=\toks22
+\multlinegap=\skip109
+\multlinetaggap=\skip110
+\mathdisplay@stack=\toks23
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\algorithms\algorithm.sty"
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count111
+\float@exts=\toks24
+\float@box=\box34
+\@float@everytoks=\toks25
+\@floatcapt=\box35
+)
+\@float@every@algorithm=\toks26
+\c@algorithm=\count112
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\tocloft\tocloft.sty"
+Package: tocloft 2013/05/02 v2.3f parameterised ToC, etc., typesetting
+Package tocloft Info: The document has section divisions on input line 44.
+\cftparskip=\skip111
+\cftbeforetoctitleskip=\skip112
+\cftaftertoctitleskip=\skip113
+\cftbeforepartskip=\skip114
+\cftpartnumwidth=\skip115
+\cftpartindent=\skip116
+\cftbeforesecskip=\skip117
+\cftsecindent=\skip118
+\cftsecnumwidth=\skip119
+\cftbeforesubsecskip=\skip120
+\cftsubsecindent=\skip121
+\cftsubsecnumwidth=\skip122
+\cftbeforesubsubsecskip=\skip123
+\cftsubsubsecindent=\skip124
+\cftsubsubsecnumwidth=\skip125
+\cftbeforeparaskip=\skip126
+\cftparaindent=\skip127
+\cftparanumwidth=\skip128
+\cftbeforesubparaskip=\skip129
+\cftsubparaindent=\skip130
+\cftsubparanumwidth=\skip131
+\cftbeforeloftitleskip=\skip132
+\cftafterloftitleskip=\skip133
+\cftbeforefigskip=\skip134
+\cftfigindent=\skip135
+\cftfignumwidth=\skip136
+\c@lofdepth=\count113
+\c@lotdepth=\count114
+\cftbeforelottitleskip=\skip137
+\cftafterlottitleskip=\skip138
+\cftbeforetabskip=\skip139
+\cfttabindent=\skip140
+\cfttabnumwidth=\skip141
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\chngcntr\chngcntr.sty"
+Package: chngcntr 2009/09/02 v1.0a change counter resetting
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\ulem\ulem.sty"
+\UL@box=\box36
+\UL@hyphenbox=\box37
+\UL@skip=\skip142
+\UL@hook=\toks27
+\UL@height=\dimen129
+\UL@pe=\count115
+\UL@pixel=\dimen130
+\ULC@box=\box38
+Package: ulem 2012/05/18
+\ULdepth=\dimen131
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\wrapfig\wrapfig.sty"
+\wrapoverhang=\dimen132
+\WF@size=\dimen133
+\c@WF@wrappedlines=\count116
+\WF@box=\box39
+\WF@everypar=\toks28
+Package: wrapfig 2003/01/31  v 3.6
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\algorithmicx\algpseudocode.sty"
+Package: algpseudocode 
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\algorithmicx\algorithmicx.sty"
+Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
+
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+\c@ALG@line=\count117
+\c@ALG@rem=\count118
+\c@ALG@nested=\count119
+\ALG@tlm=\skip143
+\ALG@thistlm=\skip144
+\c@ALG@Lnr=\count120
+\c@ALG@blocknr=\count121
+\c@ALG@storecount=\count122
+\c@ALG@tmpcounter=\count123
+\ALG@tmplength=\skip145
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
+Package: hyperref 2016/06/24 v6.83q Hypertext links for LaTeX
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package hobsub Info: Skipping package `ifvtex' (already loaded).
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package hobsub Info: Skipping package `ifpdf' (already loaded).
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
+)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package hobsub Info: Skipping package `atbegshi' (already loaded).
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+)
+\@linkdim=\dimen134
+\Hy@linkcounter=\count124
+\Hy@pagecounter=\count125
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
+File: pd1enc.def 2016/06/24 v6.83q Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count126
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Option `colorlinks' set `false' on input line 4362.
+Package hyperref Info: Hyper figures OFF on input line 4486.
+Package hyperref Info: Link nesting OFF on input line 4491.
+Package hyperref Info: Hyper index ON on input line 4494.
+Package hyperref Info: Plain pages OFF on input line 4501.
+Package hyperref Info: Backreferencing OFF on input line 4506.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4735.
+\c@Hy@tempcnt=\count127
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\url\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5088.
+\XeTeXLinkMargin=\dimen135
+\Fld@menulength=\count128
+\Field@Width=\dimen136
+\Fld@charsize=\dimen137
+Package hyperref Info: Hyper figures OFF on input line 6342.
+Package hyperref Info: Link nesting OFF on input line 6347.
+Package hyperref Info: Hyper index ON on input line 6350.
+Package hyperref Info: backreferencing OFF on input line 6357.
+Package hyperref Info: Link coloring OFF on input line 6362.
+Package hyperref Info: Link coloring with OCG OFF on input line 6367.
+Package hyperref Info: PDF/A mode OFF on input line 6372.
+LaTeX Info: Redefining \ref on input line 6412.
+LaTeX Info: Redefining \pageref on input line 6416.
+\Hy@abspage=\count129
+\c@Item=\count130
+\c@Hfootnote=\count131
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
+File: hpdftex.def 2016/06/24 v6.83q Hyperref driver for pdfTeX
+\Fld@listcount=\count132
+\c@bookmark@seq@number=\count133
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip146
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
+Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
+\multirow@colwidth=\skip147
+\multirow@cntb=\count134
+\multirow@dima=\skip148
+\bigstrutjot=\dimen138
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption.sty"
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
+\captionmargin=\dimen139
+\captionmargin@=\dimen140
+\captionwidth=\dimen141
+\caption@tempdima=\dimen142
+\caption@indent=\dimen143
+\caption@parindent=\dimen144
+\caption@hangindent=\dimen145
+)
+Package caption Info: KOMA-Script document class.
+\c@ContinuedFloat=\count135
+Package caption Info: float package is loaded.
+Package caption Info: hyperref package is loaded.
+Package caption Info: wrapfig package is loaded.
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty"
+Package: babel 2016/04/23 3.9r The Babel package
+
+*************************************
+* Local config file bblopts.cfg used
+*
+("C:\Program Files\MiKTeX 2.9\tex\latex\arabi\bblopts.cfg"
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\babel-german\ngerman.ldf"
+Language: ngerman 2016/11/02 v2.9 German support for babel (new orthography)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\babel-german\ngermanb.ldf"
+Language: ngermanb 2016/11/02 v2.9 German support for babel (new orthography)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.def"
+File: babel.def 2016/04/23 3.9r Babel common definitions
+\babel@savecnt=\count136
+\U@D=\dimen146
+)
+Package babel Info: Making " an active character on input line 125.
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\babel-english\english.ldf"
+Language: english 2017/01/24 v3.3q English support from the babel system
+\l@canadian = a dialect from \language\l@american 
+\l@australian = a dialect from \language\l@british 
+\l@newzealand = a dialect from \language\l@british 
+))
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.sty"
+\lst@mode=\count137
+\lst@gtempboxa=\box40
+\lst@token=\toks29
+\lst@length=\count138
+\lst@currlwidth=\dimen147
+\lst@column=\count139
+\lst@pos=\count140
+\lst@lostspace=\dimen148
+\lst@width=\dimen149
+\lst@newlines=\count141
+\lst@lineno=\count142
+\lst@maxwidth=\dimen150
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
+File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
+\c@lstnumber=\count143
+\lst@skipnumbers=\count144
+\lst@framebox=\box41
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.cfg"
+File: listings.cfg 2015/06/04 1.6 listings configuration
+))
+Package: listings 2015/06/04 1.6 (Carsten Heinz)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+File: lstlang1.sty 2015/06/04 1.6 listings language file
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\frontendlayer\tikz.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\basiclayer\pgf.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\utilities\pgfrcs.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfutil-common.tex"
+\pgfutil@everybye=\toks30
+\pgfutil@tempdima=\dimen151
+\pgfutil@tempdimb=\dimen152
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfutil-common-lists.te
+x")) ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfutil-latex.def"
+\pgfutil@abb=\box42
+("C:\Program Files\MiKTeX 2.9\tex\latex\ms\everyshi.sty"
+Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
+))
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfrcs.code.tex"
+Package: pgfrcs 2015/08/07 v3.0.1a (rcs-revision 1.31)
+))
+Package: pgf 2015/08/07 v3.0.1a (rcs-revision 1.15)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\basiclayer\pgfcore.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\systemlayer\pgfsys.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsys.code.tex"
+Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfkeys.code.tex"
+\pgfkeys@pathtoks=\toks31
+\pgfkeys@temptoks=\toks32
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfkeysfiltered.code.te
+x"
+\pgfkeys@tmptoks=\toks33
+))
+\pgf@x=\dimen153
+\pgf@y=\dimen154
+\pgf@xa=\dimen155
+\pgf@ya=\dimen156
+\pgf@xb=\dimen157
+\pgf@yb=\dimen158
+\pgf@xc=\dimen159
+\pgf@yc=\dimen160
+\w@pgf@writea=\write3
+\r@pgf@reada=\read1
+\c@pgf@counta=\count145
+\c@pgf@countb=\count146
+\c@pgf@countc=\count147
+\c@pgf@countd=\count148
+\t@pgf@toka=\toks34
+\t@pgf@tokb=\toks35
+\t@pgf@tokc=\toks36
+ ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgf.cfg"
+File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
+)
+Driver file for pgf: pgfsys-pdftex.def
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsys-pdftex.def"
+File: pgfsys-pdftex.def 2014/10/11  (rcs-revision 1.35)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsys-common-pdf.def
+"
+File: pgfsys-common-pdf.def 2013/10/10  (rcs-revision 1.13)
+)))
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsyssoftpath.code.t
+ex"
+File: pgfsyssoftpath.code.tex 2013/09/09  (rcs-revision 1.9)
+\pgfsyssoftpath@smallbuffer@items=\count149
+\pgfsyssoftpath@bigbuffer@items=\count150
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\systemlayer\pgfsysprotocol.code.t
+ex"
+File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
+)) ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcore.code.tex"
+Package: pgfcore 2010/04/11 v3.0.1a (rcs-revision 1.7)
+ ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmath.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathcalc.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathutil.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathparser.code.tex"
+\pgfmath@dimen=\dimen161
+\pgfmath@count=\count151
+\pgfmath@box=\box43
+\pgfmath@toks=\toks37
+\pgfmath@stack@operand=\toks38
+\pgfmath@stack@operation=\toks39
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.code.tex"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.basic.code.
+tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.trigonometr
+ic.code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.random.code
+.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.comparison.
+code.tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.base.code.t
+ex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.round.code.
+tex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.misc.code.t
+ex")
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfunctions.integerarit
+hmetics.code.tex")))
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmathfloat.code.tex"
+\c@pgfmathroundto@lastzeros=\count152
+))
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepoints.code.tex
+"
+File: pgfcorepoints.code.tex 2013/10/07  (rcs-revision 1.27)
+\pgf@picminx=\dimen162
+\pgf@picmaxx=\dimen163
+\pgf@picminy=\dimen164
+\pgf@picmaxy=\dimen165
+\pgf@pathminx=\dimen166
+\pgf@pathmaxx=\dimen167
+\pgf@pathminy=\dimen168
+\pgf@pathmaxy=\dimen169
+\pgf@xx=\dimen170
+\pgf@xy=\dimen171
+\pgf@yx=\dimen172
+\pgf@yy=\dimen173
+\pgf@zx=\dimen174
+\pgf@zy=\dimen175
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepathconstruct.c
+ode.tex"
+File: pgfcorepathconstruct.code.tex 2013/10/07  (rcs-revision 1.29)
+\pgf@path@lastx=\dimen176
+\pgf@path@lasty=\dimen177
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepathusage.code.
+tex"
+File: pgfcorepathusage.code.tex 2014/11/02  (rcs-revision 1.24)
+\pgf@shorten@end@additional=\dimen178
+\pgf@shorten@start@additional=\dimen179
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorescopes.code.tex
+"
+File: pgfcorescopes.code.tex 2015/05/08  (rcs-revision 1.46)
+\pgfpic=\box44
+\pgf@hbox=\box45
+\pgf@layerbox@main=\box46
+\pgf@picture@serial@count=\count153
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoregraphicstate.co
+de.tex"
+File: pgfcoregraphicstate.code.tex 2014/11/02  (rcs-revision 1.12)
+\pgflinewidth=\dimen180
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoretransformations
+.code.tex"
+File: pgfcoretransformations.code.tex 2015/08/07  (rcs-revision 1.20)
+\pgf@pt@x=\dimen181
+\pgf@pt@y=\dimen182
+\pgf@pt@temp=\dimen183
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorequick.code.tex"
+File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreobjects.code.te
+x"
+File: pgfcoreobjects.code.tex 2006/10/11  (rcs-revision 1.2)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepathprocessing.
+code.tex"
+File: pgfcorepathprocessing.code.tex 2013/09/09  (rcs-revision 1.9)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorearrows.code.tex
+"
+File: pgfcorearrows.code.tex 2015/05/14  (rcs-revision 1.43)
+\pgfarrowsep=\dimen184
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreshade.code.tex"
+File: pgfcoreshade.code.tex 2013/07/15  (rcs-revision 1.15)
+\pgf@max=\dimen185
+\pgf@sys@shading@range@num=\count154
+) ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreimage.code.te
+x"
+File: pgfcoreimage.code.tex 2013/07/15  (rcs-revision 1.18)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoreexternal.code.t
+ex"
+File: pgfcoreexternal.code.tex 2014/07/09  (rcs-revision 1.21)
+\pgfexternal@startupbox=\box47
+))
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorelayers.code.tex
+"
+File: pgfcorelayers.code.tex 2013/07/18  (rcs-revision 1.7)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcoretransparency.co
+de.tex"
+File: pgfcoretransparency.code.tex 2013/09/30  (rcs-revision 1.5)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\basiclayer\pgfcorepatterns.code.t
+ex"
+File: pgfcorepatterns.code.tex 2013/11/07  (rcs-revision 1.5)
+)))
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\modules\pgfmoduleshapes.code.tex"
+File: pgfmoduleshapes.code.tex 2014/03/21  (rcs-revision 1.35)
+\pgfnodeparttextbox=\box48
+) ("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\modules\pgfmoduleplot.code.tex"
+File: pgfmoduleplot.code.tex 2015/08/03  (rcs-revision 1.13)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\compatibility\pgfcomp-version-0-65.
+sty"
+Package: pgfcomp-version-0-65 2007/07/03 v3.0.1a (rcs-revision 1.7)
+\pgf@nodesepstart=\dimen186
+\pgf@nodesepend=\dimen187
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\compatibility\pgfcomp-version-1-18.
+sty"
+Package: pgfcomp-version-1-18 2007/07/23 v3.0.1a (rcs-revision 1.1)
+)) ("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\utilities\pgffor.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\utilities\pgfkeys.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgfkeys.code.tex"))
+("C:\Program Files\MiKTeX 2.9\tex\latex\pgf\math\pgfmath.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmath.code.tex"))
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\utilities\pgffor.code.tex"
+Package: pgffor 2013/12/13 v3.0.1a (rcs-revision 1.25)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\math\pgfmath.code.tex")
+\pgffor@iter=\dimen188
+\pgffor@skip=\dimen189
+\pgffor@stack=\toks40
+\pgffor@toks=\toks41
+))
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\tikz.code.tex"
+Package: tikz 2015/08/07 v3.0.1a (rcs-revision 1.151)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\pgflibraryplothandlers.
+code.tex"
+File: pgflibraryplothandlers.code.tex 2013/08/31 v3.0.1a (rcs-revision 1.20)
+\pgf@plot@mark@count=\count155
+\pgfplotmarksize=\dimen190
+)
+\tikz@lastx=\dimen191
+\tikz@lasty=\dimen192
+\tikz@lastxsaved=\dimen193
+\tikz@lastysaved=\dimen194
+\tikzleveldistance=\dimen195
+\tikzsiblingdistance=\dimen196
+\tikz@figbox=\box49
+\tikz@figbox@bg=\box50
+\tikz@tempbox=\box51
+\tikz@tempbox@bg=\box52
+\tikztreelevel=\count156
+\tikznumberofchildren=\count157
+\tikznumberofcurrentchild=\count158
+\tikz@fig@count=\count159
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\modules\pgfmodulematrix.code.tex"
+File: pgfmodulematrix.code.tex 2013/09/17  (rcs-revision 1.8)
+\pgfmatrixcurrentrow=\count160
+\pgfmatrixcurrentcolumn=\count161
+\pgf@matrix@numberofcolumns=\count162
+)
+\tikz@expandcount=\count163
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
+librarytopaths.code.tex"
+File: tikzlibrarytopaths.code.tex 2008/06/17 v3.0.1a (rcs-revision 1.2)
+)))
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
+libraryshapes.geometric.code.tex"
+File: tikzlibraryshapes.geometric.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1
+)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\shapes\pgflibraryshapes
+.geometric.code.tex"
+File: pgflibraryshapes.geometric.code.tex 2008/06/26 v3.0.1a (rcs-revision 1.1)
+
+))
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\frontendlayer\tikz\libraries\tikz
+libraryarrows.code.tex"
+File: tikzlibraryarrows.code.tex 2008/01/09 v3.0.1a (rcs-revision 1.1)
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\pgf\libraries\pgflibraryarrows.code.t
+ex"
+File: pgflibraryarrows.code.tex 2013/09/23 v3.0.1a (rcs-revision 1.16)
+\arrowsize=\dimen197
+))
+
+LaTeX Warning: Unused global option(s):
+    [article,colorback,accentcolor=tud9c,11pt].
+
+(TUDthesis.aux)
+\openout1 = `TUDthesis.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for MDA/cmr/m/n on input line 61.
+LaTeX Font Info:    Try loading font information for MDA+cmr on input line 61.
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\mathdesign\mdacmr.fd"
+File: mdacmr.fd 
+)
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for MDB/cmr/m/n on input line 61.
+LaTeX Font Info:    Try loading font information for MDB+cmr on input line 61.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\mathdesign\mdbcmr.fd"
+File: mdbcmr.fd 
+)
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 61.
+LaTeX Font Info:    ... okay on input line 61.
+LaTeX Font Info:    Try loading font information for T1+5ch on input line 61.
+LaTeX Font Info:    No file T15ch.fd. on input line 61.
+
+
+LaTeX Font Warning: Font shape `T1/5ch/m/n' undefined
+(Font)              using `T1/cmr/m/n' instead on input line 61.
+
+("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count164
+\scratchdimen=\dimen198
+\scratchbox=\box53
+\nofMPsegments=\count165
+\nofMParguments=\count166
+\everyMPshowfont=\toks42
+\MPscratchCnt=\count167
+\MPscratchDim=\dimen199
+\MPnumerator=\count168
+\makeMPintoPDFobject=\count169
+\everyMPtoPDFconversion=\toks43
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-base.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+)
+\AtBeginShipoutBox=\box54
+
+*geometry* detected driver: dvips
+*geometry* verbose mode - [ preamble ] result:
+* driver: dvips
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: includehead includefoot includemp twoside 
+* h-part:(L,W,R)=(56.9055pt, 497.92325pt, 42.67912pt)
+* v-part:(T,H,B)=(42.67912pt, 745.46222pt, 56.9055pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=497.92325pt
+* \textheight=701.09778pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-29.59087pt
+* \topmargin=-29.59087pt
+* \headheight=16.56445pt
+* \headsep=13.9pt
+* \topskip=11.0pt
+* \footskip=13.9pt
+* \marginparwidth=0.0pt
+* \marginparsep=0.0pt
+* \columnsep=11.95013pt
+* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+\TUD@part@topskip=\skip149
+Package hyperref Info: Link coloring OFF on input line 61.
+("C:\Program Files\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
+)
+\c@section@level=\count170
+)
+LaTeX Info: Redefining \ref on input line 61.
+LaTeX Info: Redefining \pageref on input line 61.
+LaTeX Info: Redefining \nameref on input line 61.
+
+(TUDthesis.out) (TUDthesis.out)
+\@outlinefile=\write4
+\openout4 = `TUDthesis.out'.
+
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: listings package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\c@lstlisting=\count171
+ ABD: EveryShipout initializing macros
+
+Package  Warning: Command `\dateofexam ' ignored!
+()                See documentation for details. on input line 70.
+
+\@TUD@tmp@baselineskip=\skip150
+\@TUD@tmp@parwidth=\skip151
+\TUD@titleboxheight=\skip152
+\TUD@titleboxdepth=\skip153
+\TUD@subtitleboxheight=\skip154
+\TUD@subtitleboxdepth=\skip155
+\TUD@logoboxheight=\skip156
+\TUD@logoboxwidth=\skip157
+\TUD@colorbackheight=\skip158
+\TUD@colorbacktitleheight=\skip159
+\TUD@instboxheight=\skip160
+\TUD@instboxdepth=\skip161
+\TUD@instboxwidth=\skip162
+\TUD@instlogoheight=\skip163
+\TUD@instlogowidth=\skip164
+\TUD@sponsorheight=\skip165
+\TUD@titlebox=\box55
+\TUD@subtitlebox=\box56
+\TUD@logobox=\box57
+\TUD@instbox=\box58
+\TUD@sponsorbox=\box59
+\TUD@tmp@height=\skip166
+\TUD@tmp@depth=\skip167
+LaTeX Font Info:    Try loading font information for T1+5fp on input line 72.
+LaTeX Font Info:    No file T15fp.fd. on input line 72.
+
+LaTeX Font Warning: Font shape `T1/5fp/mb/n' undefined
+(Font)              using `T1/cmr/m/n' instead on input line 72.
+
+LaTeX Font Info:    Try loading font information for OT1+mdbch on input line 72
+.
+("C:\Program Files\MiKTeX 2.9\tex\latex\mathdesign\mdbch\ot1mdbch.fd"
+File: ot1mdbch.fd 2013/08/29 Fontinst v1.933 font definitions for OT1/mdbch.
+)
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 11.04007pt on input line 72.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 7.68005pt on input line 72.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 6.62404pt on input line 72.
+LaTeX Font Info:    Try loading font information for OML+mdbch on input line 72
+.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\mathdesign\mdbch\omlmdbch.fd"
+File: omlmdbch.fd 2013/08/29 Fontinst v1.933 font definitions for OML/mdbch.
+)
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 11.04007pt on input line 72.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 7.68005pt on input line 72.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 6.62404pt on input line 72.
+LaTeX Font Info:    Try loading font information for OMS+mdbch on input line 72
+.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\mathdesign\mdbch\omsmdbch.fd"
+File: omsmdbch.fd 2013/08/29 Fontinst v1.933 font definitions for OMS/mdbch.
+)
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 11.04007pt on input line 72.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 7.68005pt on input line 72.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 6.62404pt on input line 72.
+LaTeX Font Info:    Try loading font information for OMX+mdbch on input line 72
+.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\mathdesign\mdbch\omxmdbch.fd"
+File: omxmdbch.fd 2013/08/29 Fontinst v1.933 font definitions for OMX/mdbch.
+)
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 11.04007pt on input line 72.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 7.68005pt on input line 72.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 6.62404pt on input line 72.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 11.04007pt on input line 72.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 7.68005pt on input line 72.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 6.62404pt on input line 72.
+LaTeX Font Info:    Try loading font information for MDA+mdbch on input line 72
+.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\mathdesign\mdbch\mdamdbch.fd"
+File: mdamdbch.fd 2013/08/29 Fontinst v1.933 font definitions for MDA/mdbch.
+)
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 11.04007pt on input line 72.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 7.68005pt on input line 72.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 6.62404pt on input line 72.
+LaTeX Font Info:    Try loading font information for MDB+mdbch on input line 72
+.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\mathdesign\mdbch\mdbmdbch.fd"
+File: mdbmdbch.fd 2013/08/29 Fontinst v1.933 font definitions for MDB/mdbch.
+)
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 11.04007pt on input line 72.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 7.68005pt on input line 72.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 6.62404pt on input line 72.
+LaTeX Font Info:    Try loading font information for OML+mdput on input line 72
+.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\mathdesign\mdput\omlmdput.fd"
+File: omlmdput.fd 2013/08/29 Fontinst v1.933 font definitions for OML/mdput.
+)
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 10.81003pt on input line 72.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 7.52002pt on input line 72.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 6.48601pt on input line 72.
+\@TUD@titlelines=\count172
+
+
+LaTeX Font Warning: Font shape `T1/5fp/m/n' undefined
+(Font)              using `T1/cmr/m/n' instead on input line 72.
+
+<tud_logo.pdf, id=106, 157.58875pt x 63.23625pt>
+File: tud_logo.pdf Graphic file (type pdf)
+ <use tud_logo.pdf>
+Package pdftex.def Info: tud_logo.pdf used on input line 72.
+(pdftex.def)             Requested size: 134.92238pt x 62.59605pt.
+File: tud_logo.pdf Graphic file (type pdf)
+
+<use tud_logo.pdf>
+Package pdftex.def Info: tud_logo.pdf used on input line 72.
+(pdftex.def)             Requested size: 134.92238pt x 62.59605pt.
+\@TUD@logolines=\count173
+ [-1
+Non-PDF special ignored!
+
+
+Non-PDF special ignored!{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map} <.
+/tud_logo.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 72--72
+
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.}) has b
+een already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.72   \makethesistitle
+                        [0
+
+]
+LaTeX Font Info:    Try loading font information for T1+5sf on input line 73.
+LaTeX Font Info:    No file T15sf.fd. on input line 73.
+
+
+LaTeX Font Warning: Font shape `T1/5sf/m/n' undefined
+(Font)              using `T1/cmr/m/n' instead on input line 73.
+
+[1
+
+
+
+
+] [2
+
+
+
+] [3
+
+
+] [4
+
+
+]
+LaTeX Font Info:    Try loading font information for TS1+5ch on input line 89.
+LaTeX Font Info:    No file TS15ch.fd. on input line 89.
+
+
+LaTeX Font Warning: Font shape `TS1/5ch/m/n' undefined
+(Font)              using `TS1/cmr/m/n' instead
+(Font)              for symbol `textregistered' on input line 89.
+
+[5] (TUDthesis.toc
+
+LaTeX Font Warning: Font shape `T1/5ch/b/n' undefined
+(Font)              using `T1/5ch/m/n' instead on input line 5.
+
+)
+\tf@toc=\write5
+\openout5 = `TUDthesis.toc'.
+
+ [6
+
+] (TUDthesis.lof)
+\tf@lof=\write6
+\openout6 = `TUDthesis.lof'.
+
+ [7
+
+] (TUDthesis.lot)
+\tf@lot=\write7
+\openout7 = `TUDthesis.lot'.
+
+
+
+Class scrartcl Warning: \float@listhead detected!
+(scrartcl)              Implementation of \float@listhead became
+(scrartcl)              deprecated in KOMA-Script v3.01 2008/11/14 and
+(scrartcl)              has been replaced by several more flexible
+(scrartcl)              features of package `tocbasic`.
+(scrartcl)              Maybe implementation of \float@listhead will
+(scrartcl)              be removed from KOMA-Script soon.
+(scrartcl)              Loading of package `scrhack' may help to
+(scrartcl)              avoid this warning, if you are using a
+(scrartcl)              a package that still implements the
+(scrartcl)              deprecated \float@listhead interface  on input line 101
+.
+
+(TUDthesis.loa)
+\tf@loa=\write8
+\openout8 = `TUDthesis.loa'.
+
+ [8
+
+]
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 9.21606pt on input line 109.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 6.43204pt on input line 109.
+LaTeX Font Info:    Font shape `OT1/mdbch/m/n' will be
+(Font)              scaled to size 5.56804pt on input line 109.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 9.21606pt on input line 109.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 6.43204pt on input line 109.
+LaTeX Font Info:    Font shape `OML/mdbch/m/it' will be
+(Font)              scaled to size 5.56804pt on input line 109.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 9.21606pt on input line 109.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 6.43204pt on input line 109.
+LaTeX Font Info:    Font shape `OMS/mdbch/m/n' will be
+(Font)              scaled to size 5.56804pt on input line 109.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 9.21606pt on input line 109.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 6.43204pt on input line 109.
+LaTeX Font Info:    Font shape `OMX/mdbch/m/n' will be
+(Font)              scaled to size 5.56804pt on input line 109.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 9.21606pt on input line 109.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 6.43204pt on input line 109.
+LaTeX Font Info:    Font shape `OML/mdbch/m/n' will be
+(Font)              scaled to size 5.56804pt on input line 109.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 9.21606pt on input line 109.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 6.43204pt on input line 109.
+LaTeX Font Info:    Font shape `MDA/mdbch/m/n' will be
+(Font)              scaled to size 5.56804pt on input line 109.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 9.21606pt on input line 109.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 6.43204pt on input line 109.
+LaTeX Font Info:    Font shape `MDB/mdbch/m/n' will be
+(Font)              scaled to size 5.56804pt on input line 109.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 9.02402pt on input line 109.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 6.298pt on input line 109.
+LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
+(Font)              scaled to size 5.45201pt on input line 109.
+
+
+LaTeX Font Warning: Font shape `T1/5ch/m/it' undefined
+(Font)              using `T1/5ch/m/n' instead on input line 122.
+
+[1
+
+] [2] <CrawlerAlgorithFlowchart.png, id=232, 408.02437pt x 446.41782pt>
+File: CrawlerAlgorithFlowchart.png Graphic file (type png)
+
+<use CrawlerAlgorithFlowchart.png>
+Package pdftex.def Info: CrawlerAlgorithFlowchart.png used on input line 145.
+(pdftex.def)             Requested size: 367.21854pt x 401.77231pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[3
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [4 <./CrawlerAlgorithFlowchart.png>]
+
+LaTeX Warning: Citation `frontierdatastructures' on page 5 undefined on input l
+ine 172.
+
+[5] [6]
+LaTeX Font Info:    Try loading font information for T1+txtt on input line 223.
+
+ ("C:\Program Files\MiKTeX 2.9\tex\latex\txfonts\t1txtt.fd"
+File: t1txtt.fd 2000/12/15 v3.1
+)
+<OriginalIEdriver.jpg, id=265, 684.5575pt x 82.3075pt>
+File: OriginalIEdriver.jpg Graphic file (type jpg)
+
+<use OriginalIEdriver.jpg>
+Package pdftex.def Info: OriginalIEdriver.jpg used on input line 237.
+(pdftex.def)             Requested size: 410.73766pt x 49.38486pt.
+ [7]
+<ModifiedIEdriver.PNG, id=291, 684.5575pt x 232.87pt>
+File: ModifiedIEdriver.PNG Graphic file (type png)
+
+<use ModifiedIEdriver.PNG>
+Package pdftex.def Info: ModifiedIEdriver.PNG used on input line 246.
+(pdftex.def)             Requested size: 410.73766pt x 139.72307pt.
+
+Underfull \vbox (badness 7451) has occurred while \output is active []
+
+ [8 <./OriginalIEdriver.jpg> <./ModifiedIEdriver.PNG>]
+<SeleniumHttp.PNG, id=306, 644.4075pt x 493.845pt>
+File: SeleniumHttp.PNG Graphic file (type png)
+ <use SeleniumHttp.PNG>
+Package pdftex.def Info: SeleniumHttp.PNG used on input line 276.
+(pdftex.def)             Requested size: 386.64748pt x 296.30928pt.
+
+[9 <./SeleniumHttp.PNG>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10]
+
+LaTeX Warning: Citation `EffectivnessofUnitTest' on page 11 undefined on input 
+line 349.
+
+[11] [12] [13
+
+]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14]
+[15] [16]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [18]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [19]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [20]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [21]
+[22]
+
+LaTeX Warning: Citation `EffectivnessofUnitTest' on page 23 undefined on input 
+line 701.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [23]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [24]
+[25] [26
+
+
+] (TUDthesis.bbl
+! Misplaced alignment tab character &.
+<argument> ...tional Journal of Computer Science &
+                                                   Management Studies
+l.30 ... of Computer Science & Management Studies}
+                                                  , 2012.
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+) [27
+
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 761.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 761.
+ (TUDthesis.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 761.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 761.
+Package rerunfilecheck Info: File `TUDthesis.out' has not changed.
+(rerunfilecheck)             Checksum: EFD0024CA779E6143276568C50251D4C;1821.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 761.
+ ) 
+Here is how much of TeX's memory you used:
+ 27272 strings out of 493334
+ 496389 string characters out of 3136660
+ 672030 words of memory out of 3000000
+ 29929 multiletter control sequences out of 15000+200000
+ 45527 words of font info for 84 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 65i,13n,100p,8876b,1720s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\achikhale\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi
+613\ecrm0900.pk> <C:\Users\achikhale\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\j
+knappen\ec\dpi670\ecrm0600.pk> <C:\Users\achikhale\AppData\Local\MiKTeX\2.9\fon
+ts\pk\ljfour\jknappen\ec\dpi600\ecrm0800.pk> <C:\Users\achikhale\AppData\Local\
+MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> <C:\Users\achikhale\
+AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm0800.pk> <C:\Us
+ers\achikhale\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi696\ecrm1
+000.pk> <C:\Users\achikhale\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\e
+c\dpi660\ecrm1000.pk> <C:\Users\achikhale\AppData\Local\MiKTeX\2.9\fonts\pk\ljf
+our\jknappen\ec\dpi660\ecrm1200.pk> <C:\Users\achikhale\AppData\Local\MiKTeX\2.
+9\fonts\pk\ljfour\jknappen\ec\dpi806\ecrm1728.pk> <C:\Users\achikhale\AppData\L
+ocal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0700.pk> <C:\Users\achik
+hale\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi690\ecrm1000.pk> <
+C:\Users\achikhale\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi1250
+\ecrm1728.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/mathdesign/mdbch/md-chr7y
+.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/txfonts/t1xtt.pfb>
+Output written on TUDthesis.pdf (37 pages, 415992 bytes).
+PDF statistics:
+ 1066 PDF objects out of 1200 (max. 8388607)
+ 317 named destinations out of 1000 (max. 500000)
+ 250 words of extra memory for PDF output out of 10000 (max. 10000000)
+

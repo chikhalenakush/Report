@@ -4,6 +4,7 @@
 \usepackage{graphicx}
 \graphicspath{ {images/} }
 \usepackage{graphicx}
+\usepackage[]{algorithm2e}
 \begin{document}
 
 \begingroup
@@ -36,11 +37,11 @@ Telekoperation Lab\\
 
 \newpage
 \section*{Acknowledgment}
-This Master Thesis was conducted at the Telekoperation Lab (TK) at Technical University Darmstadt in Germany as Masters in Distributed Software Systems (Computer Science).
+This Master Thesis was conducted at the Telekoperation Lab (TK) in Technical University Darmstadt, Germany as Masters in Distributed Software Systems (Computer Science).
 
-I would like to thank all the people who contributed in some way to the work described in this thesis.I wish to express my gratitude to Professor Max Müllhäuser for providing me the Possibility to work in a motivating and challenging environment at the TK Lab. I would also like to thank Dipl.-Ing Jens Heuschkel, my advisor and mentor at TK, for encouraging me at every step during my thesis and guiding me through challenging phase of my Thesis. His inputs and suggestions always gave me a future sight to solve the problem. During my tenure, he contributed to a rewarding graduate school experience by giving me intellectual freedom in my work, engaging me in new ideas, and demanding a high quality of work in all my endeavors.
+I would like to thank all the people who contributed in some way to the work described in this thesis. I wish to express my gratitude to Professor Dr.Max Müllhäuser for providing me the oppurtunity to work in a motivating and challenging environment at the TK Lab. I would also like to thank Dipl.-Ing Jens Heuschkel, my advisor and mentor at TK, for encouraging me at every step during my thesis and guiding me through challenging phase of my Thesis. His inputs and suggestions always gave me a future insight to solve the problem. During my tenure, he contributed to a rewarding graduate school experience by giving me intellectual freedom in my work, engaging me in new ideas and demanding a high quality of work in all my endeavors.
 
-I would also like to thank the researches who were involved in the data validation for this research project. Without the thorough validation of data, the research would not have been successful. I would also like to acknowledge Mr. Anshul Tak of the Ubiquitous Knowledge Processing (UKP) Lab at Technical University Darmstadt as the second reader of this thesis, and I am gratefully indebted to his very valuable comments on this thesis.
+I would also like to thank the researches who were involved in the data validation for this research project. Without the thorough validation of data, the research would not have been successful. I would also like to acknowledge Mr.Anshul Tak of the Ubiquitous Knowledge Processing (UKP) Lab at Technical University Darmstadt as the second reader of this thesis and I am gratefully indebted to his very valuable comments on this thesis.
 
 Finally, I must express my very profound gratitude to my parents for providing me with unfailing support and continuous encouragement throughout my years of study and through the process of researching and writing this thesis. This accomplishment would not have been possible without them. Thank you.
 
@@ -48,58 +49,57 @@ Finally, I must express my very profound gratitude to my parents for providing m
 \newpage
 
 \section*{Introduction and Motivation}
-Data mining is the process for extraction of hidden predictive information from large databases, is a powerful new technology with great potential to help companies focus on the most important information in their data warehouses. Researchers in TK Lab have a task of generating pattern or prediction from large amount of Medical data using Machine Learning and data mining. To capitalize the task of Data mining in field of Medical sector, we need bulk amount of data. This data will be provided from CareLink®website. 
+Data mining is the process for extraction of hidden predictive information from large databases, It is a powerful new technology with great potential to help companies focus on the most important information in their data warehouses. Researchers in TK Lab have a task of generating pattern or prediction from large amount of Medical data using Machine Learning and data mining. To capitalize the task of Data mining in field of Medical sector, we need bulk amount of data. This data will be provided from CareLink®website. 
 
 Carelink, Web-based system is designed to help take information from all of diabetes management tools –insulin pump, continuous glucose monitor, blood glucose meter(s), and logbook – and organize it into easy-to-read charts, graphs and tables. These reports can help healthcare provider discover trends and other information that can lead to improved therapy management for greater control.
-Data crawler is required to access the required data from website without manually visiting it. Web Crawler is the process through which we collect varieties of webpages, in order to gather information from them. Especially with respect to Search Engines, crawlers are used to add index to web pages and it helps in building a database of web sites. It is the system for bulk downloading of web pages. It is a program or automated script, which browses the web in automated manner. Main prominent use of Web crawlers are 
+Data crawler is required to access the required data from website without manually visiting it. Crawling is the process through which we collect varieties of webpages, in order to gather information from them. Especially with respect to Search Engines, crawlers are used to add index to web pages and it helps in building a database of web sites. It is the system for bulk downloading of web pages. It is a program or automated script, which browses the web in automated manner. Main prominent use of Web crawlers are 
 
 \begin{enumerate}[label=(\alph*)]
-\item	Data mining, where web pages are analyzed for statical properties.
+\item	Data crawling, where web pages are analyzed for statical properties.
 \item	Web Search Engines, Indexing web pages.
 \item	Web Archiving, where web pages are collected for successors.
 \end{enumerate}
 There are various types of crawlers available:
 \begin{enumerate} [label=(\alph*)]
 \item	Incremental crawlers: continuously crawl their crawl space, to get freshness of content.
-\item	Batch crawlers: Crawl a snapshot of their crawl space, until reaching a certain sire or time limit.
+\item	Batch crawlers: Crawl a snapshot of their crawl space, until reaching a certain site or time limit.
 \item	Focused crawlers: crawl pages to only restricted topics.
 \end{enumerate}
-Given the overwhelming use of crawler in different scenarios, Web Data mining as a prominent use case for crawling is used in our research project to extract data for Medical research. Jsoup as a Java framework is used to login website https://carelink.minimed.eu/ for bypassing different user agents and manipulating entries in website. Automating downloading CSV file using Web Mining is built with Java Native application.
+Given the overwhelming use of crawler in different scenarios, Web Data crawling as a prominent use case for crawling is used in our research project to extract data for Medical research. URL for Carelink Website is \textit{https://carelink.minimed.eu/}
  (http://webcourse.cs.technion.ac.il/236620/Winter2006-2007/ho/WCFiles/lec14-crawlers.PDF)
-Basic Algorithm used for Crawling: 
-\begin{enumerate} [label=(\alph*)]
-\item	Add the URL in queue.
-\item	Until queue is not empty:
-\item  Take the first url out of the queue.
-\item Retrieve the contents of x from the web
-\item Do the needful
-\item Mark as visited
-\item If x was used as page to find hyperlink URLs
-\item Stop when you got the needed Information.
-\end{enumerate}
+ 
+\begin{algorithm}[H]
+\KwData{URL}
+ \KwResult{Expected DOM Object}
+ Add the URL in queue\;
+ \While{Until queue is not empty}{
+ Take the first url out of the queue\;
+ \eIf{URL}{
+   Download the corresponding page\;
+   Check the Relevancy of the page\;
+   Extract any links contained in it\;
+   Add these links back to the URL list\;
+   }{
+   go to next URL in queue\;
+   }
+ 
+ }
+\end{algorithm}
 
-Parallel to accessing data from website, there is also the need of uploading local data to website (server). The process of uploading data to website done using Applet. Since Applet runs only with IE the task of making it automated through browser, simulation has been chosen. Selenium helps automate browsers. It enables java program to emulate user interaction with a web page. Selenium uses Web Drivers for interacting with a Web browser. Web drivers helps to control web browsers by a hook and which in turn enables selenium to interact with web browsers similar to User. Using selenium most of the repeatability of the tests and the speed at which the tests can be executed. There are a number of commercial and open source tools available for assisting with the development of test automation. Selenium is possibly the most widely used open source solution. With the help of selenium, we are trying to automate uploading Data from USB to server and cut the human repeatable work. This will help mass upload data with minimum efforts and time.
+Parallel to accessing data from website, there is also the need of uploading data from local system or USB server. The process of uploading data to server is done using Applet. Since we canot take Applet out from browser and run it as stand alone due to signinging and login cookies issue, we try to automate process of accessng applet in Web browser. Selenium helps to automate browsers and simulate user interaction. It enables java program to emulate user interaction with a web page. Selenium uses Web Drivers for interacting with a Web browser. Web drivers helps to control web browsers by a hook and which in turn enables selenium to interact with web browsers similar to User. Using selenium most of the repeatability of the tests and the speed at which the tests can be executed. There are a number of commercial and open source tools available for assisting with the development of test automation. Selenium is possibly the most widely used open source solution. With the help of selenium, we are trying to automate uploading Data from USB to server and cut the human repeatable work. This will help mass upload data with minimum efforts and time.
 
-We have used Web Technologies and Web crawling added with automation technologies to make the entire process smooth and easy with just one click. JSoup as a Java framework is used to crawl website and visit particular page with ability to manipulate entries. Jsoup is a java HTML parser. It is a java library that is used to parse HTML document. Jsoup provides API to extract and manipulate data from URL or HTML file. It uses DOM, CSS and JQuery-like methods for extracting and manipulating file. This is used to download CSV file with user-entered dates. Jsoup will help in checking login credentials of User and bypass browser agent so that crawling is uninterrupted. After successful login Using Jsoup user input dates will be insert so that required csv file will be downloaded. 
+We have used Web Technologies and Web crawling added with automation technologies to make the entire process smooth and easy with just one click. JSoup as a Java framework is used to crawl website and visit particular page with ability to manipulate entries. Jsoup is a java HTML parser. It is a java library that is used to parse HTML document. Jsoup provides API to extract and manipulate data from URL or HTML file. It uses DOM, CSS and JQuery-like methods for extracting and manipulating file. This is used to download CSV file with user-entered dates. Jsoup will help in checking login credentials of User and will help in bypassing browser agent so that crawling is uninterrupted. After successful login Using Jsoup user input dates will be inserted so that required CSV file will be downloaded. 
 
 
 \section*{Background}
-In this section, we provide an overview of Web Crawler, Data Crawler, Automation and Data slicing. We start by discussing Web Crawler and Data crawler in Internet and extracting data from webpage. We then move ahead with automating Web browser clicks and manipulation using Selenium as a Internet Explorer WebDriver. At last, we explain the newly built algorithm for Data slicing and recognizing events for it.
+In this section, we provide an overview of Web crawler, Data crawler, Automation and Data slicing. We start by discussing Web crawler and Data crawler in Internet and extracting data from webpage. We then move ahead with automating Web browser clicks and manipulation using Selenium as a Internet Explorer WebDriver. At last, we explain the newly built algorithm for Data slicing and recognizing events for it.
 \subsection*{Basics of Web Crawling}
-Web crawler also called as Web spider or Web Robot is a program, which browses the Web in an automated manner. This entire process is called web crawling or spidering. Web Crawlers are used for automating maintenance task on a Web site, such as validating HTML Codes. A related use is web archiving where in large set of web pages are periodically collected. The most important reason for web crawler lies in the fact that World Wide Web is not a centrally managed repository of information, but millions of independent web content providers. We can also say that web is held together by set of agreed- upon protocol and data formats such as Hypertext Transfer Protocol (HTTP) , the Hypertext Markup Language (HTML) , the Domain Name Service (DNS), the Transmission Control Protocol (TCP) and the robots exclusion protocol. Hence, Web data miners or search engines have few choices as: Adopt a pull model where they will proactively search the web for new or updated information or try to establish a convention and a set of protocols enabling content providers to push content of interest to the aggregators. 
+Web crawler also called as Web spider or Web Robot is a program, which browses the Web in an automated manner. This entire process is called web crawling or spidering. Web crawlers are used for automating maintenance task on a Web site, such as validating HTML Codes. A related use is web archiving where in large set of web pages are periodically collected. The most important reason for web crawler lies in the fact that World Wide Web is not a centrally managed repository of information, but millions of independent web content providers. We can also say that web is held together by set of agreed- upon protocol and data formats such as Hypertext Transfer Protocol (HTTP) , the Hypertext Markup Language (HTML) , the Domain Name Service (DNS), the Transmission Control Protocol (TCP) and the robots exclusion protocol. Hence, Web data miners or search engines have few choices as: Adopt a pull model where they will proactively search the web for new or updated information or try to establish a convention and a set of protocols enabling content providers to push content of interest to the aggregators. 
 
 Web servers are highly autonomous that is the barrier of entry to becoming a content provider is quite low, and hence the fact that the web protocols were at least initially extremely simple lowered the barrier even further in fact, this simplicity is viewed by many as the reason why the web succeeded where earlier hypertext systems had failed. Push protocol would have made difficult to set of web protocols and thus raised the barrier of entry for content providers, while the pull model does not require any extra protocols. At the same level, the pull model lowers the barrier of entry for content aggregators as well: Launching a crawler does not require any a priori buy-in from content providers, and indeed there are over 1,500 operating crawlers , extending far beyond the systems employed by the big search engines. Finally, the push model requires a trust relationship between content provider and content aggregator, something that is not given on the web at large — indeed, the relationship between 178 Introduction content providers and search engines is characterized by both mutual dependence and adversarial dynamics. 
-Basic Algorithm used for Crawling:
-\begin{enumerate} [label=(\alph*)]
-\item	Add the URL in queue.
-\item	Until queue is not empty:
-\item  Take the first url out of the queue.
-\item Retrieve the contents of x from the web
-\item Do the needful
-\item Mark as visited
-\item If x was used as page to find hyperlink URLs
-\item Stop when you got the needed Information.
-\end{enumerate}
+Below is the flowchart of Breadth search algorithm used:
+\includegraphics[scale=0.7]{CrawlerAlgorithFlowchart}
+
 Even though the Web crawler algorithm is simple it still has few challenges such as 
 
 \begin{enumerate} [label=(\alph*)]
@@ -111,9 +111,7 @@ Even though the Web crawler algorithm is simple it still has few challenges such
 Sometimes there might be case that crawlers visit sites without approval or they consume resources on system. When crawling websites often issue of “politeness” comes into picture when large amount of pages are accessed. There are also new ways where in websites does not wished to be crawled to make this known to the crawling agent. There are large number of web pages on Internet and it makes the entire process highly complex. However, introduction of various modern Crawlers helps to solve this problem in a more sophisticated way.
 \subsection*{Crawler Architecture}
 
-Figure shows high-level architecture of web crawler. It consist of various process running on different machines connected by network. Multiple worker threads are created using crawler and loop work cycles are achieved using worker thread.
-
-	Beginning of every work cycle, URL is fetched from Frontier Data structure,  which distributes URL according to policies mentioned such as politeness. Worker thread invokes the HTTP fetcher. To resolve host component of the URL into the IP address of relevant web server a DNS module is called using fetcher. It tries to connect to the web server, which checks for any robots exclusion rules and attempts to download the web page.
+Web crawler consist of various process running on different machines connected by network. Multiple worker threads are created using crawler and loop work cycles are achieved using worker thread. Beginning of every work cycle, URL is fetched from Frontier Data structure,  which distributes URL according to policies mentioned such as politeness. Worker thread invokes the HTTP fetcher. To resolve host component of the URL into the IP address of relevant web server a DNS module is called using fetcher. It tries to connect to the web server, which checks for any robots exclusion rules and attempts to download the web page.
 	
  When the download succeeds, the web page can be stored in a repository of harvested web page. Link extractor gets the page, which then parse the page’s HTML content and extracts hyperlinks contained within. Related URLs are passed to URL distributor, which assigns each URL to a crawling process. Most of the hyperlinks refer to pages on same website, assignment to local crawling process is common case. Now the URL is passed through URL fileter and into the duplicate URL eliminator, which in turn maintains set of all URLs.  At last URL priotizer selects a position for the URL in the frontier, based on factors such as estimated page importance or rate of change.
  
@@ -124,17 +122,17 @@ Figure shows high-level architecture of web crawler. It consist of various proce
 \end{enumerate}
 
 \subsection*{Frontier Data Structure}
-First in First out (FIFO) is implemented in Frontier Data structure.  Search will take place as breadth-first traversal of web graph. However, as we know most of the hyperlinks are relative and hence FIFO queue has long runs of URLs on same web server. Is it very common to not issue multiple overlapping request to server. Most of the easy way to realize it is to maintain a mapping between web servers to crawling threads. A separate FIFO queue is assigned to each crawling thread. Another dedicated policy is to send request to each web server depending on server’s capabilities. For instance crawler can delay requests to a server by a multiple of time to get last page from server. Mercator web crawler implements adaptive politeness. Frontier is divided into two parts, “front end” and “back end”.
+First in First out (FIFO) is implemented in Frontier Data structure.  Breadth-first traversal of web graph will be used as Search technique. However, as we know most of the hyperlinks are relative and hence FIFO queue has long runs of URLs on same web server. Is it very common to not issue multiple overlapping request to server. The easisest way to realize it is to maintain a mapping between web servers to crawling threads. A separate FIFO queue is assigned to each crawling thread. Another dedicated policy is to send request to each web server depending on server’s capabilities. For instance crawler can delay requests to a server by a multiple of time to get last page from server. Mercator web crawler implements adaptive politeness. Frontier is divided into two parts, “front end” and “back end”.
 
-Front end consisted of a single queue Q, and URLs were added to the frontier byen queuing them into that queue.  Many separate queues are contained in back end. Queue containing URL belongs to a single web server; mapping from web servers to back-end queues are maintained on table T. In addition, associated with each back-end queue q was a time t at which the next URL from q may be processed. These (q,t) pairs were organized into an in-memory priority queue, with the pair with lowest t having the highest priority.  Removing highest-priority entry (q,t) obtained URL by crawling thread from priority queue, waiting if necessary until time t had been reached, dequeuing the next URL u from q, downloading it, and finally reinserting the pair (q,tnow + k · x) into the priority queue, where now is the current time, x is the amount of time it took to download u, and k is a “politeness parameter”; typically 10. If dequeuing u from q left q empty, the crawling thread would remove the mapping from host(u) to q from T, repeatedly dequeue a URL u from Q and enqueue u into the back-end queue identified by T(host(u )), until it found a u such that host(u ) was not contained in T. At this point, it would enqueue u in q and update T to map host(u ) to q.
+Front end consisted of a single queue Q, and URLs were added to the frontier by enqueuing them into that queue.  Many separate queues are contained in back end. Queue containing URL belongs to a single web server; mapping from web servers to back-end queues are maintained on table T. In addition, associated with each back-end queue q was a time t at which the next URL from q may be processed. These (q,t) pairs were organized into an in-memory priority queue, with the pair with lowest t having the highest priority.  Removing highest-priority entry (q,t) obtained URL by crawling thread from priority queue, waiting if necessary until time t had been reached, dequeuing the next URL u from q, downloading it, and finally reinserting the pair (q,tnow + k · x) into the priority queue, where now is the current time, x is the amount of time it took to download u, and k is a “politeness parameter”; typically 10. If dequeuing u from q left q empty, the crawling thread would remove the mapping from host(u) to q from T, repeatedly dequeue a URL u from Q and enqueue u into the back-end queue identified by T(host(u )), until it found a u such that host(u ) was not contained in T. At this point, it would enqueue u in q and update T to map host(u ) to q.
 
 \subsection*{URL Seen Test (duplicated URL eliminator)}
-UrL Seen Test is used to exempt adding multiple instances of the Same URL to the frontier and that is why it is called duplicate URL eliminator. During batch crawling setting UST supports insertion and set membership testing. There are various implementation of UST such as Bloom filter or a hash table. In memory implementation has issues with scaling to large web corpora but they scale well in frontier. Commercial search engines employ distributed crawlers and a hash table realizing the UST can be partitioned across the machines in the crawling cluster.
+URL Seen Test is used to remove adding multiple instances of the Same URL to the frontier and hence it is called duplicate URL eliminator. UST supports insertion and set membership testing during batch crawling setting. There are various implementation of UST such as Bloom filter or a hash table. In memory implementation has issues with scaling to large web corpora but they scale well in frontier. Commercial search engines employ distributed crawlers and a hash table realizing the UST can be partitioned across the machines in the crawling cluster.
 
-In the Mercator scheme, adding bunch of URL into disk-based hash file involves reading the old hash file and writing out an updated version. Therefore, the require  time is directly equivalent to the number of discovered URLs. A slight improvement of this pattern is to store the URL hashes on disk in sorted order as before, but lightly packed rather than densely packed. The k highest-order bits of a hash determine the disk block where this hash resides (if it is present). Merging a batch into the disk file is done in place, by reading a block for which there are hashes in the batch, checking which hashes are not present in that block, and writing the updated block back to disk. Thus, the time requirement for merging a batch is proportional to the size of the batch, not the number of discovered URLs (albeit with high constant due to disk seeks resulting from skipping disk blocks). Once any block in the file fills up completely, the disk file is rewritten to be twice as large, and each block contains hashes that now share their k + 1 highest-order bits.
+Adding bunch of URL into disk-based hash file involves reading the old hash file and writing out an updated version. Therefore, the require  time is directly equivalent to the number of discovered URLs. A slight improvement of this pattern is to store the URL hashes on disk in sorted order as before, but lightly packed rather than densely packed. The k highest-order bits of a hash determine the disk block where this hash resides. Merging a batch into the disk file is done in place, by reading a block for which there are hashes in the batch, checking which hashes are not present in that block, and writing the updated block back to disk. Thus, the time requirement for merging a batch is proportional to the size of the batch, not the number of discovered URLs (albeit with high constant due to disk seeks resulting from skipping disk blocks). Once any block in the file fills up completely, the disk file is rewritten to be twice as large, and each block contains hashes that now share their k + 1 highest-order bits.
 
 \subsection*{Auxiliary Data Structures}
-Web crawlers should adhere to the Robots Exclusion protocol, a convention that allows a web site admins to bar crawlers from crawling.  It is done by providing a file at URL /robots.txt containing rules such as which pages the crawler is allowed to download. Before crawling web site crawler must check if the site supplies /robots.txt file and if it does, crawler should adhere to rules. Some URLs contain a host component (e.g., www.yahoo.com), which is “resolved” using the Domain Name Service (DNS). DNS requests can take quite a long time due to the request forwarding nature of the protocol. Therefore, crawlers often maintain their own DNS caches. As with the robots exclusion rule cache, entries are expired according to both a standard eviction policy, and to expiration directives.
+Web crawlers should adhere to the Robots Exclusion protocol, a convention that allows a web site admins to bar crawlers from crawling. It is done by providing a file at URL /robots.txt containing rules such as which pages the crawler is allowed to download. Before crawling web site crawler must check if the site supplies /robots.txt file and if it does, crawler should adhere to rules. Some URLs contain a host component (e.g., www.yahoo.com), which is “resolved” using the Domain Name Service (DNS). DNS requests can take quite a long time due to the request forwarding nature of the protocol. Therefore, crawlers often maintain their own DNS caches. As with the robots exclusion rule cache, entries are expired according to both a standard eviction policy, and to expiration directives.
 
  
 \subsection*{Distributed crawling}
@@ -307,6 +305,19 @@ Elements newsHeadlines = doc.select("#mp-itn b a");
 \end{verbatim}
 To upload data from local Machine to Server using Applet as an interface, we use web browser automation. The reason for web browser automation is minimizing user interaction with going to website and clicking on button. All this manual steps has been overtaken by web browser automation. There are number of automation tools available such as Kantu, QF-Test, Sahi, SOAtest, iMacros, Selenium and so on. Kantu uses only screenshots as scripting language, QF-Test uses visual scripting, Jython and Groovy as scripting language. Sahi uses it’s own Sahi script whereas Selenium supports Ruby, Java, NodeJS, PHP, Perl, Python, Groovy as scripting language. In addition, the web driver provided by Selenium for IE is very reliable, sophisticated and most important it is Open source. Because of added advantage, selenium was chosen to work on.
 
+To create Graphical user Interface project of the above-mentioned scenarios JavaFx is chosen because it is a software platform for developing desktop applications that are available for number of different devices. JavaFX tends to replace swing Framework as standard GUI library. JavaFX is a set of graphics and media packages that enables developers to design, create, test, debug, and deploy rich client applications that operate consistently across diverse platforms. JavaFX application code can reference API’s from any Java library as it is written as a Java API. JavaFX applications can use Java API libraries to access native system capabilities and connect to server-based middleware applications. JavaFX platform components includes.
+
+\begin{enumerate} [label=(\alph*)]
+\item The JavaFX SDK: runtime tools. Graphics, media web services, and rich text libraries. Java FX  also included JavaFX compiler, which is now obsolete as JavaFX user code is written in Java.
+\item NetBeans IDE for JavaFX: NetBeans with drag-and-drop palette to add objects with transformations, effects and animations plus a set of samples and best practices. For Eclipse users there is a community-supported plugin hosted on e(fx)clipse.
+\item JavaFX scene builder: A user interface (UI) is created by dragging and dropping controls from a palette. This information is saved as an FXML file, a special XML format.
+\item Tools and plugins for creative tools : Plugins for Adobe Photoshop and Adobe Illustrator that can export graphics assets to JavaFX Script code, tools to convert SVG graphics into JavaFX Script code and preview assets converted to JavaFX from other.
+\end{enumerate}
+
+Simultaneously we have to create a Command line program as well which contains various flags to run either Crawler, Applet wrapper, data slicing or Unit Test cases.  The Apache Commons CLI library is chosen because it provides an API for parsing command line options passed to programs. It's also able to print help messages detailing the options available for a command line tool. The Commons Proper is a place for collaboration and sharing, where developers from throughout the Apache community can work together on projects to be shared by Apache projects and Apache users. The Apache Commons is a project of the Apache Software Foundation. Its purpose is to provide reusable, open source Java software. The Commons is composed of three parts: proper, sandbox, and dormant. It is dedicated to creating and maintaining reusable Java components. Commons CLI comes under proper.
+
+We also have a task of providing Unit test cases before our code pushes to production. We have used Junit as a Test framework. Junit is important in the development of test-driven deployment and is one of a family of unit testing frameworks. Junit is linked as a JAR at compile time; the framework resides under package org.junit for Junit4. We have used Junit4 for our testing purpose. A JUnit test fixture is a Java object. With older versions of JUnit, fixtures had to inherit from junit.framework.TestCase, but the new tests using JUnit 4 should not do this. Test methods must be annotated by the @Test annotation. If the situation requires it, it is also possible to define a method to execute before  each of the test methods with the @Before (or @After) and @BeforeClass (or @AfterClass) annotations
+
 \section*{Data slicing}
 
 \section*{Configuration of external libraries and drivers}
@@ -315,7 +326,10 @@ In this section we discuss about the basic configurations and prerequisites requ
 
 In this section we talk about the integration of Internet Explorer driver into Project folder or adding it to Jar file and using it to launch web browser automation. To upload data from local machine to Server Java applet is being used as interface. “A Java applet is a special kind of Java program that a browser enabled with Java technology can download from the internet and run. An applet is typically embedded inside a web page and runs in the context of a browser. An applet must be a subclass of the java.applet.Applet class. The Applet class provides the standard interface between the applet and the browser environment.”- http://docs.oracle.com/javase/tutorial/deployment/applet/
 
-With the latest version of every browser such as Chrome, Firefox, Opera and Internet Explorer. It is only IE that enables and allows to run Java applet. With this constraint, we have a dependency of running our Selenium web browser automation only on IE and hence we have used IE web driver for it. To run IE web browser automation, it has to be available on very machine. To avoid this high dependency on user running this native java application and need to install IE driver manually. We have added inbuilt IEdriver to our project. This is same with Jar file. Jar file itself contains IEdriver. If any user runs jar file the jar file will first be extracted to folder and then Java program itself will search for location where jar is being extracted and will get the path of IEdriver. This path will later help in running web driver as shown below
+
+While applet plugin was very famous in 90s as an simple way to bring app like feature in browsers, but in recent times it created a huge issue with it’s security flaws and malware issues. Most of the browser such as google chrome, Firefox, Edge, Opera have stopped supporting Applet, leaving Internet Explorer the only browser to support Applet plugin.
+With this constraint, we have a dependency of running our Selenium web browser automation only on IE and hence we have used IE web driver for it. To run IE web browser automation, it has to be available on very machine. To avoid this high dependency on user running this native java application and need to install IE driver manually. We have added inbuilt IEdriver to our project. This is same with Jar file. Jar file itself contains IEdriver. If any user runs jar file the jar file will first be extracted to folder and then Java program itself will search for location where jar is being extracted and will get the path of IEdriver. This path will later help in running web driver as shown below
+
 \begin{verbatim}
 File file = new File("C:/Selenium/iexploredriver.exe");
 System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
@@ -337,11 +351,7 @@ External Libraries:
 \item To make a GUI based application JavaFx framework is used.
 \item To make entire project command line with different flags, Apache Commons CLI is used. 
 \end{enumerate}
-JavaFx is a software platform for developing desktop applications that are available for number of different devices. JavaFX tends to replace swing Framework as standard GUI library. JavaFX is a set of graphics and media packages that enables developers to design, create, test, debug, and deploy rich client applications that operate consistently across diverse platforms. JavaFX application code can reference API’s from any Java library as it is written as a Java API. JavaFX applications can use Java API libraries to access native system capabilities and connect to server-based middleware applications.
 
-Junit is important in the development of test-driven deployment and is one of a family of unit testing frameworks. Junit is linked as a JAR at compile time; the framework resides under package org.junit for Junit4. We have used Junit4 for our testing purpose.
-
-The Apache Commons CLI library provides an API for parsing command line options passed to programs. It's also able to print help messages detailing the options available for a command line tool. The Commons Proper is a place for collaboration and sharing, where developers from throughout the Apache community can work together on projects to be shared by Apache projects and Apache users.
 
 \subsection*{Implementation}
 In this section, we discuss about our approach to our topic developing Native java application, which can be easily added into another project/framework. We divide the problem into three parts, first with crawling data and extracting CSV files from it. Second with uploading data and making automation of web browser. Third with generating data with series of event i.e. data slicing.
