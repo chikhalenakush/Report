@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2016.9.12)  19 JUN 2017 14:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2016.9.12)  19 JUN 2017 16:17
 entering extended mode
 **./TUDthesis.tex
 (TUDthesis.tex
@@ -1619,7 +1619,7 @@ LaTeX Font Warning: Font shape `T1/5ch/m/it' undefined
 
 [1
 
-] [2] <CrawlerAlgorithFlowchart.png, id=232, 408.02437pt x 446.41782pt>
+] [2] <CrawlerAlgorithFlowchart.png, id=240, 408.02437pt x 446.41782pt>
 File: CrawlerAlgorithFlowchart.png Graphic file (type png)
 
 <use CrawlerAlgorithFlowchart.png>
@@ -1645,14 +1645,14 @@ LaTeX Font Info:    Try loading font information for T1+txtt on input line 223.
  ("C:\Program Files\MiKTeX 2.9\tex\latex\txfonts\t1txtt.fd"
 File: t1txtt.fd 2000/12/15 v3.1
 )
-<OriginalIEdriver.jpg, id=265, 684.5575pt x 82.3075pt>
+<OriginalIEdriver.jpg, id=273, 684.5575pt x 82.3075pt>
 File: OriginalIEdriver.jpg Graphic file (type jpg)
 
 <use OriginalIEdriver.jpg>
 Package pdftex.def Info: OriginalIEdriver.jpg used on input line 237.
 (pdftex.def)             Requested size: 410.73766pt x 49.38486pt.
  [7]
-<ModifiedIEdriver.PNG, id=291, 684.5575pt x 232.87pt>
+<ModifiedIEdriver.PNG, id=299, 684.5575pt x 232.87pt>
 File: ModifiedIEdriver.PNG Graphic file (type png)
 
 <use ModifiedIEdriver.PNG>
@@ -1662,7 +1662,7 @@ Package pdftex.def Info: ModifiedIEdriver.PNG used on input line 246.
 Underfull \vbox (badness 7451) has occurred while \output is active []
 
  [8 <./OriginalIEdriver.jpg> <./ModifiedIEdriver.PNG>]
-<SeleniumHttp.PNG, id=306, 644.4075pt x 493.845pt>
+<SeleniumHttp.PNG, id=314, 644.4075pt x 493.845pt>
 File: SeleniumHttp.PNG Graphic file (type png)
  <use SeleniumHttp.PNG>
 Package pdftex.def Info: SeleniumHttp.PNG used on input line 276.
@@ -1672,10 +1672,6 @@ Package pdftex.def Info: SeleniumHttp.PNG used on input line 276.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [10]
-
-LaTeX Warning: Citation `EffectivnessofUnitTest' on page 11 undefined on input 
-line 349.
-
 [11] [12] [13
 
 ]
@@ -1699,11 +1695,6 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [21]
 [22]
-
-LaTeX Warning: Citation `EffectivnessofUnitTest' on page 23 undefined on input 
-line 701.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [23]
@@ -1717,8 +1708,8 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ! Misplaced alignment tab character &.
 <argument> ...tional Journal of Computer Science &
                                                    Management Studies
-l.30 ... of Computer Science & Management Studies}
-                                                  , 2012.
+l.51   Computer Science & Management Studies}
+                                             , 2012.
 I can't figure out why you would want to use a tab mark
 here. If you just want an ampersand, the remedy is
 simple: Just type `I\&' now. But if some right brace
@@ -1747,10 +1738,10 @@ LaTeX Warning: There were undefined references.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 761.
  ) 
 Here is how much of TeX's memory you used:
- 27272 strings out of 493334
- 496389 string characters out of 3136660
- 672030 words of memory out of 3000000
- 29929 multiletter control sequences out of 15000+200000
+ 27281 strings out of 493334
+ 496508 string characters out of 3136660
+ 672199 words of memory out of 3000000
+ 29933 multiletter control sequences out of 15000+200000
  45527 words of font info for 84 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  65i,13n,100p,8876b,1720s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1770,9 +1761,9 @@ hale\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi690\ecrm1000.pk> <
 C:\Users\achikhale\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi1250
 \ecrm1728.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/mathdesign/mdbch/md-chr7y
 .pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/txfonts/t1xtt.pfb>
-Output written on TUDthesis.pdf (37 pages, 415992 bytes).
+Output written on TUDthesis.pdf (37 pages, 418952 bytes).
 PDF statistics:
- 1066 PDF objects out of 1200 (max. 8388607)
- 317 named destinations out of 1000 (max. 500000)
+ 1079 PDF objects out of 1200 (max. 8388607)
+ 322 named destinations out of 1000 (max. 500000)
  250 words of extra memory for PDF output out of 10000 (max. 10000000)
 

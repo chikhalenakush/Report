@@ -26,8 +26,29 @@ N.~Figueroa, ``Java applet awareness impacting user web browsing behavior,
   university of massachusetts boston , college of managment,'' Ph.D.
   dissertation, Dissertation, 2012.
 
+\bibitem{Webdriver}
+L.~M. Stocco~A and R.~F, ``Why creating web page objects manually if it can be
+  done automatically?'' \emph{IEEE/ACM 10th International Workshop on
+  Automation of Software Test}, pp. 70--74, 2015.
+
+\bibitem{Jsoup}
+Y.~D. Xu~Z, ``Designing and implementing of the webpage information extracting
+  model based on tags,'' \emph{International Conference on Intelligence Science
+  and Information Engineering}, pp. 64--75, 2011.
+
+\bibitem{BeaqleJSHTML}
+Z.~U. Kraft~S, ``Beaqlejs: Html5 and javascript based framework for the
+  subjective evaluation of audio quality,'' \emph{International Conference on
+  Big Data (Big Data)}, pp. 12--22, 2014.
+
+\bibitem{JavaFx}
+F.~A. Bao~C and B.~J, ``Perfect power visualization-performance optimization
+  with java,'' \emph{IEEE 5th International Conference on Software Engineering
+  and Service Science}, pp. 152--165, 2014.
+
 \bibitem{WebCrawlerAReview}
-K.~Khurana1, ``Web crawler: Web crawler:a review,'' \emph{IJCSMS International Journal of Computer Science & Management Studies}, 2012.
+K.~Khurana1, ``Web crawler: A review,'' \emph{IJCSMS International Journal of
+  Computer Science & Management Studies}, 2012.
 
 \bibitem{AutomationTestingAnIntroductiontoSelenium}
 U.~N. Himanshi and S.~A, ``Automation testing: An introduction to selenium,''
@@ -35,8 +56,13 @@ U.~N. Himanshi and S.~A, ``Automation testing: An introduction to selenium,''
 
 \bibitem{SeleniumTestingFramework}
 M.~S. Jagannatha~S, Niranjanamurthy~M and C.~GS, ``Comparative study on
-  automation testing using selenium testing framework and qtp,'' pp. 258--267,
-  2014.
+  automation testing using selenium testing framework and qtp,''
+  \emph{International Journal of Computer Science and Mobile Computing}, pp.
+  258--267, 2014.
 
+\bibitem{EffectivnessofUnitTest}
+N.~N. Williams~L, Kudrjavets~G, ``On the effectiveness of unit test automation
+  at microsoft,'' \emph{20th International Symposium on Software Reliability
+  Engineering}, pp. 119--133, 2009.
 
 \end{thebibliography}
