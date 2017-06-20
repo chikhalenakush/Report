@@ -7,23 +7,24 @@
 \contentsline {subsection}{\numberline {2.1}Basics of Web Crawling}{3}{subsection.2.1}
 \contentsline {subsection}{\numberline {2.2}Crawler Architecture}{4}{subsection.2.2}
 \contentsline {subsubsection}{\numberline {2.2.1}Frontier Data Structure}{5}{subsubsection.2.2.1}
-\contentsline {subsubsection}{\numberline {2.2.2}URL Seen Test (duplicated URL eliminator)}{5}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.2}URL Seen Test (duplicated URL eliminator)}{6}{subsubsection.2.2.2}
 \contentsline {subsubsection}{\numberline {2.2.3}Auxiliary Data Structures}{6}{subsubsection.2.2.3}
 \contentsline {subsubsection}{\numberline {2.2.4}Distributed crawling}{6}{subsubsection.2.2.4}
-\contentsline {subsubsection}{\numberline {2.2.5}Incremental crawling}{6}{subsubsection.2.2.5}
-\contentsline {subsection}{\numberline {2.3}Selenium}{6}{subsection.2.3}
-\contentsline {subsubsection}{\numberline {2.3.1}WebDriver Design}{7}{subsubsection.2.3.1}
-\contentsline {subsubsection}{\numberline {2.3.2}The IE Driver}{7}{subsubsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.2.5}Incremental crawling}{7}{subsubsection.2.2.5}
+\contentsline {subsection}{\numberline {2.3}Browser automation: Selenium}{7}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}WebDriver Design}{8}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}The IE Driver}{8}{subsubsection.2.3.2}
 \contentsline {subsubsection}{\numberline {2.3.3}The Remote Driver}{9}{subsubsection.2.3.3}
-\contentsline {subsubsection}{\numberline {2.3.4}Combinatorial Explosion}{11}{subsubsection.2.3.4}
-\contentsline {subsubsection}{\numberline {2.3.5}Different Browsers}{11}{subsubsection.2.3.5}
-\contentsline {subsection}{\numberline {2.4}Unit Testing}{11}{subsection.2.4}
-\contentsline {section}{\numberline {3}Implementation}{13}{section.3}
-\contentsline {subsection}{\numberline {3.1}Technologies}{13}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Data slicing}{15}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Configuration of external libraries and drivers}{15}{subsection.3.3}
-\contentsline {subsubsection}{\numberline {3.3.1}Driver configuration}{15}{subsubsection.3.3.1}
-\contentsline {subsection}{\numberline {3.4}Implementation}{16}{subsection.3.4}
-\contentsline {subsubsection}{\numberline {3.4.1}Crawler}{16}{subsubsection.3.4.1}
-\contentsline {subsubsection}{\numberline {3.4.2}Applet Wrapper}{20}{subsubsection.3.4.2}
-\contentsline {subsubsection}{\numberline {3.4.3}Unit Test cases}{24}{subsubsection.3.4.3}
+\contentsline {subsubsection}{\numberline {2.3.4}Combinatorial Explosion}{12}{subsubsection.2.3.4}
+\contentsline {subsubsection}{\numberline {2.3.5}Layers and Javascript}{12}{subsubsection.2.3.5}
+\contentsline {subsubsection}{\numberline {2.3.6}Different Browsers}{13}{subsubsection.2.3.6}
+\contentsline {subsection}{\numberline {2.4}Unit Testing}{13}{subsection.2.4}
+\contentsline {section}{\numberline {3}Implementation}{15}{section.3}
+\contentsline {subsection}{\numberline {3.1}Technologies}{15}{subsection.3.1}
+\contentsline {subsection}{\numberline {3.2}Data slicing}{17}{subsection.3.2}
+\contentsline {subsection}{\numberline {3.3}Configuration of external libraries and drivers}{17}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Driver configuration}{17}{subsubsection.3.3.1}
+\contentsline {subsection}{\numberline {3.4}Implementation}{18}{subsection.3.4}
+\contentsline {subsubsection}{\numberline {3.4.1}Crawler}{18}{subsubsection.3.4.1}
+\contentsline {subsubsection}{\numberline {3.4.2}Applet Wrapper}{22}{subsubsection.3.4.2}
+\contentsline {subsubsection}{\numberline {3.4.3}Unit Test cases}{26}{subsubsection.3.4.3}

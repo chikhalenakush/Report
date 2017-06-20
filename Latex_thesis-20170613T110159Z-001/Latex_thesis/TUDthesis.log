@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2016.9.12)  19 JUN 2017 16:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (MiKTeX 2.9.6210 64-bit) (preloaded format=pdflatex 2016.9.12)  20 JUN 2017 11:19
 entering extended mode
 **./TUDthesis.tex
 (TUDthesis.tex
@@ -1461,7 +1461,7 @@ LaTeX Font Info:    Font shape `OML/mdput/m/it' will be
 LaTeX Font Warning: Font shape `T1/5fp/m/n' undefined
 (Font)              using `T1/cmr/m/n' instead on input line 72.
 
-<tud_logo.pdf, id=106, 157.58875pt x 63.23625pt>
+<tud_logo.pdf, id=110, 157.58875pt x 63.23625pt>
 File: tud_logo.pdf Graphic file (type pdf)
  <use tud_logo.pdf>
 Package pdftex.def Info: tud_logo.pdf used on input line 72.
@@ -1619,7 +1619,7 @@ LaTeX Font Warning: Font shape `T1/5ch/m/it' undefined
 
 [1
 
-] [2] <CrawlerAlgorithFlowchart.png, id=240, 408.02437pt x 446.41782pt>
+] [2] <CrawlerAlgorithFlowchart.png, id=247, 408.02437pt x 446.41782pt>
 File: CrawlerAlgorithFlowchart.png Graphic file (type png)
 
 <use CrawlerAlgorithFlowchart.png>
@@ -1639,52 +1639,64 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 LaTeX Warning: Citation `frontierdatastructures' on page 5 undefined on input l
 ine 172.
 
-[5] [6]
-LaTeX Font Info:    Try loading font information for T1+txtt on input line 223.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5]
+[6] [7]
+LaTeX Font Info:    Try loading font information for T1+txtt on input line 229.
 
  ("C:\Program Files\MiKTeX 2.9\tex\latex\txfonts\t1txtt.fd"
 File: t1txtt.fd 2000/12/15 v3.1
 )
-<OriginalIEdriver.jpg, id=273, 684.5575pt x 82.3075pt>
+<OriginalIEdriver.jpg, id=303, 684.5575pt x 82.3075pt>
 File: OriginalIEdriver.jpg Graphic file (type jpg)
 
 <use OriginalIEdriver.jpg>
-Package pdftex.def Info: OriginalIEdriver.jpg used on input line 237.
+Package pdftex.def Info: OriginalIEdriver.jpg used on input line 244.
 (pdftex.def)             Requested size: 410.73766pt x 49.38486pt.
- [7]
-<ModifiedIEdriver.PNG, id=299, 684.5575pt x 232.87pt>
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<ModifiedIEdriver.PNG, id=305, 684.5575pt x 232.87pt>
 File: ModifiedIEdriver.PNG Graphic file (type png)
 
 <use ModifiedIEdriver.PNG>
-Package pdftex.def Info: ModifiedIEdriver.PNG used on input line 246.
+Package pdftex.def Info: ModifiedIEdriver.PNG used on input line 253.
 (pdftex.def)             Requested size: 410.73766pt x 139.72307pt.
-
-Underfull \vbox (badness 7451) has occurred while \output is active []
-
- [8 <./OriginalIEdriver.jpg> <./ModifiedIEdriver.PNG>]
-<SeleniumHttp.PNG, id=314, 644.4075pt x 493.845pt>
+ [8] [9 <./OriginalIEdriver.jpg> <./ModifiedIEdriver.PNG>] <SeleniumHttp.PNG, i
+d=338, 644.4075pt x 493.845pt>
 File: SeleniumHttp.PNG Graphic file (type png)
- <use SeleniumHttp.PNG>
-Package pdftex.def Info: SeleniumHttp.PNG used on input line 276.
-(pdftex.def)             Requested size: 386.64748pt x 296.30928pt.
 
-[9 <./SeleniumHttp.PNG>]
+<use SeleniumHttp.PNG>
+Package pdftex.def Info: SeleniumHttp.PNG used on input line 283.
+(pdftex.def)             Requested size: 386.64748pt x 296.30928pt.
+ [10 <./SeleniumHttp.PNG>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [10]
-[11] [12] [13
+ [11]
+<LayersofSeleniumJSLibrary.jpg, id=389, 286.06876pt x 283.0575pt>
+File: LayersofSeleniumJSLibrary.jpg Graphic file (type jpg)
+
+<use LayersofSeleniumJSLibrary.jpg>
+Package pdftex.def Info: LayersofSeleniumJSLibrary.jpg used on input line 363.
+(pdftex.def)             Requested size: 171.64258pt x 169.8358pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \vbox (badness 6016) has occurred while \output is active []
+
+ [12]
+[13 <./LayersofSeleniumJSLibrary.jpg>] [14] [15
 
 ]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [14]
-[15] [16]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [17]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [18]
+ [16]
+[17] [18]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [19]
@@ -1694,14 +1706,20 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [21]
-[22]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [22]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [23]
+[24]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [24]
-[25] [26
+ [25]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [26]
+[27] [28
 
 
 ] (TUDthesis.bbl
@@ -1717,17 +1735,17 @@ up above has ended a previous alignment prematurely,
 you're probably due for more error messages, and you
 might try typing `S' now just to see what is salvageable.
 
-) [27
+) [29
 
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 761.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 761.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 787.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 787.
  (TUDthesis.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 761.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 761.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 787.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 787.
 Package rerunfilecheck Info: File `TUDthesis.out' has not changed.
-(rerunfilecheck)             Checksum: EFD0024CA779E6143276568C50251D4C;1821.
+(rerunfilecheck)             Checksum: C1EACE41A99D4AA58485993BF2B7AAE2;1923.
 
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
@@ -1735,13 +1753,13 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 761.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 787.
  ) 
 Here is how much of TeX's memory you used:
- 27281 strings out of 493334
- 496508 string characters out of 3136660
- 672199 words of memory out of 3000000
- 29933 multiletter control sequences out of 15000+200000
+ 27304 strings out of 493334
+ 496958 string characters out of 3136660
+ 672429 words of memory out of 3000000
+ 29943 multiletter control sequences out of 15000+200000
  45527 words of font info for 84 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  65i,13n,100p,8876b,1720s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1761,9 +1779,9 @@ hale\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi690\ecrm1000.pk> <
 C:\Users\achikhale\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi1250
 \ecrm1728.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/mathdesign/mdbch/md-chr7y
 .pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/txfonts/t1xtt.pfb>
-Output written on TUDthesis.pdf (37 pages, 418952 bytes).
+Output written on TUDthesis.pdf (39 pages, 441904 bytes).
 PDF statistics:
- 1079 PDF objects out of 1200 (max. 8388607)
- 322 named destinations out of 1000 (max. 500000)
- 250 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1121 PDF objects out of 1200 (max. 8388607)
+ 334 named destinations out of 1000 (max. 500000)
+ 263 words of extra memory for PDF output out of 10000 (max. 10000000)
 

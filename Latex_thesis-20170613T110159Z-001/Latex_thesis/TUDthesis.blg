@@ -5,7 +5,9 @@ Warning--I didn't find a database entry for "frontierdatastructures"
 -- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Too many commas in name 1 of "Broder, A, Najork, M and Wiener J" for entry Graphstructure
+while executing---line 2403 of file IEEEtran.bst
 Warning--empty journal in AutomationTestingAnIntroductiontoSelenium
 
 Done.
-(There were 2 warnings)
+(There was 1 error message)
