@@ -27,7 +27,6 @@
 \usepackage[ngerman,english]{babel}
 \usepackage{listings}
 \usepackage{color}
-
 \definecolor{dkgreen}{rgb}{0,0.6,0}
 \definecolor{gray}{rgb}{0.5,0.5,0.5}
 \definecolor{mauve}{rgb}{0.58,0,0.82}
@@ -56,7 +55,7 @@
 \tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=0.5cm, text centered, draw=black, fill=green!30]
 \tikzstyle{arrow} = [thick,->,>=stealth]
 \tikzstyle{connector} = [circle, rounded corners, minimum width=1.5cm, minimum height=0.5cm,text centered, draw=black, fill=yellow!30]
-
+\usepackage[T1]{fontenc}
 
 \begin{document}
 \pagenumbering{roman}
@@ -98,7 +97,7 @@ The thesis also tries to solve the problem of data slicer by building an algorit
 \listoffigures
 \clearpage
 \listoftables
-\listofalgorithms
+\listofalgorithms8
 
 \clearpage
 \pagenumbering{arabic}
@@ -182,15 +181,31 @@ The sate of the UST must reside on disk if memory is at a premium. Each lookup r
 Adding a bunch of URL into disk-based hash file involves reading the old hash file and writing out an updated version. Hence, the required time is directly equivalent to the number of discovered URLs. A slight improvement of this pattern is to store the URL hashes on disk in sorted order as before, but lightly packed rather than densely packed. The k highest-order bits of a hash determine the disk block where this hash resides. Merging a batch into the disk file is done in place, by reading a block for which there are hashes in the batch, checking which hashes are not present in that block, and writing the updated block back to disk. Thus, the time requirement for merging a batch is proportional to the size of the batch, not the number of discovered URLs. Once any block in the file fills up completely, the disk file is rewritten to be twice as large, and each block contains hashes that now share their k + 1 highest-order bits.
 
 \subsubsection{Auxiliary Data Structures}
-Web crawlers should follow Robots Exclusion protocol, a protocol that makes a web site admins to bar crawlers from crawling. It is done by providing a file at URL /robots.txt containing rules such as which pages the crawler is allowed to download. Before crawling web site crawler must check if the web site supplies /robots.txt file and if it does, crawler should adhere to rules. Entires must be discarded through some cache eviction policy. Additionally web servers can specify an expiration time for their /robots.txt file. Some URLs contain a host component (e.g., www.yahoo.com), which is "resolved" using the Domain Name Service (DNS). DNS requests can take quite a long time due to the request forwarding nature of the protocol. Therefore, crawlers often maintain their own DNS caches. As with the robots exclusion rule cache, entries are expired according to both a standard eviction policy, and to expiration directives.
+Web crawlers should follow Robots Exclusion protocol, a protocol that makes a web site admins to bar crawlers from crawling. It is done by providing a file at URL /robots.txt containing rules such as which pages the crawler is allowed to download. Before crawling web site crawler must check if the web site supplies /robots.txt file and if it does, crawler should adhere to rules. Entires must be discarded through some cache eviction policy. Additionally web servers can specify an expiration time for their /robots.txt file. Some URLs contain a host component (e.g., www.yahoo.com), which is "resolved" using the Domain Name Service (DNS). DNS requests can take quite a long time due to the request forwarding nature of the protocol. Therefore, crawlers often maintain their own DNS caches. As with the robots exclusion rule cache, entries are expired according to both a standard eviction policy, and to expiration directives. The robots.txt file must be fetched from a website so that URL under consideration passes the robot restrictions and hence can be added to URL frontier. By performing the filtering during the link extraction process, we would have especially high locality in the stream of hosts that we need to test for robots.txt files, leading to high cache hit rates. A URL may be in frontier for days or even weeks.
  
 \subsubsection{Distributed crawling}
 
 To increase the throughput of crawling, web crawler can be distributed over multiple machines. Distributed crawling is achieved by partitioning the URL space i.e. node is responsible for a subset of the URLs on the web. URL space is best partitioned across web site boundaries. Politeness policies are best achieved using partitioning the URL across site boundaries. In addition, most of the major data structures can be easily partitioned across site boundaries, i.e. the frontier, the DUE, the DNS and robots exclusion caches of each node contain URL, robots exclusion rules, and name-to-address mappings associated with the sites assigned to that node, and nothing else.
 
-Web pages are extracted and downloaded using crawling process and with the help of prevalence of relative links on web, links will be responsible for large majority of extracted URLs. When a URL u that falls under the responsibility of another crawl node. Forwarding of URLs can be done through peer to peer TCP connections\cite{Highperformancewebcrawling}, a shared file system\cite{Highperformance}, or a central coordination process\cite{anatomy}. The amount of communication with other crawler nodes can be reduced by maintaining a cache of popular URLs, used to avoid repeat forwarding\cite{Graphstructure}. A variant of distributed web crawling is peer to peer crawling which spreads crawling over a loosely collaborating set of crawler nodes.
+Web pages are extracted and downloaded using crawling process and with the help of prevalence of relative links on web, links will be responsible for large majority of extracted URLs. When a URL u that falls under the responsibility of another crawl node. Forwarding of URLs can be done through peer to peer TCP connections\cite{Highperformancewebcrawling}, a shared file system\cite{Highperformance}, or a central coordination process\cite{anatomy}. The amount of communication with other crawler nodes can be reduced by maintaining a cache of popular URLs, used to avoid repeat forwarding\cite{Graphstructure}. A variant of distributed web crawling is peer to peer crawling which spreads crawling over a loosely collaborating set of crawler nodes. There are two types of policies used under distributed crawling:
+ \begin{enumerate}
+	\item Dynamics assignment: Within this policy, a central server assigns new URLs to different crawlers dynamically. Central server is allowed to dynamically balance the load of each crawler. Typically the systems can add or remove downloaded processes. Most of the workload must be transferred to the distributed crawling process for large crawls.
+	\item Static assignment: Within this policy, there is a fixed rule stated from the beginning of the crawl that defines how to assign new URLs to the crawler. A hashing function can be used to transform URLs into a number that corresponds to the index of the corresponding crawling process.
+\end{enumerate}
+
 \subsubsection{Incremental crawling}
-Snapshots of batch crawling can be combined using Web crawlers. To perform incremental or continuous crawling where the resources of the crawler are divided between downloading newly discovered pages. For making good Incremental crawling, requires few changes to the major data structures of crawlers. DUE should support deletion of URLs that are no longer valid. If URL are prioritized in frontier, the priority of a previously downloaded URL should be dependent on a model of the page's temporal behavior based on past observations. Other factors such as page quality are also taken into account. The functionality is best facilitated by augmenting URLs in the frontier with additional information in particular previous priorities and compact sketches of their previous content. This extra information allows the crawler sketches of their previous content.
+Snapshots of batch crawling can be combined using Web crawlers. To perform incremental or continuous crawling where the resources of the crawler are divided between downloading newly discovered pages. For making good Incremental crawling, requires few changes to the major data structures of crawlers. DUE should support deletion of URLs that are no longer valid. If URL are prioritized in frontier, the priority of a previously downloaded URL should be dependent on a model of the page's temporal behavior based on past observations. Other factors such as page quality are also taken into account. The functionality is best facilitated by augmenting URLs in the frontier with additional information in particular previous priorities and compact sketches of their previous content. This extra information allows the crawler sketches of their previous content. Three possible metrics that are most popular are as below:
+\begin{enumerate}
+	\item Coverage: count the number of pages that exist on the web but are not present in the repository at any given time.
+	\item Freshness: count the number of documents that are present in the repository, but whose content was
+	changed after insertion into the repository. Alternatively, the metric may incorporate a measure of the
+	size of the change for individual pages.
+	\item Age: the average age of documents in the repository (e.g., time since they were last updated).
+\end{enumerate}
+Above metrics may be adjusted to add weights of autonoumos pages to reflect their relative importance for the application. Documents which are dominated by thousands of other documents for every possible query should probably be weighted lower than documents that are often found by users of the search engine. The quality of an incremental crawling strategy must also be evaluated on the basis of resources that it consumes in order to maintain a given level of metric.
+
+
+
 
 \subsection{Browser automation: Selenium}
 There are numerous browser automation tools available but the one, which outperforms others and could be found open source is Selenium. Selenium\cite{AutomationTestingAnIntroductiontoSelenium} is a browser automation tool; mostly it is used to simulate user interaction on web applications. The browser control is automated so that repetitive tasks can be automated. Selenium,  is a combination of selenium IDE, selenium Web driver and selenium gird. Selenium grid helps to use the selenium APIs to control browser instances distributed over a grid of machines. Selenium IDE is an extension for Firefox used to record and playback tests. Selenium uses lot of Jargon.
@@ -367,9 +382,49 @@ Selenium uses layered set of libraries. The bottom layer is Google's closure lib
 To interrogate the DOM through the project is done with the help of atomic library. There is an monolithic script used for RC and those divers largely composed of JS. It allows the Javascript to be pushed into the underlying driver without needing to expose the raw source in multiple places.
 
 \subsubsection{Different Browsers}
-Web browser is a translation device, which takes document written in HTML language and translates it into a formatted web page. The basic rules for translating HTML documents are established by the WWW. HTML standards usually run ahead of that the browsers support. Over the past few years Internet Explorer has done a lot than Opera or other browsers.
+Web browser is a translation device, which takes document written in HTML language and translates it into a formatted web page. The basic rules for translating HTML documents are established by the WWW. HTML standards usually run ahead of that the browsers support. Over the past few years Internet Explorer has done a lot than Opera or other browsers.An overview of all the supported browser with Selenium automation tool are shown in Table \ref{SB}.
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|}
+	\hline
+	\textbf{Browser} & \textbf{Selenium IDE} & \textbf{Selenium 1 (RC)} 
+	& \textbf{Operating Systems}\\ \hline
+	Firefox 3.x   & Record and playback tests             & Start browser, run tests  & Windows, Linux, Mac    \\ \hline
+	
+	Firefox 3  & Record and playback tests             & Start browser, run tests  & Windows, Linux, Mac    \\ \hline
+	
+	Firefox 2  & Record and playback tests             & Start browser, run tests  & Windows, Linux, Mac    \\ \hline
+	
+	IE 8  & Test execution only via Selenium RC             & Start browser, run tests  & Windows    \\ \hline
+	
+	IE 7  & Test execution only via Selenium RC             & Start browser, run tests  & Windows    \\ \hline
+	
+	IE 6  & Test execution only via Selenium RC             & Start browser, run tests  & Windows    \\ \hline
+	
+	Safari 4  & Test execution only via Selenium RC             & Start browser, run tests  & Windows, Mac    \\ \hline
+	
+	Safari 3  & Test execution only via Selenium RC             & Start browser, run tests  & Windows, Mac    \\ \hline
+	
+	Safari 2  & Test execution only via Selenium RC             & Start browser, run tests  & Windows, Mac    \\ \hline
+	
+	Opera 10  & Test execution only via Selenium RC             & Start browser, run tests  & Windows, Linux, Mac    \\ \hline
+	
+	Opera 9  & Test execution only via Selenium RC             & Start browser, run tests  & Windows, Linux, Mac    \\ \hline
+	
+	Opera 8  & Test execution only via Selenium RC             & Start browser, run tests  & Windows, Linux, Mac    \\ \hline
+	
+	Google Chrome  & Test execution only via Selenium RC             & Start browser, run tests  & Windows, Linux, Mac    \\ \hline
+	
+	Others  & Test execution only via Selenium RC             & Partial support possible  & As applicable    \\ \hline
+\end{tabular}
+\caption{Overview of Supported browsers by Selenium}
+\label{SB}
+\end{table}
 
 HTML tags isn't universal, you could be building your pages with parts of the language that not all browsers understand. In such cases browser will ignore that part of your page it can translate and way pages will be displayed is affected.
+
+\subsubsection{Extensibility and Flexibility}
+Selenium is highly flexible. Functionality could be added to selenium test scripts and selenium's framework to customize test automation. This particular use case is the greatest strength when compared with other automation tools. One more good point is as selenium is open source, the sourceode can always be downloaded and modified.
 
 \subsection{Unit Testing}
 Unit Testing\cite{EffectivnessofUnitTest} is testing modules of code in isolation with test code. It is a way to test the behavior and functionality of your system. The main goal of our unit testing is to take the smallest piece of software module in the application, isolate it from the remainder of the code, and determine whether it behaves exactly as you expect. Each unit is tested separately before integrating them into modules to test the interfaces between modules. Unit testing has proven its value in that a large percentage of defects are identified during its use. The benefit of unit test cases are:
@@ -594,14 +649,9 @@ String userHome = "PathforCSV";
 \end{figure}
 \end{center}
 \subsubsection{Applet Wrapper}
-Browser automation is used to automate Applet wrapper, which helps in uploading data from local machine or USB to server via browser. As we cannot take applet out of web browser and run it as a standalone application, because it uses signed certificate with login cookies from browser. We have tried to simulate user behavior which in turn will help browser open Internet Explorer automatically and and update would take place. Algorithm used for automation is below.
+\label{subsec:AppletWrapper}
+Browser automation is used in our work to automate Applet wrapper, i.e the process of uploading data from local system to server of Carelink via browser. The problem lies in not able to run applet as standalone application, because it uses signed certificate with login cookies from browser. We have tried to emulate user behavior in performing steps manually uploading data to server. 
 
-To avoid unexpected behavior and make IE web automation smooth, small change in IE settings is required as below
-\begin{enumerate}
-\item Open IE
-\item Go to Tools $\rightarrow$ {Internet Options} $\rightarrow$ {Security}
-\item Set all zones (Internet, Local intranet, trusted sites, restricted sites) to the same protected mode, enabled or disabled should not matter
-\end{enumerate}
 Flowchart in figure \ref{fig:AppletwrapperAlgorithm} shows  program logic for automating webbrowser for applet wrapper.
 
 \begin{center}
@@ -724,39 +774,41 @@ driver.findElement(By.id("upload")).sendKeys(Keys.ENTER);
 \end{enumerate}
 
 \subsubsection{Unit Test cases}
-Unit Testing\cite{EffectivnessofUnitTest} is testing modules of code in isolation with test code. It is a way to test the behavior and functionality of your system. The main goal of our unit testing is to take the smallest piece of software module in the application, isolate it from the remainder of the code, and determine whether it behaves exactly as you expect. Each unit is tested separately before integrating them into modules to test the interfaces between modules. Unit testing has proven its value in that a large percentage of defects are identified during its use. The benefit of unit test cases are:
+Unit Testing\cite{EffectivnessofUnitTest} is used for testing modules of code in isolation with test code. It is a way to test the functionality and behavior of your system. The main goal of unit testing is to deal with the smallest piece of software module in the application, isolate it from the remaining of the code, and determine whether it behaves exactly as you expect. Each unit is tested separately before integrating them into modules to test the interfaces between modules. Unit testing is valuable where large percentage of defects are identified during its use. Few of the benefits of unit test cases are listed below:
 \begin{enumerate}
 \item Properly unit tested code can be cleaned up with little chance of breaking anything without noticing it.
-\item It gives confidence to developers when adding or making changes to code.
-\item It helps to document the code.
-\item It indicates methods and classes that are integrated 
-\item Indicated code that are tightly coupled
+\item When adding or making changes to code a confidence is given to developers.
+\item To document the code unit Testing is used.
+\item Methods and classes that are integrated are indicated with it. 
+\item Indicates code that are tightly coupled
 \item Provide a means to use your API and look for difficulties early on 
 \end{enumerate}
-Performing unit tests are designed to be simple, generally the tests are written in the form of functions that will determine whether a returned value equals the value you were expecting when you wrote the function (or the value you will expect when you eventually write it - this is called Test Driven Development when you write the tests first).Unit testing is not only for testing. By doing unit testing we also force the design of the software into something that is unit testable. Many people are of the opinion that this design is for the most part Good Design regardless of other benefits from testing.So one reason to do unit test is to force your design into something that hopefully will be easier to maintain than what it would be had you not designed it for unit testing.
+Unit test cases are designed in such a way that they are simple. The tests are written in the form of functions that will determine whether a returned value equals the value you were expecting when you wrote the function (or the value you will expect when you eventually write it - this is called Test Driven Development when you write the tests first). Unit testing is not only for testing. We force the design of the software into something that is unit testable by performing unit testing. Many are of the opinion that this design is for the most part Good Design regardless of other benefits from testing. So one reason to do unit test is to force your design into something that hopefully will be easier to maintain than what it would be had you not designed it for unit testing.
 
-With respect to our project, All the three main modules are tested with Junit as unit test case Framework. First Crawler module i.e downloading CSV file is tested. Login functionality is first tested with input from user. After testing login, start date and end dates are tested to validate correct dates for CSV Download.There is an array of predeinfed values and their result.
-For example to enter date Values would be something like
+With respect to project work in this thesis, All the three main modules are tested with Junit as unit test case Framework. At the very beginning Crawler module i.e downloading CSV file is tested. Within Crawler module submodule Login functionality is first with input from user. Thereafter, start date and end dates are tested to validate correct dates for CSV Download.Test case contains an array of predeinfed values and their result. A quick example to enter date Values would be something like
 \begin{lstlisting}
 Statdate 	Enddate 	Result
 { "15/05/2015", "20/05/2016", true},
 { "18-05/2015", "15/05/2015",false},
 { "15-05/2015", "20/05/2016",false}
 \end{lstlisting}
- Later on CSV path is also tested so that complete module for Downloading CSV file is tested.
+ Within the same module CSV path will also be tested so that the entire module for Crawler (Downloading CSV file) is tested.
  \begin{lstlisting}
 	FolderLocation										Result
 {System.getProperty("user.home") + "/RandomFolder", false },
 { ystem.getProperty("user.home") + "/testfolder", false },
 {System.getProperty("user.home") + "/desktop", true } });
 \end{lstlisting}
- To test Crawler CSV download module, Command used is "java -jar abc.jar -crawler -test". One more point to note is that password is always masked while running from both command line and through IDE, so that it is not shown clear text. Next Applet Module is applied for testing. Applet module consist of three parts
+ To test Crawler CSV download module, Command used is "java -jar abc.jar -crawler -test". Important point to note is that password is always masked while running from both command line and through IDE, so it does not appear in clear text. Applet Module is applied for testing. 
+ 
+ Second step in Unit Testing is to Test Applet wrapper module which consist of three main parts.
  \begin{enumerate}
 \item Login credentials
 \item SN Number and Device validation
-\item Run automated browser. early on 
+\item Run automated browser early on 
 \end{enumerate}
-  Once again login is tested for applet module. After login SN Number and Device are tested.
+Login is tested as same by calling the previous methods. Thereafter SN Number and Device are tested withinin module of Applet wrapper. Taking from Section
+~\ref{subsec:AppletWrapper} the correct definiftion of SN number and Device is being stated. Using the same definition SN number and Device are checked as shown below in code snippet
 
 \begin{lstlisting}
  Device, 	SNNumber, 	Result
@@ -766,7 +818,7 @@ Statdate 	Enddate 	Result
  { "BGdevice", "125648$890", false }
 \end{lstlisting}   
   
-    To test this module command used is "java -jar abc.jar - applet -test" A code snippet for Test case is follows
+    To test this module command used is "java -jar abc.jar - applet -test" A code snippet class for a generic Test case is shown below.
 \begin{lstlisting}
 		public void isLoginCorrect() throws IOException, ParseException {
 	Result result = JUnitCore.runClasses(JunitIsloginCorrect.class);
