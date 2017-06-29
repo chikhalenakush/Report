@@ -103,9 +103,9 @@ The thesis also tries to solve the problem of data slicer by building an algorit
 \pagenumbering{arabic}
 \selectlanguage{English}
 \section{Introduction}
-Data mining is the process for extraction of hidden predictive information from large databases. It is a powerful new technology with great potential to help companies focus on the most important information in their data warehouses. Researchers in TK Lab have a task of generating pattern or prediction from large amount of Medical data using Machine Learning and data mining. To capitalize the task of Data mining in field of Medical sector, we need bulk amount of data. This data will be provided from CareLink\textsuperscript{\textregistered} website. 
+Data mining is the process for extraction of hidden predictive information from large databases. It is a powerful technology with great potential to help companies focus on the most important information in their data warehouses. Researchers at TK Lab have a task of generating pattern/prediction from large amount of Medical data using Machine Learning and data mining. To capitalize the task of Data mining in field of Medical sector, we need bulk amount of data. This data will be provided from CareLink\textsuperscript{\textregistered} website. 
 
-Carelink, Web-based system is designed to help take information from all of diabetes management tools such as insulin pump, continuous glucose monitor, blood glucose meter(s), and logbook - and organize it into easy-to-read charts, graphs and tables. These reports can help health care provider discover trends and other information that can lead to improved therapy management for greater control\footnote{https://carelink.minimed.eu/}.
+Carelink\footnote{https://carelink.minimed.eu/}, Web-based system is designed to help take information from all of diabetes management tools such as insulin pump, continuous glucose monitor, blood glucose meter(s), and logbook - and organize it into easy-to-read charts, graphs and tables. These reports can help health care provider discover trends and other information that can lead to improved therapy management for greater control.
 Data crawler is required to access the required data from website without manually visiting it. Crawling is the process through which we collect varieties of web pages, in order to gather information from them. Especially with respect to Search Engines, crawlers are used to add index to web pages and it helps in building a database of web sites. It is the system for bulk downloading of web pages. It is a program or automated script, which browses the web in automated manner. Main prominent use of Web crawlers\footnote{http://webcourse.cs.technion.ac.il/236620/Winter2006-2007/ho/WCFiles/lec14-crawlers.PDF} are
 \begin{enumerate}
 \item	Data crawling, where web pages are analyzed for statistical properties.
@@ -120,9 +120,9 @@ There are various types of crawlers available:
 \end{enumerate}
 Given the overwhelming use of crawler in different scenarios, Web Data crawling as a prominent use case for crawling is used in our research project to extract data for Medical research. URL for Carelink Website which has been crawled for extracting information is \textit{https://carelink.minimed.eu/}
 
-Parallel to extracting data from website, we also have a need to upload data from local system or USB device to server. The process of uploading data to server is done in website using Applet. Since we cannot take Applet\cite{Javaapplet} out from browser and run it as stand alone due to signing and loin cookies issue, we try to automate the process of accessing applet in Web browser. Selenium\footnote{http://www.seleniumhq.org/} helps to automate browsers and simulate user interaction. It enables java program to emulate user interaction with a web page. Selenium\cite{Webdriver} uses Web Drivers for interacting with a Web browser. Web drivers helps to control web browsers by a hook and which in turn enables selenium to interact with web browsers similar to User. There are a numerous commercial and open source tools available for assisting with the development of automation. Selenium is possibly the most widely used open source solution. With the help of selenium, we are trying to automate uploading Data from USB to server and cut the human repeatable work. This will help mass upload of data with minimum efforts and time.
+Parallel to extracting data from website, we also have a requierement to upload data from local system or USB device to server. The process of uploading data to server is done in website using Applet. Since we cannot take Applet\cite{Javaapplet} out from browser and run it as stand alone due to signing and loin cookies issue, we try to automate the process of accessing applet in Web browser. To overcome this difficulty, browser automation is ued to access website pragmatically. Selenium\footnote{http://www.seleniumhq.org/} helps to automate browsers and simulate user interaction. It enables java program to emulate user interaction with a web page. Selenium\cite{Webdriver} uses Web Drivers for interacting with a Web browser. Web drivers helps to control web browsers by a hook and which in turn enables selenium to interact with web browsers similar to User. There are a numerous commercial and open source tools available for assisting with the development of automation. Selenium is possibly the most widely used open source solution. With the help of selenium, we are trying to automate uploading Data from USB to server and cut the human repeatable work. This will help mass upload of data with minimum efforts and time.
 
-We have used Web bases technologies and Web data crawling added with automation technologies to make the entire process of data uploading and downloading smooth and easy with just one click. JSoup\cite{Jsoup} as a Java framework is used to crawl website and visit particular page with ability to manipulate entries. Jsoup is a java HTML parser. It is a java library that is used to parse HTML\cite{BeaqleJSHTML} document. Jsoup provides API to extract and manipulate data from URL or HTML file. It uses DOM, CSS and JQuery-like methods for extracting and manipulating file. This is used to download CSV file with user-entered dates. Jsoup will help in checking login credentials of User and will help in bypassing browser agent so that crawling is uninterrupted. After successful login Using Jsoup user input dates will be inserted so that required CSV file will be downloaded. 
+We have used Web bases technologies and Web data crawling added with automation technologies to make the entire process of data uploading and downloading smooth and easy with just one click. JSoup\cite{Jsoup} as a Java framework is used to crawl website and visit particular page with ability to manipulate entries. Jsoup is a java HTML parser. It is a java library that is used to parse HTML\cite{BeaqleJSHTML} document. Jsoup provides API to extract and manipulate data from URL or HTML file. It uses DOM, CSS and JQuery-like methods for extracting and manipulating file. The above mentioned features of Jsoup are particular fit for downloading data from website as CSV. We also have a need to add user entered Start date and end date. Jsoup will help in checking login credentials of User and will help in bypassing browser agent so that crawling is uninterrupted. After successful login Using Jsoup user input dates will be inserted so that required CSV file will be downloaded. 
 
 To Build GUI based Native Java application, Swing Framework is used. In particular we have used Scene Builder which is a JavaFx\cite{JavaFx} project. Scene Builder\footnote{http://www.oracle.com/technetwork/java/javase/downloads/javafxscenebuilder-info-2157684.html} is a visual layout tool which helps user build application user interfaces without coding. The good thing about scene builder is, user can simply drag and drop UI components, modify it's properties, apply styles to it and all this will produce FXML code for the layout created. FXML file created from the UI drag and drop can then be used in combination with Java project by binding UI to application logic. Addition to building GUI based application, we have a need to build a Command line interface for the project. To help making command line run different parts of entire project, Apache Commons CLI is being used. The Apache Commons CLI\footnote{https://commons.apache.org/proper/commons-cli/} library provides an API for parsing command line options passed to programs. It's also able to print help messages detailing the options available for a command line tool
 
@@ -134,7 +134,7 @@ In this section, we provide an overview of Web crawler, Data crawler, Automation
 
 \subsection{Basics of Web Crawling}
 
-Web crawler\cite{WebCrawlerAReview} also known as Web spider or Web Robot is a program, which helps to browse the Web in an automated manner. The entire process is called web crawling or spidering. Web Crawlers helps in automating maintenance task on a Web site, such as validating HTML Codes. A related use case is web archiving where in large set of web pages are collected in a periodic time frame. The most important reason for web crawler is, World Wide Web is not a centrally managed repository of information rather it is combination of millions of independent web content providers. In other words web is combined together by set of agreed - upon protocol and data formats such as Hypertext Transfer Protocol (HTTP) , the Hypertext Markup Language (HTML) , the Domain Name Service (DNS) , the Transmission Control Protocol (TCP) and the robots exclusion protocol. 
+Web crawler\cite{WebCrawlerAReview} also known as Web spider or Web Robot is a program, which helps to browse the Web in an automated manner. The entire process is called web crawling or spidering. Web Crawlers helps in automating maintenance task on a Web site, such as validating HTML Codes. A related use case is web archiving where in large set of web pages are collected in a periodic time frame. The most important reason for web crawler is, World Wide Web which is not a centrally managed repository of information rather it is combination of millions of independent web content providers. In other words web is combined together by set of agreed - upon protocol and data formats such as Hypertext Transfer Protocol (HTTP) , the Hypertext Markup Language (HTML) , the Domain Name Service (DNS) , the Transmission Control Protocol (TCP) and the robots exclusion protocol. 
 
 Data miners or search engines have few of the available choices as : Adopting to a pull model which will proactively search the web for new information or try to establish a set of protocols making content providers to push content of interest to the aggregators. To become a Content provider is very easy as web servers are highly independent and hence the web protocols were initially extremely simple lowered the barrier even further, this simplicity is expressed by many as the reason why the web succeeded where earlier hypertext systems had failed. Push protocol might have made it more difficult to set of web protocols and hence raised the barrier of entry for content providers, while the pull model does not require any extra protocols. Similarly the pull model lowers the barrier of entry for content aggregators as well: Executing a crawler does not require any a prior buy-in from content providers.The push model requires a trust relationship between content provider and content aggregator, something that is not given on the web at large - The relationship between Introduction content providers and search engines is characterized by both mutual dependence and adversarial dynamics.
 
@@ -153,7 +153,7 @@ Even though the Web crawler algorithm is simple it still has few challenges\foot
 \item Crawlers should achieve high throughput even though many website possess difficult structure for bot.
 \end{enumerate}
 
-Sometimes there might be case that crawlers visit web sites without approval or they consume resources on system. When crawling websites often issue of "politeness" comes into picture where large amount of pages are accessed. There are also new ways where in websites does not wished to be crawled to make this known to the crawling agent. There are large number of web pages on Internet and it makes the entire process highly complex. However, introduction of various modern Crawlers helps to solve this problem in a more sophisticated way.
+Sometimes there might be case that crawler visit web sites without approval or they consume resources on system. When crawling websites often issue of "politeness" comes into picture where large amount of pages are accessed. There are also new ways where in websites does not wished to be crawled to make this known to the crawling agent. There are large number of web pages on Internet and it makes the entire process highly complex. However, introduction of various modern Crawlers helps to solve this problem in a more sophisticated way.
 
 \subsection{Crawler Architecture}
 
@@ -208,7 +208,7 @@ Above metrics may be adjusted to add weights of autonoumos pages to reflect thei
 
 
 \subsection{Browser automation: Selenium}
-There are numerous browser automation tools available but the one, which outperforms others and could be found open source is Selenium. Selenium\cite{AutomationTestingAnIntroductiontoSelenium} is a browser automation tool; mostly it is used to simulate user interaction on web applications. The browser control is automated so that repetitive tasks can be automated. Selenium,  is a combination of selenium IDE, selenium Web driver and selenium gird. Selenium grid helps to use the selenium APIs to control browser instances distributed over a grid of machines. Selenium IDE is an extension for Firefox used to record and playback tests. Selenium uses lot of Jargon.
+There are numerous browser automation tools available but the one, which outperforms others and could be found open source is Selenium. Selenium\cite{AutomationTestingAnIntroductiontoSelenium} is a browser automation tool; mostly used to simulate user interaction on web applications. The browser control is automated so that repetitive tasks can be automated. One of Selenium's key features is the support for executing one's tests on multiple browser platforms. Selenium,  is a combination of selenium IDE, selenium Web driver and selenium gird. Selenium grid helps to use the selenium APIs to control browser instances distributed over a grid of machines. Selenium IDE is an extension for Firefox used to record and playback tests. Selenium uses lot of Jargon.
 
 \begin{enumerate}
 \item Selenium core JavaScript that control the browser.
@@ -237,9 +237,9 @@ Variant of selenium:
 \item Selenium Grid
 \end{enumerate}
 
-Selenium\footnote{http://www.seleniumhq.org/docs/01\_introducing\_selenium.jsp\#test-automation-for-web-applications} consist of different software tools each with a different approach to supporting test automation. The entire set of tools results in a rich set of testing functions specifically geared to the needs of testing of web application of all types. Such operations are highly flexible allowing many options for locating UI elements and comparing expected test results against actual application behavior. While selenium is a tremendous tool it isn't without drawbacks. Because of its Java-script based automation engine and the security limitations browsers apply to Java-script, different things became impossible to do. But then in 2006 Selenium introduced Webdiver which talks directly to web browser and avoids Java-script dependency.
+Selenium\footnote{http://www.seleniumhq.org/docs/01\_introducing\_selenium.jsp\#test-automation-for-web-applications} consist of different software tools each with a different approach to supporting test automation. The entire set of tools results in a rich set of testing functions specifically geared to the needs of testing of web application of all types. Such operations are highly flexible allowing many options for locating UI elements and comparing expected test results against actual application behavior. While selenium is a tremendous tool it isn't without drawbacks. Because of its Java-script based automation engine and the security limitations browsers apply to Java-script, different things became impossible to do. But then in 2006 Selenium introduced Webdiver which talks directly to web browser and avoids Java-script dependency. Good thing about selenium is it's wide popularity and large community support. WebDriver were the tool of the future. The joining of the two tools provided a common set of features for all users. Webdriver addresses some shortcoming in selenium partly because selenium contributors and felt that it was the best way to offer users the best possible framework.
 \subsubsection{WebDriver Design}
-WebDrivers API \cite{SeleniumTestingFramework} is also called as  object-based. The interfaces are clearly defined and try to manage single responsibility and hence rather than modelling every single possible HTML Tag, we have only one WebElement interface. Snippet of code for initilization of web driver.\footnote{http://www.aosabook.org/en/selenium.html}
+WebDrivers API \cite{SeleniumTestingFramework} is also called as  object-based. The interfaces are clearly defined and try to manage single responsibility and hence rather than modelling every single possible HTML Tag, We have only one WebElement interface. Snippet of code for initilization of web driver\footnote{http://www.aosabook.org/en/selenium.html} is shown below.
 
 \begin{lstlisting}
 WebDriver driver = new FirefoxDriver();
@@ -315,22 +315,19 @@ This is then passed as a JSON string to a custom XPCOM component written called 
 \begin{lstlisting}
 var jsonResponseString = JSON.stringify(json);
 var callback = function(jsonResponseString) {
-  var jsonResponse = JSON.parse(jsonResponseString);
-
-  if (jsonResponse.status != ErrorCode.SUCCESS) {
-    response.setStatus(Response.INTERNAL_ERROR);
+var jsonResponse = JSON.parse(jsonResponseString);
+if (jsonResponse.status != ErrorCode.SUCCESS) {
+response.setStatus(Response.INTERNAL_ERROR);
   }
-
-  response.setContentType('application/json');
-  response.setBody(jsonResponseString);
-  response.commit();
+response.setContentType('application/json');
+response.setBody(jsonResponseString);
+response.commit();
 };
-
 // Dispatch the command.
 Components.classes['@googlecode.com/webdriver/command-processor;1'].
-    getService(Components.interfaces.nsICommandProcessor).
-    execute(jsonString, callback);
-
+getService(Components.interfaces.nsICommandProcessor).
+execute(jsonString, callback);
+}
 \end{lstlisting}
 Object above in code is converted into JSON string. A callback to the execute method that causes the HTTP response to be sent is passed.
 
@@ -444,14 +441,14 @@ The sideeffect can be that developers test too large a unit, or might consider a
 \clearpage
 
 \section{Implementation}
-In this section, we discuss in detail about the implementation of our proposed solution. First we discuss about the technologies which are used to solve our problem and reason for selecting it , then we proceed with the pre-configuration requirements for our implementations. This include using the IDE, using the external libraries and installing the .Exe file to run the software. Then we divide the problem definition into sub parts and describe the solution in detail for each of the part separately. This section also includes the algorithms and assumptions used for solving the problem.
+In this section, we discuss in detail about the implementation of our proposed solution. First we discuss the technologies used to solve our problem and reason for selecting it , then we proceed with the pre-configuration requirements for our implementations. This include using the IDE, using the external libraries and installing the .Exe file to run the software. Then we divide the problem definition into sub parts and describe the solution in detail for each of the part separately. This section also includes the algorithms and assumptions used for solving the problem.
 
 \subsection{Technologies}
 Let us revisit the aim of this thesis, if we talk in layman's term the work in this thesis tries to extract bulk amount of data from website without actually visiting it. At the same time, we try to upload data to server from local machine or USB using Website and it's applet as an interface. In addition, we are trying to segregate data using data slicing algorithm and save it to local disk or database. Most of the work mentioned above is some way or other related to Web and Web technologies. Thorough knowledge of web technologies such as HTML, CSS, DOM object, XML, TCP protocol is required.
 
-To extract data from a website without actually visiting it lies between the methodology of Data scraping and Data crawling. Data crawling refers to downloading pages from the website, where as data scraping involves extracting data of from various sources including web. To crawl  large amount of data is mostly done with Data Crawling whereas with Data scrapping scale has not major impact. Most important point here is deduplication of an essential part, Data crawling takes into consideration deduplication, with data scrapping it is not an integral part. Data crawler needs only crawl agent to crawl/download a page, whereas data scrapping needs crawl agent and parser. Taking into consideration both the ways of extracting data and the most suitable use case for our work we went ahead with Data crawling as it was most relevant such as high scale data, crawl agent and deduplication.
+To extract data from a website without actually visiting it lies between the methodology of Data scraping and Data crawling. Data crawling refers to downloading pages from the website, where as data scraping involves extracting data from various sources including web. To crawl  large amount of data is mostly done with Data Crawling whereas with Data scrapping scale has not major impact. Most important point here is deduplication of an essential part, Data crawling takes into consideration deduplication, with data scrapping it is not an integral part. Data crawler needs only crawl agent to crawl/download a page, whereas data scrapping needs crawl agent and parser. Taking into consideration both the ways of extracting data and the most suitable use case for our work we went ahead with Data crawling as it was most relevant such as high scale data, crawl agent and deduplication.
 
-To crawl data we need libraries, which supports and handle DOM objects with HTML tags. There are many programing languages, which supports and contains needed libraries to handle DOM objects. We have used Java as a programming language because this project is going to be part of bigger project which is written in Java and Java has wide support for external libraries. In this particular project, we are using three different types of libraries for crawling, automating and for data slicing. Java provides good support for all the three technologies/libraries. Also Java is platform independent which was very important here as this project is being used with a simple command line for executing the steps and last but most important reason for choosing Java, as this project is going to be part of bigger project which is written in Java. In Java, we have used Jsoup as external library, which helps in crawling and extracting data. Jsoup \footnote{https://jsoup.org/} is a Java library for working with real world HTML. It provides a very convenient API for extracting and manipulating data. Jsoup implements the WHATWG HTML5 specification and parses HTML to the same DOM. Most important it is an open source project under MIT license. It helps to
+To crawl data we need libraries, which supports and handle DOM objects with HTML tags. There are many programing languages, which supports and contains needed libraries to handle DOM objects. We have used Java as a programming language. Major reason for choosing Java was due to this project being part of bigger project which is written in Java. In addition Java has excellent support for external libraries. In this particular thesis work, we have three different modules as crawling, automating and for data slicing. Java provides good support for all the three technologies/libraries. Also Java is platform independent which was very important here as this project is being used with a simple command line for executing the steps and last but most important reason for choosing Java, as this project is going to be part of bigger project which is written in Java. In Java, we have used Jsoup as external library, which helps in crawling and extracting data. Jsoup\footnote{https://jsoup.org/} is a Java library for working with real world HTML. It provides a very convenient API for extracting and manipulating data. Jsoup implements the WHATWG HTML5 specification and parses HTML to the same DOM. Most important it is an open source project under MIT license. It helps to
 \begin{enumerate}
 \item Scrape and parse HTML from a URL, file or string
 \item Manipulate HTML elements, attributes and text.
@@ -459,35 +456,36 @@ To crawl data we need libraries, which supports and handle DOM objects with HTML
 \item Find and extract data using DOM traversal
 \item Clean user-submitted content against a safe white list, to prevent XSS attacks.
 \end{enumerate}
-Example to Fetch Wikipedia homepage, parse it to a DOM and select the headlines from the In the news section into a list of Elements
+Code snippet to Fetch Wikipedia homepage, parse it to a DOM and select the headlines from the news section into a list of Elements is shown below
 
 \begin{lstlisting}
 Document doc = Jsoup.connect("http://en.wikipedia.org/").get();
 Elements newsHeadlines = doc.select("#mp-itn b a");
 \end{lstlisting}
 
-To upload data from local Machine to Server using Applet as an interface, we use web browser automation. The reason for web browser automation is minimizing user interaction with going to website and clicking on button. All this manual steps has been overtaken by web browser automation. There are number of automation tools available such as Kantu, QF-Test, Sahi, SOAtest, iMacros, Selenium and so on. Kantu uses only screenshots as scripting language, QF-Test uses visual scripting, Jython and Groovy as scripting language. Sahi uses it's own Sahi script whereas Selenium supports Ruby, Java, NodeJS, PHP, Perl, Python, C\#, Groovy as scripting language. In addition, the web driver provided by Selenium for IE is very reliable, sophisticated and most important it is Open source. Because of added advantage, selenium was chosen to work on.
+To upload data from USB or local Machine on Carelink Server, is taken care through website using Applet. As stated in section \ref{subsec:AppletWrapper} running applet out of browser standalone posses problem of authentication and cookies which could not be dealt with as we do not have source code of Carelink website and it's applet and therefore web browser automation as an alternative option has been chosen. The reason for web browser automation is minimizing user interaction such as visiting Carelink website and going through the entire process of clicking button for uploading data to server. All this manual process has been overtaken by web browser automation. There are number of automation tools available such as Kantu, QF-Test, Sahi, SOAtest, iMacros, Selenium and so on. Kantu uses only screenshots as scripting language, QF-Test uses visual scripting, Jython and Groovy as scripting language. Sahi uses it's own Sahi script whereas Selenium supports Ruby, Java, NodeJS, PHP, Perl, Python, C\#, Groovy as scripting language. In addition, the web driver provided by Selenium for IE is very reliable, sophisticated and most important it is Open source. Because of added advantage, selenium was chosen to work on.
 
 To create Graphical user Interface project of the above-mentioned scenarios JavaFx\footnote{http://docs.oracle.com/javase/8/javase-clienttechnologies.htm} is chosen because of it's software platform for developing desktop applications that are available for number of different devices. JavaFX tends to replace swing Framework as standard GUI library. JavaFX is a set of graphics and media packages that enables developers to design, create, test, debug, and deploy rich client applications that operate consistently across diverse platforms. JavaFX application code can reference API's from any Java library as it is written as a Java API. JavaFX applications can use Java API libraries to access native system capabilities and connect to server-based middleware applications. JavaFX platform components includes.
 \begin{enumerate}
-\item The JavaFX SDK: runtime tools. Graphics, media web services, and rich text libraries. Java FX  also included JavaFX compiler, which is now obsolete as JavaFX user code is written in Java.
+\item The JavaFX SDK runtime tools: Graphics, media web services, and rich text libraries. Java FX  also included JavaFX compiler, which is now obsolete as JavaFX user code is written in Java.
 \item NetBeans IDE for JavaFX: NetBeans with drag-and-drop palette to add objects with transformations, effects and animations plus a set of samples and best practices. For Eclipse users there is a community-supported plugin hosted on e(fx)clipse.
 \item JavaFX scene builder: A user interface (UI) is created by dragging and dropping controls from a palette. This information is saved as an FXML file, a special XML format.
 \item Tools and plugins for creative tools : Plugins for Adobe Photoshop and Adobe Illustrator that can export graphics assets to JavaFX Script code, tools to convert SVG graphics into JavaFX Script code and preview assets converted to JavaFX from other.
 \end{enumerate}
 
-Simultaneously we have to create a Command line program as well which contains various flags to run either Crawler, Applet wrapper, data slicing or Unit Test cases.  The Apache Commons CLI\footnote{https://commons.apache.org/proper/commons-cli/} library is chosen for adding flags because it provides an API for parsing command line options passed to programs. It is also able to print help messages de fotailing the options available for a command line tool. The Commons Proper is a place for collaboration and sharing, where developers from throughout the Apache community can work together on projects to be shared by Apache projects and Apache users. The Apache Commons is a project of the Apache Software Foundation. Its purpose is to provide reusable, open source Java software. The Commons is composed of three parts: proper, sandbox, and dormant. It is dedicated to creating and maintaining reusable Java components. Commons CLI comes under proper.
+JavaFX application code can refrence APIs from any java library. JavaFx applicaitons can use Java API libraries to access native system capabilitites and connect to server-based middelware applications. The look and feel of JavaFX applications can be customizied so that udevelopers can concentrate on coding. Graphic designer can easily customize the apperance and style of the application through CSS. If you would like to seperate the user interface (UI) and the back-end logic, then you can develop the presentation logic in FXML scripting language. If you prefer to design UIs without writing code, then use JavaFX Scene Builder. As you design the UI, Scene Builder creates FXML markup that can be ported to an Integrated Development Environment (IDE) so that developers can add the business logic.
 
-We also have a task of providing Unit test cases before our code pushes to production. We have used Junit as a Test framework. Junit\footnote{http://junit.org/junit4/} is important in the development of test-driven deployment and is one of a family of unit testing frameworks. Junit is linked as a JAR at compile time; the framework resides under package org.junit for Junit4. We have used Junit4 for our testing purpose. A JUnit test fixture is a Java object. With older versions of JUnit, fixtures had to inherit from junit.framework.TestCase, but the new tests using JUnit 4 should not do this. Test methods must be annotated by the @Test annotation. If the situation requires it, it is also possible to define a method to execute before  each of the test methods with the @Before (or @After) and @BeforeClass (or @AfterClass) annotations
-\subsection{Data slicing}
+Simultaneously there is a task to run entire program using Command line. The idea behind command line program is to run different modules depending on which flags is set. For example to run crawler flag will be something like "java -jar xyz.jar -u username -p password -c". Same way to run applet wrapper it will be something like  "java -jar xyz.jar -u username -p password -a" and so on for data slicing and Unit Test cases. To accomplish the task of command line flas, Apache Commons CLI\footnote{https://commons.apache.org/proper/commons-cli/} library was chosen because it provides an API for parsing command line options passed to programs. It is also able to print help messages de fotailing the options available for a command line tool. The Commons Proper is a place for collaboration and sharing, where developers from throughout the Apache community can work together on projects to be shared by Apache projects and Apache users. The Apache Commons is a project of the Apache Software Foundation. Its purpose is to provide reusable, open source Java software. The Commons is composed of three parts: proper, sandbox, and dormant. It is dedicated to creating and maintaining reusable Java components. Commons CLI comes under proper.
+
+We also have a task of providing Unit test cases before our code pushes to production. There are numerous unit test frameworks available with respect to java such as TestNG, easyb, RSpec, Canoo, Selenium, JBehave. We have used Junit as a Test framework. Junit\footnote{http://junit.org/junit4/} is important in the development of test-driven deployment and is one of a family of unit testing frameworks. Junit is linked as a JAR at compile time; the framework resides under package org.junit for Junit4. We have used Junit4 for our testing purpose. A JUnit test fixture is a Java object. With older versions of JUnit, fixtures had to inherit from junit.framework.TestCase, but the new tests using JUnit 4 should not do this. Test methods must be annotated by the @Test annotation. If the situation requires it, it is also possible to define a method to execute before  each of the test methods with the @Before (or @After) and @BeforeClass (or @AfterClass) annotations
 
 \subsection{Configuration of external libraries and drivers}
 In this section we discuss about the basic configurations and prerequisites required for our implementation.
 \subsubsection{Driver configuration}
-In this section we talk about the integration of Internet Explorer driver into Project folder or adding it to Jar file and using it to launch web browser automation. To upload data from local machine to Server Java applet is being used as interface. "A Java applet is a special kind of Java program that a browser enabled with Java technology can download from the internet and run. An applet is typically embedded inside a web page and runs in the context of a browser. An applet must be a subclass of the java.applet.Applet class. The Applet class provides the standard interface between the applet and the browser environment".\footnote{http://docs.oracle.com/javase/tutorial/deployment/applet/}
+To upload data from local machine to Carelink Server, Java applet is  used as interface stated in section \ref{subsec:AppletWrapper}. "A Java applet is a special kind of Java program that a browser enabled with Java technology can download from the internet and run. An applet is typically embedded inside a web page and runs in the context of a browser. An applet must be a subclass of the java.applet.Applet class. The Applet class provides the standard interface between the applet and the browser environment".\footnote{http://docs.oracle.com/javase/tutorial/deployment/applet/}
 
 While applet plugin was very famous in 90s as an simple way to bring app like feature in browsers, but in recent times it created a huge issue with it's security flaws and malware issues. Most of the browser such as google chrome, Firefox, Edge, Opera have stopped supporting Applet, leaving Internet Explorer the only browser which support Applet plugin.
-With this constraint, we have a dependency of running our Selenium web browser automation only on IE and hence we have used IE web driver for it. To run IE web browser automation IEWebdriver.exe file has to be available on very machine. To avoid this high dependency on user running this native java application and need to install IE driver manually. We have added inbuilt IEWebdriver.exe file to our project. This is same with user wish to run our Java application with Jar file. Jar file itself contains IEdriver. If any user runs jar file the jar file will first be extracted to folder and then Java program itself will search for location where jar is being extracted and will get the path of IEdriver. This path will later help in running web driver as shown below
+With this constraint of applet running only on IE browser, we have a dependency of running our Selenium web browser automation only on IE. Now to run IE browser automation selenium has introduced IE web driver, which helps in browser automation. WebDriver helps to provide a easier, more concise prgramming interface in addition to address some limitations in the Selenium-RC API. WebDriver was developed to better support dynamic web pages where elements of a page may change without the page itself being reloaded. WebDriver's goal is to supply a well-designed object-oriented API that provides improved support for modern advanced web-app testing problems. To run IE web browser automation IEWebdriver.exe file has to be available on every machine. To avoid this high dependency on user running this native java application and need to install IE driver manually. We have added inbuilt IEWebdriver.exe file to our project. This is same with user wish to run our Java application with Jar file .Jar file itself contains IEdriver. If any user runs jar file the jar file will first extract to folder at desired location and then Java program will get the location of extracted jar get the path of IEdriver. This path will later help in running web driver as shown below
 \begin{lstlisting}
 File file = new File("C:/Selenium/iexploredriver.exe");
 System.setProperty("webdriver.ie.driver", file.getAbsolutePath());
@@ -503,33 +501,43 @@ When you cross into or out of Protected Mode by, say, navigating from an interna
 \end{enumerate}
 External Libraries used for the project are:
 \begin{enumerate}
-\item To crawl data Jsoup as Java Native library is used.
+\item To crawl data, Jsoup as Java Native library is used.
 \item To make browser automation, Selenium as Java native library is used.
 \item To run Test cases for crawling and data upload, Junit as test framework is used. 
-\item To make a GUI based application JavaFx framework is used.
+\item To make a GUI based application, JavaFx framework is used.
 \item To make entire project command line with different flags, Apache Commons CLI is used. 
 \end{enumerate}
 
 \subsection{Implementation}
-In this section, we discuss about our approach to developing Native java application, which can be easily added into another project/framework. We divide the problem into three parts, first with crawling data and extracting CSV files from it. Second with uploading data and making automation of web browser. Third with generating data with series of event i.e. data slicing. We will also discuss in brief about Unit Test cases. 
+In this section, we discuss about our approach to developing Native java application, which finally will be easily added into another project/framework. We divide the problem into three major modules.
+\begin{enumerate}
+	\item Crawling data and extracting CSV files from it-Data cralwer.
+	\item Uploading data using browser automation-Applet Wrapper.
+	\item Generating data with series of event i.e. data slicing
+	\item Unit test cases for each of the above module8.
+	
+\end{enumerate}
 
-\subsubsection{Crawler}
- Flowchart in figure \ref{fig:CrawlerCSVAlgorithm} shows  program logic to crawl and download CSV file from website.
-
-First we check if the user entered login details are correct or not by passing these values as below 
+ 
+\subsubsection{Data Crawler}
+\label{subsec:DataCrawler}
+ Flowchart in figure \ref{fig:CrawlerCSVAlgorithm} shows program logic to crawl and download CSV file from website. To run data crawler the very first steps is to check if login is valid. Login is required to fetch data of particular user depending on the entered dates. User has to first login to the website and using Jsoup we can check if the user is valid or not. Below is the sample code snippet to check if user is valid.
 \begin{lstlisting}
-Connection.Response res = 
-Jsoup.connect("https://carelink.minimed.eu/patient/j_security_check")
-.data("j_username",username)
-.data("j_password",password)
-.method(Connection.Method.POST)
-.execute();
+try {
+logger.info("Inside class checkConnection");
+Connection.Response res = Jsoup.connect("https://carelink.minimed.eu/patient/j_security_check")
+.data("j_username", username).data("j_password", password).method(Connection.Method.POST).execute();
 loginCookies = res.cookies();
+System.out.println("correct Username and Password");
+logger.info("correct Username and Password");
+return true;
+} catch (Exception e) {
+logger.info("Incorrect Username or Password");
+System.out.println("Incorrect Username or Password");
+return false;
+}
 \end{lstlisting}
-Login user seesion cookies will be saved into global variables.
-If the above statement yields positive result then in next step using HTML document the particular link for Downloading document is retrieved as https://carelink.minimed.eu/patient/main/selectCSV.do
-If the rules for dates are correct and login is successful, next step is to download CSV file with above details. Below is the code for downloading file. Global variable, which saved session cookies are used here for validating user and start date and end date, are added.\\
-Rules used in Algorithm for correct Dates are as follows
+If user login entered yields positive result, program will move to next step for Data crawling. Next step is to check for the dates i.e to check user entered start and end date. Start dates and end dates are required so that CSV file will be downloaded with data from specific duration metioned within start and end date. Definition of correct start date and end date with respect to Carelink website for data Extraction is as below. This restriction is provided by Carelink website and has to be respected.
 \begin{enumerate}
 \item Date format should be DD/MM/YYYY
 \item Start date and end date should not be before 01/01/1998
@@ -537,6 +545,9 @@ Rules used in Algorithm for correct Dates are as follows
 \item Start date and end date shall not be greater than Today's date.
 \item Start date and end date should be valid
 \end{enumerate}
+\clearpage
+
+Here particular URL is fetched from the DOM object which was extracted after login. User agent is added which will bypass browser dependency and help in accessing correct dom objects. Get method is used here to get result from Sever. All this process is take care without user opening web browser. Below is the code snippet for above mentioned steps. 
 
 \begin{lstlisting}
 Connection.Response ReportDocument = Jsoup
@@ -553,7 +564,7 @@ Connection.Response ReportDocument = Jsoup
 					.header("X-Requested-With",
 					 "XMLHttpRequest").method(Connection.Method.GET).execute();
 \end{lstlisting}
-CSV file is saved to user entered path with below code.
+After correct Start and end date was passed, CSV file can be downloaded. But the csv file has to be saved locally. To check user entered path is correct or program has access to place the file is done with below code snippet. Name format for saving CSV file used is "carelink-Export.Time.csv". Below is the code snippet for saving CSV file locally.
 \begin{lstlisting}
 String userHome = "PathforCSV";
 			String outputFolder = userHome + File.separator + "careLink-Export";
@@ -648,11 +659,12 @@ String userHome = "PathforCSV";
   \label{fig:CrawlerCSVAlgorithm}
 \end{figure}
 \end{center}
+
 \subsubsection{Applet Wrapper}
 \label{subsec:AppletWrapper}
-Browser automation is used in our work to automate Applet wrapper, i.e the process of uploading data from local system to server of Carelink via browser. The problem lies in not able to run applet as standalone application, because it uses signed certificate with login cookies from browser. We have tried to emulate user behavior in performing steps manually uploading data to server. 
+To help automating process of uploading data from local system/USB to server, Browser automation is used in our work, i.e the process of uploading data from local system to server of Carelink via browser. Ideal situation could have been taking applet out of browser and running standalone direct with Java Native libraries, but there lies the road block as applet uses signed certificate with login cookies from browser and this cannot be performed running applet out of the browser. Alternative approach is rather making end user go through tiring process of opening browser every second time and adding changes required to upload data, We have emulated user behavior programatically and selenium will help us in performing browser steps i.e uploading data to server. 
 
-Flowchart in figure \ref{fig:AppletwrapperAlgorithm} shows  program logic for automating webbrowser for applet wrapper.
+Flowchart in figure \ref{fig:AppletwrapperAlgorithm} shows  program logic for automating web browser for applet wrapper.
 
 \begin{center}
 \begin{tikzpicture}[node distance=1.5cm]
@@ -712,22 +724,41 @@ Flowchart in figure \ref{fig:AppletwrapperAlgorithm} shows  program logic for au
   \label{fig:AppletwrapperAlgorithm}
 \end{figure}
 \end{center}
-To run IEwebdriver, IEWebdriver.exe file has to be available in system. Programmatically we have added IEWebdriver.exe either in IDE project folder or zipped into Jar file so that dependency is reduced for user to add external file. Sometimes
-there might be case with IE browser, running automation slow or occurring unexpected behavior. This basically happened after Microsoft made efforts to reduce the attack surface presented by malicious web sites, IE7 introduced something called protected mode, which leveraged Mandatory Integrity Control in Windows Vista to prevent actions initiated IE, usually initiated by JavaScript, from being able to access the operating system the way it could in prior releases. While this was generally a welcome development for most users of IE, it created all manner of problems for automating IE.
+As stated in section \ref{subsec:AppletWrapper} Applet runs only on IE browsers with new versions, therefore User emulation has to be performed only on IE. Selenium has dedicated IE webdriver which will help ease the task of automation. To run IEwebdriver, IEWebdriver.exe file has to be available on every system running browser simulation. In normal case user should have before hand IEWebdriver.exe file saved in local system, but it would create one more dependency from end user point of view. We have made efforts to run this project as less dependent on external technologies as possible with adding IEWebdriver.exe file either in IDE project folder or into zipped Jar file. The overall logic here is, If end user run this project from IDE such as Eclipse, Netbeans or so on, IEWebdriver.exe file would be available in folder structure and user can straight a way run the project. Programm will itself take file path and run the IEWebdriver.exe file. But if user chooses to run Jar version of the project i.e command line, then Jar file i.e Zip file contains IEwebdriver.exe file and during running of the program, jar file will be unzipped with folder name "extractjar" which contain the IEWebdriver.exe file and will be available for use within Java program.
 
-For running Applet wrapper, First User login credentials are checked similar to CSV data download module. If the credentials are correct further SN Number is checked. The criteria for correct SN number is
+Sometimes there might be case with IE browser, running automation slow or occurring unexpected behavior. This basically happened after Microsoft made efforts to reduce the attack surface presented by malicious web sites, IE7 introduced something called protected mode, which leveraged Mandatory Integrity Control in Windows Vista to prevent actions initiated IE, usually initiated by Java Script, from being able to access the operating system the way it could in prior releases. While this was generally a welcome development for most users of IE, it created all manner of problems for automating IE.
+
+Once the above prerequisite for getting IEwebdriver.exe file is successful, For running Applet wrapper, User login credentials are checked in similar fashion to CSV data download module. If the login credentials are correct further SN Number is checked. The criteria for correct SN number is
 \begin{enumerate}
 \item SN number should be of 10 digits.
 \item SN number should be alpha numeric.
 \end{enumerate}
-If the above conditions are true then Device is checked,The criteria for correct Device is 
+If the above conditions holds true then Device is checked,The criteria for correct Device is 
 \begin{enumerate}
-\item Device should be either "bedevice" or "stick".
+\item Device should be either "bgdevice" or "stick".
 \end{enumerate}
-After the above basics for applet are checked, IEWebDriver.exe file is extracted either from Jar file or from IDE folder. Using IEwebdriver Browser automation is performed. Steps for browser automation used are as follows.
+
+Using IEwebdriver Browser automation is performed. Following steps are performed one after another  for browser automation especially for Applet. All these setps are performed programatically
 \begin{enumerate}
-\item programmatically Internet Explorer is opened.
-\item Website https://carelink.minimed.eu/ is entered in  IE browser from step 1. Below code helps to add IEwebdriver and open IE with website 
+\item Open Internet Explorer.
+\item Enter website https://carelink.minimed.eu/
+\item Login page will be opened.
+\item Enter login details.
+\item Click on submit button to go on next step.
+\item Once the login is correctly entered, check DOM Object and see if it contains tag "Upload"
+\item  If Tag "Upload" is available then click on Upload device
+\item  wait for few miliseconds to let Applet open up
+\item Enter user given details with the help of robot library
+\item Using robot use key event SHIFT+TAB to highlight applet buttons
+\item Now DOWN arrow button move towards Minimed pump
+\item To move on next step in applet ALT+N is used.
+\item repeat step 10 and 11 to select Minimed 600 series and click next
+\item Enter the 10 character alpha numeric SN number using robot.
+\item Repeat step 10 and 11 to select any of user desired (Entered) device.
+\item Click on finish using ALT+F.
+\end{enumerate}
+
+Below code snippet shows how IE webdriver helps to open a particualr website, In this case Carelink
 \begin{lstlisting}
 System.setProperty("webdriver.ie.driver", fileWhereIEDriverislocated.getAbsolutePath());
 
@@ -736,19 +767,17 @@ System.setProperty("webdriver.ie.driver", fileWhereIEDriverislocated.getAbsolute
 					driver.manage().window().maximize();
 					driver.get("https://carelink.minimed.eu/patient/entry.jsp?bhcp=1");
 \end{lstlisting}
-
-\item User credentials which are earlier validated using Jsoup are entered
+User credentials which are earlier validated using Jsoup are entered
 \begin{lstlisting}
 driver.findElement(By.id("j_username")).sendKeys(loginName);
 				driver.findElement(By.id("j_password")).sendKeys(loginPassword);
 driver.findElement(By.id("j_password")).sendKeys(Keys.ENTER);
 \end{lstlisting}
-\item Once the Welcome page appears, Upload section is being clicked.
+To find DOM object of a particualr page, here Upload section is being clicked.
 \begin{lstlisting}
 driver.findElement(By.id("upload")).sendKeys(Keys.ENTER);
 \end{lstlisting}
-\item From upload section, Once applet loads, User given SN number is entered and device is selected.
-\item programmatically next buttons are clicked till upload is finished.
+ Code snippet below shows programmatically buttons are clicked.
 \begin{lstlisting}
 		robot.keyPress(KeyEvent.VK_SHIFT);
 		robot.keyPress(KeyEvent.VK_TAB);
@@ -771,7 +800,9 @@ driver.findElement(By.id("upload")).sendKeys(Keys.ENTER);
 		robot.keyRelease(KeyEvent.VK_ALT);
 		robot.keyRelease(KeyEvent.VK_ALT);
 \end{lstlisting}
-\end{enumerate}
+
+
+\subsubsection{Data slicing}
 
 \subsubsection{Unit Test cases}
 Unit Testing\cite{EffectivnessofUnitTest} is used for testing modules of code in isolation with test code. It is a way to test the functionality and behavior of your system. The main goal of unit testing is to deal with the smallest piece of software module in the application, isolate it from the remaining of the code, and determine whether it behaves exactly as you expect. Each unit is tested separately before integrating them into modules to test the interfaces between modules. Unit testing is valuable where large percentage of defects are identified during its use. Few of the benefits of unit test cases are listed below:
@@ -785,30 +816,42 @@ Unit Testing\cite{EffectivnessofUnitTest} is used for testing modules of code in
 \end{enumerate}
 Unit test cases are designed in such a way that they are simple. The tests are written in the form of functions that will determine whether a returned value equals the value you were expecting when you wrote the function (or the value you will expect when you eventually write it - this is called Test Driven Development when you write the tests first). Unit testing is not only for testing. We force the design of the software into something that is unit testable by performing unit testing. Many are of the opinion that this design is for the most part Good Design regardless of other benefits from testing. So one reason to do unit test is to force your design into something that hopefully will be easier to maintain than what it would be had you not designed it for unit testing.
 
-With respect to project work in this thesis, All the three main modules are tested with Junit as unit test case Framework. At the very beginning Crawler module i.e downloading CSV file is tested. Within Crawler module submodule Login functionality is first with input from user. Thereafter, start date and end dates are tested to validate correct dates for CSV Download.Test case contains an array of predeinfed values and their result. A quick example to enter date Values would be something like
+A more important distinction is whether the unit you're testing should be sociable or solitary. For example testing an order class's price method. The price method needs to invoke some functions on the product and customer classes. If unit tests to be solitary, we don't want to use the real product or customer classes, as a fault in the customer class would cause the order class's tests to fail. But not all unit testers use solitary unit tests. We didn't find it difficult to track down the actual fault, even if it caused neighboring tests to fail. So we felt allowing our tests to be sociable didn't lead to problems in practice.
+
+Indeed using sociable unit tests was one of the reasons we were criticized for our use of the term "unit testing". I think that the term "unit testing" is appropriate because these tests are tests of the behavior of a single unit. We write the tests assuming everything other than that unit is working correctly.
+
+With respect to thesis work, The entire project is divided in three main modules. The plan for setting unit testing is bifurcated with respect to module. At the very beginning Crawler module is taken for testing. This module contains three units to test as Login credentials, Dates and Path. Login unit is tested with user entered username and password. User entered Username and passowrd are sent using Jsoup as shown in section \ref{subsec:DataCrawler}. If the results yields in true the Test can be considered as Success or fail.
+\begin{lstlisting}
+this.UserName = user; // user entered username
+this.Password = pass; // user entered password
+this.expected = expected; // true or false
+\end{lstlisting}
+ In next step, start date and end dates are tested to validate correct dates for CSV Download. Rules for correct dates can be derived from section \ref{subsec:DataCrawler}. Test case contains an array of predefined values and their result. A quick example to enter date Value would be something like
 \begin{lstlisting}
 Statdate 	Enddate 	Result
 { "15/05/2015", "20/05/2016", true},
 { "18-05/2015", "15/05/2015",false},
 { "15-05/2015", "20/05/2016",false}
 \end{lstlisting}
- Within the same module CSV path will also be tested so that the entire module for Crawler (Downloading CSV file) is tested.
+ Within the same module CSV path will also be tested so that the entire module for Crawler (Downloading CSV file) is tested and ready for deployment in Production. CSV file path is something where Java program has rights to place the file and at the same time path is in valid format. This has to checked with actual file trying to be placed. If the actual file could be successfully placed at the given location, then it returns success of fail. This can be derived as a result of unit test case for CSV Path. Below code snippet shows test instances of path for CSV and expected results.
+ \clearpage
  \begin{lstlisting}
-	FolderLocation										Result
+	FolderLocation											Result
 {System.getProperty("user.home") + "/RandomFolder", false },
-{ ystem.getProperty("user.home") + "/testfolder", false },
+{System.getProperty("user.home") + "/testfolder", false },
 {System.getProperty("user.home") + "/desktop", true } });
 \end{lstlisting}
- To test Crawler CSV download module, Command used is "java -jar abc.jar -crawler -test". Important point to note is that password is always masked while running from both command line and through IDE, so it does not appear in clear text. Applet Module is applied for testing. 
+ To test Crawler CSV download module, Command used is "java -jar abc.jar -crawler -test". Important point to note is that password is always masked while running from both command line and through IDE, so it does not appear in clear text.
  
- Second step in Unit Testing is to Test Applet wrapper module which consist of three main parts.
+ 
+Next moudule used for Testing is Applet wrapper. Applet wrapper consist of three main parts.
  \begin{enumerate}
 \item Login credentials
 \item SN Number and Device validation
-\item Run automated browser early on 
+\item Automated browser
 \end{enumerate}
-Login is tested as same by calling the previous methods. Thereafter SN Number and Device are tested withinin module of Applet wrapper. Taking from Section
-~\ref{subsec:AppletWrapper} the correct definiftion of SN number and Device is being stated. Using the same definition SN number and Device are checked as shown below in code snippet
+To test login unit here is optional for the Unit test case scenario, But keeping entire module in context, login unit is most important to proceed furtherer in other modules and hence considered for testing as same used in Crawler module. Thereafter SN Number and Device are tested within module of Applet wrapper. Taking from Section
+~\ref{subsec:AppletWrapper} the correct definition of SN number and Device is being stated. Using the same definition SN number and Device are checked as shown below in code snippet
 
 \begin{lstlisting}
  Device, 	SNNumber, 	Result
@@ -817,8 +860,7 @@ Login is tested as same by calling the previous methods. Thereafter SN Number an
  { "chutiy", "58745652590", false },
  { "BGdevice", "125648$890", false }
 \end{lstlisting}   
-  
-    To test this module command used is "java -jar abc.jar - applet -test" A code snippet class for a generic Test case is shown below.
+To test this module command used is "java -jar abc.jar - applet -test" A code snippet class for a calling Test method taking login as example is shown below.
 \begin{lstlisting}
 		public void isLoginCorrect() throws IOException, ParseException {
 	Result result = JUnitCore.runClasses(JunitIsloginCorrect.class);
@@ -826,9 +868,7 @@ Login is tested as same by calling the previous methods. Thereafter SN Number an
 	for (Failure failure : result.getFailures()) {
 		System.out.println(failure.toString());
 	}
-
-	System.out.println("Test case Result is : " + result.wasSuccessful());
-	
+System.out.println("Test case Result is : " + result.wasSuccessful());
 }
 \end{lstlisting}
 

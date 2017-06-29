@@ -22,10 +22,10 @@
 \contentsline {subsection}{\numberline {2.4}Unit Testing}{14}{subsection.2.4}
 \contentsline {section}{\numberline {3}Implementation}{16}{section.3}
 \contentsline {subsection}{\numberline {3.1}Technologies}{16}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}Data slicing}{18}{subsection.3.2}
-\contentsline {subsection}{\numberline {3.3}Configuration of external libraries and drivers}{18}{subsection.3.3}
-\contentsline {subsubsection}{\numberline {3.3.1}Driver configuration}{18}{subsubsection.3.3.1}
-\contentsline {subsection}{\numberline {3.4}Implementation}{19}{subsection.3.4}
-\contentsline {subsubsection}{\numberline {3.4.1}Crawler}{19}{subsubsection.3.4.1}
-\contentsline {subsubsection}{\numberline {3.4.2}Applet Wrapper}{23}{subsubsection.3.4.2}
-\contentsline {subsubsection}{\numberline {3.4.3}Unit Test cases}{27}{subsubsection.3.4.3}
+\contentsline {subsection}{\numberline {3.2}Configuration of external libraries and drivers}{18}{subsection.3.2}
+\contentsline {subsubsection}{\numberline {3.2.1}Driver configuration}{18}{subsubsection.3.2.1}
+\contentsline {subsection}{\numberline {3.3}Implementation}{20}{subsection.3.3}
+\contentsline {subsubsection}{\numberline {3.3.1}Data Crawler}{20}{subsubsection.3.3.1}
+\contentsline {subsubsection}{\numberline {3.3.2}Applet Wrapper}{24}{subsubsection.3.3.2}
+\contentsline {subsubsection}{\numberline {3.3.3}Data slicing}{28}{subsubsection.3.3.3}
+\contentsline {subsubsection}{\numberline {3.3.4}Unit Test cases}{28}{subsubsection.3.3.4}
