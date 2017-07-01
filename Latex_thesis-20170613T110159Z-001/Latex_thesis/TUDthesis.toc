@@ -19,7 +19,7 @@
 \contentsline {subsubsection}{\numberline {2.3.5}Layers and Javascript}{13}{subsubsection.2.3.5}
 \contentsline {subsubsection}{\numberline {2.3.6}Different Browsers}{14}{subsubsection.2.3.6}
 \contentsline {subsubsection}{\numberline {2.3.7}Extensibility and Flexibility}{14}{subsubsection.2.3.7}
-\contentsline {subsection}{\numberline {2.4}Unit Testing}{14}{subsection.2.4}
+\contentsline {subsection}{\numberline {2.4}Unit Testing}{15}{subsection.2.4}
 \contentsline {section}{\numberline {3}Implementation}{16}{section.3}
 \contentsline {subsection}{\numberline {3.1}Technologies}{16}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Configuration of external libraries and drivers}{18}{subsection.3.2}
