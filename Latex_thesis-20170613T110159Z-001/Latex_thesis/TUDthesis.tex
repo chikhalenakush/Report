@@ -49,12 +49,12 @@
 }
 \usepackage{tikz}
 \usetikzlibrary{shapes.geometric, arrows}
-\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=1.5cm, minimum height=0.5cm,text centered, draw=black, fill=red!30]
-\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=1.5cm, minimum height=0.5cm, text centered, draw=black, fill=blue!30]
-\tikzstyle{process} = [rectangle, minimum width=1.5cm, minimum height=0.5cm, text centered, draw=black, fill=orange!30]
-\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=0.5cm, text centered, draw=black, fill=green!30]
+\tikzstyle{startstop} = [rectangle, rounded corners, minimum width=1.5cm, minimum height=0.5cm,text centered, draw=black, fill=white!30]
+\tikzstyle{io} = [trapezium, trapezium left angle=70, trapezium right angle=110, minimum width=1.5cm, minimum height=0.5cm, text centered, draw=black, fill=white!30]
+\tikzstyle{process} = [rectangle, minimum width=1.5cm, minimum height=0.5cm, text centered, draw=black, fill=white!30]
+\tikzstyle{decision} = [diamond, minimum width=3cm, minimum height=0.5cm, text centered, draw=black, fill=white!30]
 \tikzstyle{arrow} = [thick,->,>=stealth]
-\tikzstyle{connector} = [circle, rounded corners, minimum width=1.5cm, minimum height=0.5cm,text centered, draw=black, fill=yellow!30]
+\tikzstyle{connector} = [circle, rounded corners, minimum width=1.5cm, minimum height=0.5cm,text centered, draw=black, fill=white!30]
 \usepackage[T1]{fontenc}
 
 \begin{document}
@@ -103,9 +103,11 @@ The thesis also tries to solve the problem of data slicer by creating an algorit
 \pagenumbering{arabic}
 \selectlanguage{English}
 \section{Introduction}
-Data mining is the process for extraction of hidden predictive information from large databases. It is a powerful technology with great potential to help companies focus on the most important information in their data warehouses. Researchers at TK Lab have a task of generating pattern/prediction from large amount of Medical data using Machine Learning and data mining. To capitalize the task of Data mining in field of Medical sector, we need bulk amount of data. This data will be provided from CareLink\textsuperscript{\textregistered} website. 
+OpenDiabetesVault is an framework which follows import of data from different sources, processing of these data and exporting it in different formats. Data gathered are from various sources such as Google Timeline, Fitness app, Carelink Website and so on. But the category of these data are related to Medical sector. The aim of this Framework is to generate large amount of data from different sources. With respect to work related for this thesis, We try to fetch/Import one part of such data and make it available for Researcher. Data gathered is from CareLink\textsuperscript{\textregistered} website. Carelink, Web-based system is designed to help take information from all of diabetes management tools such as insulin pump, continuous glucose monitor, blood glucose meter(s), and logbook - and organize it into easy-to-read charts, graphs and tables.
 
-Carelink\footnote{https://carelink.minimed.eu/}, Web-based system is designed to help take information from all of diabetes management tools such as insulin pump, continuous glucose monitor, blood glucose meter(s), and logbook - and organize it into easy-to-read charts, graphs and tables. These reports can help health care provider discover trends and other information that can lead to improved therapy management for greater control. To extract all the available data from website, one has to manually visit the website when needed. There is no Web API provided from CareLink\textsuperscript{\textregistered} which can be accessed to gather data. While gathering data without actually visiting it can be achived with Data crawling methodology. Data crawler is nothing but a extended variant of Web crawling. Crawling is the process through which we collect varieties of web pages, in order to gather information from them. Especially with respect to Search Engines, crawlers are used to add index to web pages and it helps in building a database of web sites. It is the system for bulk downloading of web pages. It is a program or automated script, which browses the web in automated manner. Various prominent use cases of Web crawlers\footnote{http://webcourse.cs.technion.ac.il/236620/Winter2006-2007/ho/WCFiles/lec14-crawlers.PDF} are
+All this tedious process of creating a Framework and generating data from different sources is made to get data and then implement machine learning algorithms on them. Using machine learning, Researches at TK wish to generate some patterns and make it into some logic. Data mining is the process for extraction of hidden predictive information from large databases and the database for Research work will be provided by OpenDiabetesVault Framework. It is a powerful technology with great potential to help companies focus on the most important information in their data warehouses. Researchers at TK Lab have a task of generating pattern/prediction from large amount of Medical data using Machine Learning and data mining. To capitalize the task of Data mining in field of Medical sector, we need bulk amount of data. This data will be provided from CareLink\textsuperscript{\textregistered} website. 
+
+Carelink\footnote{https://carelink.minimed.eu/}, Web-based system is designed to help take information from all of diabetes management tools such as insulin pump, continuous glucose monitor, blood glucose meter(s), and logbook - and organize it into easy-to-read charts, graphs and tables. These reports can help health care provider discover trends and other information that can lead to improved therapy management for greater control. To extract all the available data from website, one has to manually visit the website when needed. There is no Web API provided from CareLink\textsuperscript{\textregistered} which can be accessed to gather data. While gathering data without actually visiting it can be achieved with Data crawling methodology. Data crawler is nothing but a extended variant of Web crawling. Crawling is the process through which we collect varieties of web pages, in order to gather information from them. Especially with respect to Search Engines, crawlers are used to add index to web pages and it helps in building a database of web sites. It is the system for bulk downloading of web pages. It is a program or automated script, which browses the web in automated manner. Various prominent use cases of Web crawlers\footnote{http://webcourse.cs.technion.ac.il/236620/Winter2006-2007/ho/WCFiles/lec14-crawlers.PDF} are
 \begin{enumerate}
 \item	Data crawling, where web pages are analyzed for statistical properties.
 \item	Web Search Engines.
@@ -127,10 +129,13 @@ The entire project work has to be built in two versions, GUI based project and C
 
 Command line project uses various flags to describe various activites within the project and is being built with the help of Apache Commons CLI, which is a External library for Java. The Apache Commons CLI\footnote{https://commons.apache.org/proper/commons-cli/} library provides an API for parsing command line options passed to programs. It's also able to print help messages detailing the options available for a command line tool
 
+There is a Task of implementing Data slicers in OpenDiabetesVault Framework. Data slicer is used to clutter certain kind of data from the pool of large data set and  it's importance with quality of data, i.e focused data has to be extracted using data slicer. Data slicers takes input as data from database, filters and few options. Combination of these input will produce a slice list which contains high quality data. Data filters has to be implemented during this thesis. Filters can be registered at processing services like the DataSlicer and have to implement the Filter interface. Multiple filters are combined with the logical "and" paradigm. There are basically two types of filters recognized as Time related Filter and Thresold related Filter. Time related filters  are used to find a time point or a time span where some kind of event happened or some kind of data is available or not available. For instance, if you want to check the basal insulin rate you search for time spans where no bolus is given. Filters of the time point type should provide a margin option enable data observation around the found point Threshold related filter are used to find data over or under a certain threshold. 
+
 Once the entire project is built, before pushing the code in production, Unit test cases has to be provided. With respect to this project, Three main modules are built as Downloading (Data crawling), Uploading (Applet wrapper) and Data slicer. Unit test cases has to be provided for all the three modules and all the submodules/subunits of it. UnitTesting\cite{EffectivnessofUnitTest} is testing modules of code in isolation with test code. It is a way to test the behavior and functionality of your system. The main goal of our unit testing is to take the smallest piece of software module in the application, isolate it from the remainder of the code, and determine whether it behaves exactly as you expect. Each unit is tested separately before integrating them into modules to test the interfaces between modules.
 
 
-\textbf{Data slicing add few lines here for data slicing}
+The outline of this thesis as follows. In Background section, we provide an overview of methodologies used and there in depth background related to
+respective technologies. Methodologies such as Web crawler, Data crawler as extension to web crawler, Web brwoser automation and Data slicing are described. Background of unit test cases are also discussed. We then move ahead with discussing implementation of the Thesis work. This section takes most part of thesis as most of the work undertakes is to implement the concept discussed as an Idea. Automating Web browser and simulating user behavior using Selenium an automation tool. We discuss in detail about the implementation of our proposed solution. First we discuss the technologies used to solve our problem and reason for selecting it , then we proceed with the preconfiguration requirements for our implementations. This include using the IDE, using the external libraries and installing the. Then we divide the problem definition into sub parts and describe the solution in detail for each of the part separately. This section also includes the algorithms and assumptions used for solving the problem.
 
 \clearpage
 \section{Background}
@@ -154,10 +159,10 @@ Sometimes there might be a case that crawler visit web sites without approval or
 \subsection{Crawler Architecture}
 
 Web crawler consist of numerous process running on different machines interconnected by network. Multiple worker threads are created using crawler and loop work cycles are achieved using worker thread. Beginning of every work cycle, URL is fetched from Frontier Data structure,  which distributes URL according to policies mentioned such as politeness. Worker thread invokes the HTTP fetcher. To resolve host component of the URL into the IP address of relevant web server a DNS module is called using fetcher. It tries to connect to the web server, which checks for any robots exclusion rules and attempts to download the web page.
-Figure \ref{fig:CrawlerAlgorithFlowchart}\footnote{http://www.cis.uni-muenchen.de/}, shows flowchart of Breadth search algorithm which is used in our work for Extracting relevant links and data:
+Figure \ref{fig:CrawlerAlgorithFlowchart}\footnote{http://www.cis.uni-muenchen.de/yeong/Kurse/ss09/WebDataMining}, shows flowchart of Breadth search algorithm which is used in our work for Extracting relevant links and data:
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.9]{CrawlerAlgorithFlowchart}
+	\includegraphics[scale=1.0]{CrawlerAlgorithFlowchart}
 	\caption{Crawler Breadth search Flowchart}
 	\label{fig:CrawlerAlgorithFlowchart}
 \end{figure}
@@ -172,7 +177,7 @@ Web Crawler needs to keep track of URL which are already visited and which needs
 \end{enumerate}
 
 \subsubsection{Frontier Data Structure}
-First in First out (FIFO) is implemented with  Frontier \cite{frontierdatastructures} Data structure. Breadth-first traversal of web graph is used as search technique. FIFO queue has long runs of URLs on same web server becuase most of the  hyperlinks are relative. Multiple overlapping request to server are not issued as they are not so common. It can be easily realized with maintaining a mapping between web servers and crawling threads. A separate FIFO queue is assigned to each crawling thread. One more dedicated policy which can be used is, to send request to each web server depending on server's capabilities. For example crawler can delay requests to a server by a multiple of time to get the last page from server. Mercator web crawler implements adaptive politeness. Frontier is divided into two parts, "front end" and "back end".
+First in First out (FIFO) is implemented with  Frontier Data structure. Breadth-first traversal of web graph is used as search technique. FIFO queue has long runs of URLs on same web server becuase most of the  hyperlinks are relative. Multiple overlapping request to server are not issued as they are not so common. It can be easily realized with maintaining a mapping between web servers and crawling threads. A separate FIFO queue is assigned to each crawling thread. One more dedicated policy which can be used is, to send request to each web server depending on server's capabilities. For example crawler can delay requests to a server by a multiple of time to get the last page from server. Mercator web crawler implements adaptive politeness. Frontier is divided into two parts, "front end" and "back end".
 
 Single queue Q and URLs are added to the frontier by enqueuing them into that queue. Separate queues are contained in back end. Queue containing URL belongs to a single web server; mapping from back-end queues to web servers are maintained on table T. In addition, associated with each back-end queue q was a time t at which the next URL from q may be processed. These (q,t) pairs were organized into an in-memory priority queue, with the pair with lowest t having the highest priority.  Removing highest-priority entry (q,t) obtained URL by crawling thread from priority queue, waiting if necessary until time t had been reached, dequeuing the next URL u from q, downloading it, and finally reinserting the pair (q,tnow + k · x) into the priority queue, where now is the current time, x is the amount of time it took to download u, and k is a "politeness parameter; typically 10. If dequeuing u from q left q empty, the crawling thread would remove the mapping from host(u) to q from T, repeatedly dequeue a URL u from Q and enqueue u into the back-end queue identified by T(host(u)), until it found a u such that host(u) was not contained in T. At this point, it would enqueue u in q and update T to map host(u) to q.
 
@@ -186,20 +191,19 @@ UST state must reside on disk if memory is at a premium. Disk seek is required b
 Reading the old hash file and writing out an updated version involves adding a bunch of URL into disk-based hash files. Hence, the required time is directly equivalent to the number of discovered URLs. To store the URL hashes on disk in sorted order as before can be considered as slight improvement of this pattern, but lightly packed rather than densely packed. The k highest-order bits of a hash determine the disk block where this hash resides. Merging a batch into the disk file is done in place, by reading a block for which there are hashes in the batch, checking which hashes are not present in that block, and writing the updated block back to disk. Thus, the time requirement for merging a batch is proportional to the size of the batch, not the number of discovered URLs. Once any block in the file fills up completely, the disk file is rewritten to be twice as large, and each block contains hashes that now share their k + 1 highest-order bits.
 
 \subsubsection{Auxiliary Data Structures}
-Web crawlers should follow Robots Exclusion protocol, a protocol that makes a web site admins to bar crawlers from crawling. It is done by providing a file at URL /robots.txt containing rules such as which pages the crawler is allowed to download. Before crawling web site crawler must check if the web site supplies /robots.txt file and if it does, crawler should adhere to rules. Entires must be discarded through some cache eviction policy. Additionally web servers can specify an expiration time for their /robots.txt file. Some URLs contain a host component (e.g., www.yahoo.com), which is "resolved" using the Domain Name Service (DNS). DNS requests can take quite a long time due to the request forwarding nature of the protocol. Therefore, crawlers often maintain their own DNS caches. As with the robots exclusion rule cache, entries are expired according to both a standard eviction policy, and to expiration directives. The robots.txt file must be fetched from a website so that URL under consideration passes the robot restrictions and hence can be added to URL frontier. By performing the filtering during the link extraction process, we would have especially high locality in the stream of hosts that we need to test for robots.txt files, leading to high cache hit rates. A URL may be in frontier for days or even weeks.
+A Robots Exclusion protocol should be followed by web crawlers, it is a protocol which makes a web site admins to bar crawlers from crawling. It is accomplished by providing a file at URL/robots.txt containing rules such as which pages the crawler is allowed to download. Before crawling an web site, Crawler must check if the web site supplies /robots.txt file and if it does, crawler should adhere to rules. Using some cache eviction policies entires must be discarded. Additionally web servers can specify an expiration time for their /robots.txt file. Some URLs contain a host component (e.g., www.yahoo.com), which is "resolved" using the Domain Name Service (DNS). Due to request forwading nature of protocol, DNS requests can take quite a long time. Therefore, crawlers often maintain their own DNS caches. As with the robots exclusion rule cache, entries are expired according to both a standard eviction policy, and to expiration directives. The robots.txt file must be fetched from a website so that URL under consideration passes the robot restrictions and hence can be added to URL frontier. By performing the filtering during the link extraction process, we would have especially high locality in the stream of hosts that we need to test for robots.txt files, leading to high cache hit rates. A URL may be in frontier for days or even weeks.
  
 \subsubsection{Distributed crawling}
 
-To increase the throughput of crawling, web crawler can be distributed over multiple machines. Distributed crawling is achieved by partitioning the URL space i.e. node is responsible for a subset of the URLs on the web. URL space is best partitioned across web site boundaries. Politeness policies are best achieved using partitioning the URL across site boundaries. In addition, most of the major data structures can be easily partitioned across site boundaries, i.e. the frontier, the DUE, the DNS and robots exclusion caches of each node contain URL, robots exclusion rules, and name-to-address mappings associated with the sites assigned to that node, and nothing else.
+Web crawler can be distributed over multiple machines which will help in increasing the throughput of crawling. By partitioning the URL space, Distributed crawling can be achieved  i.e. node is responsible for a subset of the URLs on the web. URL space is best partitioned across web site boundaries. Using partitioning the URL across site boundaries, Politeness policies can be best achieved . In addition, most of the major data structures can be easily partitioned across site boundaries, i.e. the frontier, the DUE, the DNS and robots exclusion caches of each node contain URL, robots exclusion rules, and name-to-address mappings associated with the sites assigned to that node, and nothing else.
 
-Web pages are extracted and downloaded using crawling process and with the help of prevalence of relative links on web, links will be responsible for large majority of extracted URLs. When a URL u that falls under the responsibility of another crawl node. Forwarding of URLs can be done through peer to peer TCP connections\cite{Highperformancewebcrawling}, a shared file system\cite{Highperformance}, or a central coordination process\cite{anatomy}. The amount of communication with other crawler nodes can be reduced by maintaining a cache of popular URLs, used to avoid repeat forwarding\cite{Graphstructure}. A variant of distributed web crawling is peer to peer crawling which spreads crawling over a loosely collaborating set of crawler nodes. There are two types of policies used under distributed crawling:
+Using crawling process web pages are extracted and downloaded  with the help of prevalence relative links on web, links will be responsible for large majority of extracted URLs. Forwarding of URLs can be done through peer to peer TCP connections\cite{Highperformancewebcrawling}, a shared file system\cite{Highperformance}, or a central coordination process\cite{anatomy}. By maintaining a cache of popular URLs, used to avoid repeat forwarding\cite{Graphstructure}, the amount of communication with other crawler nodes can be reduced . A variant of distributed web crawling is peer to peer crawling which spreads crawling over a loosely collaborating set of crawler nodes. There are two types of policies used under distributed crawling:
  \begin{enumerate}
-	\item Dynamics assignment: Within this policy, a central server assigns new URLs to different crawlers dynamically. Central server is allowed to dynamically balance the load of each crawler. Typically the systems can add or remove downloaded processes. Most of the workload must be transferred to the distributed crawling process for large crawls.
-	\item Static assignment: Within this policy, there is a fixed rule stated from the beginning of the crawl that defines how to assign new URLs to the crawler. A hashing function can be used to transform URLs into a number that corresponds to the index of the corresponding crawling process.
+	\item Dynamics assignment: A central server assigns new URLs to different crawlers dynamically under dynamics assignment policy. To dynamically balance the load of each crawler, Central servers are used. Typically the systems can add or remove downloaded processes. Most of the workload must be transferred to the distributed crawling process for large crawls.
+	\item Static assignment: Within this policy, there is a fixed rule stated from the beginning of the crawl that defines how to assign new URLs to the crawler. To transform URLs into a number that corresponds to the index of the corresponding crawling process, hashing function can be used.
 \end{enumerate}
-
 \subsubsection{Incremental crawling}
-Snapshots of batch crawling can be combined using Web crawlers. To perform incremental or continuous crawling where the resources of the crawler are divided between downloading newly discovered pages. For making good Incremental crawling, requires few changes to the major data structures of crawlers. DUE should support deletion of URLs that are no longer valid. If URL are prioritized in frontier, the priority of a previously downloaded URL should be dependent on a model of the page's temporal behavior based on past observations. Other factors such as page quality are also taken into account. The functionality is best facilitated by augmenting URLs in the frontier with additional information in particular previous priorities and compact sketches of their previous content. This extra information allows the crawler sketches of their previous content. Three possible metrics that are most popular are as below:
+Snapshots of batch crawling can be combined using Web crawlers. To perform incremental or continuous crawling where the resources of the crawler are divided between downloading newly discovered pages. Few changes to the major data structures of crawlers are required for making good incremental crawling. DUE should support deletion of URLs that are no longer valid. If URL are prioritized in frontier, the priority of a previously downloaded URL should be dependent on a model of the page's temporal behaviour based on past observations. Other factors such as page quality are also taken into account. By augmenting URLs in the frontier with additional information in particular previous priorities and compact sketches of their previous content, the functionality is best facilitated. This extra information allows the crawler sketches of their previous content. Three possible metrics that are most popular are as below:
 \begin{enumerate}
 	\item Coverage: count the number of pages that exist on the web but are not present in the repository at any given time.
 	\item Freshness: count the number of documents that are present in the repository, but whose content was
@@ -207,13 +211,10 @@ Snapshots of batch crawling can be combined using Web crawlers. To perform incre
 	size of the change for individual pages.
 	\item Age: the average age of documents in the repository (e.g., time since they were last updated).
 \end{enumerate}
-Above metrics may be adjusted to add weights of autonoumos pages to reflect their relative importance for the application. Documents which are dominated by thousands of other documents for every possible query should probably be weighted lower than documents that are often found by users of the search engine. The quality of an incremental crawling strategy must also be evaluated on the basis of resources that it consumes in order to maintain a given level of metric.
-
-
-
-
+To reflect their relative importance for the application, above metrics can be adjusted to add weights of autonomous pages. Documents which are dominated by thousands of other documents for every possible query should probably be weighted lower than documents that are often found by users of the search engine. The quality of an incremental crawling strategy must also be evaluated on the basis of resources that it consumes in order to maintain a given level of metric.
 \subsection{Browser automation: Selenium}
-There are numerous browser automation tools available but the one, which outperforms others and could be found open source is Selenium. Selenium\cite{AutomationTestingAnIntroductiontoSelenium} is a browser automation tool; mostly used to simulate user interaction on web applications. The browser control is automated so that repetitive tasks can be automated. One of Selenium's key features is the support for executing one's tests on multiple browser platforms. Selenium,  is a combination of selenium IDE, selenium Web driver and selenium gird. Selenium grid helps to use the selenium APIs to control browser instances distributed over a grid of machines. Selenium IDE is an extension for Firefox used to record and playback tests. Selenium uses lot of Jargon.
+There are numerous browser automation tools available such as Kantu, QF-Test, Sahi, SOAtest, iMacros, Selenium and so on. Kantu uses only screenshots as scripting language, QF-Test uses visual scripting, Jython and Groovy as scripting language. Sahi uses it's own Sahi script whereas Selenium supports Ruby, Java, NodeJS, PHP, Perl, Python, C\#, Groovy as scripting language. In addition, the web driver provided by Selenium for Internet Explorer is very reliable, sophisticated and most important it is Open source. Because of added advantage, selenium was chosen to work on.
+Selenium\cite{AutomationTestingAnIntroductiontoSelenium} is a browser automation tool; mostly used to simulate user interaction on web applications. The browser control is automated so that repetitive tasks can be easily achieved with it. One of Selenium's key features is the support for executing one's tests on multiple browser platforms. Selenium,  is a combination of selenium IDE, selenium Web driver and selenium gird. Selenium grid helps to use the selenium APIs to control browser instances distributed over a grid of machines. Selenium IDE is an extension for Firefox used to record and playback tests. Selenium uses lot of Jargon.
 
 \begin{enumerate}
 \item Selenium core JavaScript that control the browser.
@@ -221,18 +222,6 @@ There are numerous browser automation tools available but the one, which outperf
 \item Selenium RC is used for language binding.
 \end{enumerate}
 
-Advantages of Selenium:
-\begin{enumerate}
-\item Opensource tool
-\item No licensing cost
-\item Customize according to our requirement
-\end{enumerate}
-
-Disadvantage of selenium:
-\begin{enumerate}
-\item	There can be cases when selenium fails to recognize objects
-\item Online support for selenium is very less
-\end{enumerate}
 
 Variant of selenium:
 \begin{enumerate}
@@ -242,23 +231,33 @@ Variant of selenium:
 \item Selenium Grid
 \end{enumerate}
 
-Selenium\footnote{http://www.seleniumhq.org/docs/01\_introducing\_selenium.jsp\#test-automation-for-web-applications} consist of different software tools each with a different approach to supporting test automation. The entire set of tools results in a rich set of testing functions specifically geared to the needs of testing of web application of all types. Such operations are highly flexible allowing many options for locating UI elements and comparing expected test results against actual application behavior. While selenium is a tremendous tool it isn't without drawbacks. Because of its Java-script based automation engine and the security limitations browsers apply to Java-script, different things became impossible to do. But then in 2006 Selenium introduced Webdiver which talks directly to web browser and avoids Java-script dependency. Good thing about selenium is it's wide popularity and large community support. WebDriver were the tool of the future. The joining of the two tools provided a common set of features for all users. Webdriver addresses some shortcoming in selenium partly because selenium contributors and felt that it was the best way to offer users the best possible framework.
+Selenium\footnote{http://www.seleniumhq.org/docs/01\_introducing\_selenium.jsp\#test-automation-for-web-applications} consist of different software tools each with a different approach to supporting browser automation. The entire set of tools results in a rich set of testing functions specifically geared to the needs of automation of web application of all types. Such operations are highly flexible allowing many options for locating UI elements and comparing expected test results against actual application behavior. While selenium is a tremendous tool it isn't without drawbacks.
+There are also few downfalls of Selenium which is important to maintain here.
+\begin{enumerate}
+	\item	There can be cases when selenium fails to recognize objects
+	\item Online support for selenium is very less
+	\item Because of its Java-script based automation engine and the security limitations browsers apply to Java-script, different things became impossible to do.
+\end{enumerate}
+ But then in 2006 Selenium introduced Webdiver which talks directly to web browser and avoids Java-script dependency. Good thing about selenium is it's wide popularity and large community support. Few of the advantages of Selenium are:
+ \begin{enumerate}
+ 	\item Opensource tool
+ 	\item No licensing cost
+ 	\item Customize according to our requirement
+ \end{enumerate}
+  WebDriver were the tool of the future. The joining of the two tools provided a common set of features for all users. Webdriver addresses some shortcoming in selenium partly because selenium contributors and felt that it was the best way to offer users the best possible framework.
 \subsubsection{WebDriver Design}
-WebDrivers API \cite{SeleniumTestingFramework} is also called as  object-based. The interfaces are clearly defined and try to manage single responsibility and hence rather than modelling every single possible HTML Tag, We have only one WebElement interface. Snippet of code for initilization of web driver\footnote{http://www.aosabook.org/en/selenium.html} is shown below.
-
+WebDrivers API \cite{SeleniumTestingFramework} is also called as  object-based. The interfaces are very well defined and try to manage single responsibility and therefore rather than modeling every single possible HTML Tag, We have only one WebElement interface. Snippet of code for initilization of web driver\footnote{http://www.aosabook.org/en/selenium.html} is shown below.
 \begin{lstlisting}
 WebDriver driver = new FirefoxDriver();
 driver.<user hits space>
 driver.findElement(<user hits space>);
 driver.findElement(By.id("someid"));
 \end{lstlisting}
-Most of the IDEs will now drop a hint about the type of the argument expected. There are a number of preconfigured factory methods for "By" objects as static methods on the by itself. For example, there is a JavascriptExecutor interface that provides the ability to execute arbitrary chunks of Java-script in the context of the current page. A successful cast of a WebDriver instance to that interface indicates that you can expect the methods on it to work.
-
-
+Most of the IDEs will now drop a hint about the type of the argument expected. There are a number of preconfigured factory methods for "By" objects as static methods on the by itself. For example, there is a JavascriptExecutor interface that is built with the ability to execute arbitrary chunks of Java-script in the context of the current page. A successful cast of a WebDriver instance to that interface indicates that you can expect the methods on it to work.
 \subsubsection{The IE Driver}
-IE browser is constructed of a number of COM interfaces working in concert. JavaScript window is an IHTMLWindow.document is an instance of the COM interface  IHTMLDocument. Good thing about IE is that if COM classes works with IE6 it will still continue to work with IE9.
+Number of COM interfaces working in concert helps to build IE browser. JavaScript window is an IHTMLWindow.document is an instance of the COM interface IHTMLDocument. Good thing about IE is that if COM classes works with IE6 it will still continue to work with IE9.
 
-One of the main positives of IE design is that it does not need to have installer. So if there are no installer, there are consequences to this choice. IDE drivers built for selenium are tightly integrated with C\#. Even though c\# would be an attractive language to do the bulk of the coding in, it is not an good option. Something native for the communication to IE and therefor C++ as we don't need to use primary Interloop Assemblies (PIAs). Since we would need to run an installer in order to make that DLL available, we would link our library for communication with IE. In the figure  \ref{fig:OriginalIEdriver}, design of IEDriver is shown 
+IE's main positives is, it does not need to have installer. So if there are no installer, there are consequences to this choice. IDE drivers built for selenium are tightly integrated with C\#. It is not an good option to do the bulk of the coding in C\#, Even though it is an attractive language . Something native for the communication to IE should be considered and therefor C++ and the main reason for choosing it could be because of no need to use primary Interloop Assemblies (PIAs). Since we would need to run an installer in order to make that DLL available, we would link our library for communication with IE. In the figure  \ref{fig:OriginalIEdriver}, design of IEDriver is shown 
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.6]{OriginalIEdriver}
@@ -266,7 +265,7 @@ One of the main positives of IE design is that it does not need to have installe
 	\label{fig:OriginalIEdriver}
 \end{figure}
 
-Looking at the diagram IE COM automation interfaces are being used and hence to make it easier to manage raw interfaces are wrapped with set of C++ classes that closely mirrored WebDriver API. For Java classes to communicate with C++ JNI is being used. This approach works well with java being only client language but could be very difficult if every other language would require to change the underlying library. Hence this is not the correct way for abstraction. Every other language had a mechanism of calling down straight C code. In c\# it is PInvoke, In ruby it is FFI, python has ctypes and Java it is JNA (Java Native Architecture). API has to be exposed to lowest common denominator and it was done by taking object model and flattening it, using a simple two or three letter prefix to indicate the "home interface" of the method: "wd" for "WebDriver" and "wde" for WebDriver Element. In Figure 
+Looking at the diagram IE COM, automation interfaces are being used and hence to make it easier to manage raw interfaces are wrapped with set of C++ classes that closely mirrored WebDriver API. JNI is being used for Java classes to communicate with C++. This approach works well with java being only client language but could be very difficult if every other language would require to change the underlying library and therefore it is considered not the correct way for abstraction. Every other language had a mechanism of calling down straight C code. In c\# it is PInvoke, In ruby it is FFI, python has ctypes and Java it is JNA (Java Native Architecture). API has to be exposed to lowest common denominator and it was done by taking object model and flattening it, using a simple two or three letter prefix to indicate the "home interface" of the method: "wd" for "WebDriver" and "wde" for WebDriver Element. In Figure 
 \ref{fig:ModifiedIEdriver}, design is shown 
 \begin{figure}[h]
 	\centering
@@ -274,7 +273,7 @@ Looking at the diagram IE COM automation interfaces are being used and hence to 
 	\caption{Modified IE driver}
 	\label{fig:ModifiedIEdriver}
 \end{figure}
-On the Java side, we exposed this library of functions via an interface, which we then adapted to make it look like the normal object-oriented interface presented by WebDriver. For example, the Java definition of the getAttribute method looks like:
+On the Java side, this library of functions is exposed via an interface, which we then adapted to make it look like the normal object-oriented interface presented by WebDriver. For example, the Java definition of the getAttribute method looks like:
 
 \begin{lstlisting}
 public String getAttribute(String name) {
@@ -290,13 +289,13 @@ More and More of IE driver is being moved to sit upon the same automation Firefo
 
 \subsubsection{The Remote Driver}
 
-To reduce the cost of maintaining web Driver by providing a uniform interface that language binding can code against is done with the help of Remote driver mechanism.To communicate with browser instance that is running out of process Remote driver is used. RPC mechanism is divided into two: transport and encoding. First iteration of the design was developed as a part of Firefox driver.
+Remote driver mechanism is used to reduce the cost of maintaining web Driver by providing a uniform interface that language binding can code against. To communicate with browser instance that is running out of process Remote driver is used. RPC mechanism is divided into two: transport and encoding. First iteration of the design was developed as a part of Firefox driver.
 
-Mozilla, and therefore Firefox, was always seen as being a multi-platform application by its developers. Inspired by Microsoft's COM, Mozilla created a framework that allowed components to be built and bolted together called XPCOM (cross-platform COM).  IDL declares XPCOM interface, language binding for C and other languages and JavaScript as well as other languages are available. It's possible to make use of XPCOM objects in Firefox extensions because of the XPCOM consisting of JavaScript.
+Mozilla, and therefore Firefox, is always seen as being a multi-platform application by its developers. Mozilla created a framework that allowed components to be built and bolted together called XPCOM (cross-platform COM) is inspired by Microsoft's COM.  IDL declares XPCOM interface, language binding for C and other languages and JavaScript as well as other languages are available. It's possible to make use of XPCOM objects in Firefox extensions because of the XPCOM consisting of JavaScript.
 
-There are hardly any libraries available for custom protocol, hence they have to be built from the ground up for every language that we wanted to support. When we used to send only text line oriented protocol it was fine but when sending images started it was tedious.
+Custom protocol does not have any of the libraries available, hence they have to be built from the ground up for every language that we wanted to support. When we used to send only text line oriented protocol it was fine but when sending images started it was tedious.
 
-Original RPC mechanism wasn't practical. Alternative for this was widely spread: HTTP. The Firefox driver is implemented as a Firefox extension, the basic design of which is shown in Figure above . HTTP server has been embedded into it. Writing HTTP servers in XPCOM wasn't one of our core areas to work on, so when the opportunity arose we replaced it with a basic HTTPD written by Mozilla themselves. Requests are received by the HTTPD and almost straight away passed to a dispatcher object.
+Original RPC mechanism wasn't that practical and hence  alternative mechanism for this was widely spread called HTTP. The Firefox driver is implemented as a Firefox extension, the basic design of which is shown in Figure \ref{fig:Flowchart}\footnote{https://github.com/SeleniumHQ/selenium/wiki/FirefoxDriver}. HTTP server has been embedded into it. Writing HTTP servers in XPCOM wasn't one of core areas to work on, so when the available resources joined it was replaced with a basic HTTPD written by Mozilla themselves. Requests are received by the HTTPD and almost straight away passed to a dispatcher object.
 
 \begin{figure}[h]
 	\centering
@@ -316,7 +315,7 @@ Original RPC mechanism wasn't practical. Alternative for this was widely spread:
 }
 \end{lstlisting} 
 
-This is then passed as a JSON string to a custom XPCOM component written called the CommandProcessor. Here's the code:
+ For example above shown Json Object is then passed as a JSON string to a custom XPCOM component written called the CommandProcessor. Code snippet is shown below:
 \begin{lstlisting}
 var jsonResponseString = JSON.stringify(json);
 var callback = function(jsonResponseString) {
@@ -336,7 +335,7 @@ execute(jsonString, callback);
 \end{lstlisting}
 Object above in code is converted into JSON string. A callback to the execute method that causes the HTTP response to be sent is passed.
 
- The "name" is been looked by execute method of the command processor which determines which function to call. The first parameter given to this implementing function is a "respond" object, which encapsulates not only the possible values that might be sent, but also has a method that allows the response to be dispatched back to the user and mechanisms to find out information about the DOM. The second parameter is the value of the parameters object seen above (in this case, id and name). The advantage of this scheme is that each function has a uniform interface that mirrors the structure used on the client side. This means that the mental models used for thinking about the code on each side are similar. Here's the underlying implementation of getAttribute,
+The determination of which function to call is being done with the help of "name" which is been looked by execute method of the command processor. The first parameter given to this implementing function is a "respond" object, which encapsulates not only the possible values that might be sent, but also has a method that allows the response to be dispatched back to the user and mechanisms to find out information about the DOM. The second parameter is the value of the parameters object seen above (in this case, id and name). The advantage of this scheme is that each function has a uniform interface that mirrors the structure used on the client side. This means that the mental models used for thinking about the code on each side are similar. Here's the underlying implementation of getAttribute,
  
  \begin{lstlisting}
 FirefoxDriver.prototype.getElementAttribute = function(respond, parameters) {
@@ -349,7 +348,7 @@ FirefoxDriver.prototype.getElementAttribute = function(respond, parameters) {
 };
 \end{lstlisting}
 
-The first line simply looks up the element referred to by the opaque ID in a cache, In order to make element references consistent. In the Firefox driver, opaque ID is a UUID and the "cache" is simply a map. The getElementAt method checks whether referred to element is both known and attached to the DOM. If either check fails, the ID is removed from the cache (if necessary) and an exception is thrown and returned to the user.
+In order to make element references consistent, the first line simply looks up the element referred to by the opaque ID in a cache. Opaque ID is a UUID and the "cache" is simply a map with respect to Firefox driver. Referred to element is both known and attached to the DOM is checked with the help of getElementAt method. If either check fails, the ID is removed from the cache (if necessary) and an exception is thrown and returned to the user.
 The second line from the end makes use of the browser automation atoms discussed earlier, this time compiled as a monolithic script and loaded as part of the extension.
 In last line, the send method is called. Simple check is done that only send a respone once before it calls the callback given to execute method. The response is sent back to the user in the form of a JSON string, which is decanted into an object that looks:
 \begin{lstlisting}
@@ -363,9 +362,9 @@ Browsing the web in a copy of Firefox with the WebDriver extension installed wil
 There is a DOM messenger, waiting for the webdriver Command that reads the serialized JSON object and calls the execute method on the command processor. The callback is one that simply sets the response attribute on the document element and then fires the expected webdriverResponse event.
 
 \subsubsection{Combinatorial Explosion}
-There is challenge to minimize cost of maintenance with X browsers supporting Y languages, it would be trap of maintaining X*Y implementations. There can be a way to reduce the number of language that web driver support. It's always better to write automation scripts in the same language that they work on. There is also a way of reducing the supported browser but it will also not be a feasible solution.
+To minimize cost of maintenance with X browsers supporting Y languages is always an challenge, it would be trap of maintaining X*Y implementations. There can be a way to reduce the number of language that web driver support. It's always better to write automation scripts in the same language that they work on. There is also a way of reducing the supported browser but it will also not be a feasible solution.
 
-Reducing the number of languages that webdriver supports would be one way to reduce the cost but it is not a feasible solution. There is an advantage to user the framework to be able to write test in same language as the do development in. The best way to deal with language binding is to try and make all the browsers look identical to the language bindings: they should offer a uniform interface that can be addressed easily in a wide variety of languages. IE driver has successfully pushed the responsibility for locating and starting IE into the main driver logic.  Java world alone, this means that we have three major classes that handle configuring and starting Firefox weighing in at around 1300 lines of code. Although this has resulted in a surprising number of lines of code being in the driver, the language binding for creating a new instance boils down to a single method call into that driver. For comparison, the Firefox driver has failed to make this change. These classes are duplicated in every language binding that wants to support the FirefoxDriver without relying on starting a Java server. That's a lot of additional code to maintain.
+It is not a feasible solution to reduce the number of languages that webdriver supports which would be one way to reduce the cost. It is always advantageous to use the framework to be able to write test in same language as the development in. One of the better measure to tackle with language binding is to try and make all the browsers look identical to the language bindings: a uniform interface should be offeres so that it can be addressed easily in a wide variety of languages. IE driver has successfully pushed the responsibility for locating and starting IE into the main driver logic. Java world alone, this means that three major classes that handle configuring and starting Firefox weighing in at around 1300 lines of code. Although this has resulted in a surprising number of lines of code being in the driver, the language binding for creating a new instance boils down to a single method call into that driver. For comparison, the Firefox driver has failed to make this change. These classes are duplicated in every language binding that wants to support the FirefoxDriver without relying on starting a Java server. That's a lot of additional code to maintain.
 
 \subsubsection{Layers and Javascript}
 Broswer automation tool is built of three parts:
@@ -374,20 +373,19 @@ Broswer automation tool is built of three parts:
 	\item Mechanism for executing Javascript
 	\item A way of interrogating the DOM
 \end{enumerate}
-This section tries on providing a mechanism to interrogate the DOM. The language of browser is Javascript, and perfect language to use when testing the DOM. But when working with Javascript posses some interesting challenges and competing requirements which needs balancing.
+We try to analyse the way or mechanism which can be used to interrogate the DOM. The language of browser is Javascript, which is a perfect language to use when testing the DOM. But when working with Javascript posses some interesting challenges and competing requirements which needs balancing.
 
-Selenium uses layered set of libraries. The bottom layer is Google's closure library, which supplies primitives and mechanism allowing sources files to be kept focused and as small as possible. There is a utility library which ranges from simple tasks such as getting the value of an attribute through determining whether an element would be visible to an end user such as simulating a click using synthesized events. Within the project, these are viewed as offering the smallest units of browser automation, and so are called browser automation toms or atoms. 
- Figure\ref{fig:LayersofSeleniumJSLibrary} shows layers of selenium Javascript library.
+Layered set of libraries are used in selenium. Google's closure library is the bottom layer, which supplies primitives and mechanism allowing sources files to be kept focused and as small as possible. Simple tasks such as getting the value of an attribute through determining whether an element would be visible to an end user such as simulating a click using synthesized events are undertaken using utility library. Within the project, these are viewed as offering the smallest units of browser automation, and so are called browser automation toms or atoms. 
+ Figure\ref{fig:LayersofSeleniumJSLibrary}\footnote{http://www.aosabook.org/en/selenium.html} shows layers of selenium Javascript library.
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.6]{LayersofSeleniumJSLibrary}
 	\caption{Layers of Selenium Javascript Library}
 	\label{fig:LayersofSeleniumJSLibrary}
 \end{figure}
-There are adapter layers that compose atoms in order to meet the API contracts of both Webdriver and Core. Closure Compiler understands the modularization technique the library uses. Javascript as the output language is targeted by Closure Compiler. Ordering input files in input file is so simple it can be considered as "Compilation", advanced minification and dead code removal. Members working with Closure Library are very much familiar with Javascript as language. If there is an requirement to interrogate the DOM, "atomic" library of code is used pervasively throughout the project. There is an monolithic script used for RC and those divers largely composed of JS. It allows the Javascript to be pushed into the underlying driver without needing to expose the raw source in multiple places. As the atoms are used extensively it's possible to manage consistent behavior between different browsers and at the same time library written in Java is easy and fast. There is only need for selenium developer to write and a test and load it in browser because Closure library can load dependencies dynamically. Abstraction is done very well with Closure library, there are continuous builds to run test in supported browser.
+There are adapter layers that compose atoms in order to meet the API contracts of both Webdriver and Core. The modularization techniques used by libraries are understood bc closure compiler. The output language as Java is targeted by Closure Compiler. It is so simple to order input files so that it can be considered as "Compilation", advanced minification and dead code removal. People working with Closure Library are very much familiar with Javascript as language. "Atomic" library of code is used pervasively throughout the project if there is an requirement to interrogate the DOM. There is an monolithic script used for RC and those divers largely composed of JS. It allows the Javascript to be pushed into the underlying driver without needing to expose the raw source in multiple places. It's possible to manage consistent behavior between different browsers and at the same time library written in Java is easy and fast as the atoms are used extensively. Closure library can load dependencies dynamically and hence there is only need for selenium developer to write and a test and load it in browser. Abstraction is done very well with Closure library, there are continuous builds to run test in supported browser.
 
-Several architectural themes of the project are viewed by atoms. There should be a implementation of an API to be easy going with Javascript. The bus factor of project is used by atoms which makes it more favorable. To check if a fix works Javascript unit test case can be used which act as a barrier to joining the Open Source project, hence the task of wirting layer is both easier and more accurate.
-
+Several architectural themes of the project are viewed by atoms. Implementation of an API to be easy going with Javascript should be available. The bus factor of project is used by atoms which makes it more favorable. Javascript unit test case can be used which act as a barrier to joining the Open Source project can be used to check if a fix works , hence the task of wirting layer is both easier and more accurate.
 \subsubsection{Different Browsers}
 Web browser is a translation device, which takes document written in HTML language and translates it into a formatted web page. The basic rules for translating HTML documents are established by the WWW. HTML standards usually run ahead of that the browsers support. Over the past few years Internet Explorer has done a lot than Opera or other browsers.An overview of all the supported browser with Selenium automation tool are shown in Table \ref{SB}.
 \begin{table}[H]
@@ -427,11 +425,102 @@ Web browser is a translation device, which takes document written in HTML langua
 \caption{Overview of Supported browsers by Selenium}
 \label{SB}
 \end{table}
-
 HTML tags isn't universal, you could be building your pages with parts of the language that not all browsers understand. In such cases browser will ignore that part of your page it can translate and way pages will be displayed is affected.
 
 \subsubsection{Extensibility and Flexibility}
 Selenium is highly flexible. Functionality could be added to selenium test scripts and selenium's framework to customize test automation. This particular use case is the greatest strength when compared with other automation tools. One more good point is as selenium is open source, the sourceode can always be downloaded and modified.
+
+\subsection{OpenDiabetesVault Architecture}
+To help understand the motivation for performing Data slicing, it is very important to understand the project OpenDiabetesVault-engine. This is well well illustrated with the help of Architecture Diagram as it is self explanatory. Figure \ref{fig:ODVArchitecture} shows OpenDiabetesVault Architecture. The overall view of Architecture shows that OpenDiabetesVault (ODV) consist of four main moudles as Geathrering, Import, Interpreter and Export which can be furtherer divided into submodules. Revisiting the main goal of ODV is to perform Data analysis on extracted data from different sources. If we take a look at Geathering module, it is subdivided into Medtronics crawler, Google Timeline, Smartband and Glucosio plug-in. For instance Medtronics module has responisibility of extracting data from carelink website and present it in CSV format which is main part of this thesis. Once the data is extracted it gets into import module where all the CSV data is combined with the help of interpreter which act as an type of data coming from which source and how it is related. At the end of module 2 and 3 i.e Import and Interpreter we have a huge dataset containing data bundled from all the available sources and ready for analysis.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.4]{ODVArchitecture.jpg}
+	\caption{ODV Architecture}
+	\label{fig:ODVArchitecture}
+\end{figure}
+
+Data analysis is the process by which data is evaluated with the help of analytical and logical reasoning of the provided data. Data from various sources is gathered, reviewed and anlyzed to generate pattern or conclusion. But to genrate some conclusion data should be of very high quality. However very rarely data generated from different sources has such quality and hence pre work for "cleaning" / "cluttering" of irrelevant data has to be taken place. For instance "cleaning" is the process of removing invalid data from datasets which are either
+\begin{enumerate}
+	\item Incorrect values for specific variables.
+	\item Cases in the data who met exclusion criteria and shouldn’t be in the study.
+	\item Duplicate cases
+	\item Skip-pattern or logic breakdowns
+\end{enumerate}
+Quality of data mainly involves human judgment to decide which points are valid and which are not, and hence there is a huge chance of valid data points caused by some effect not sufficiently accounted for in the hypothesis/assumption behind the analytical method applied. Data quality measures the amount of consistency, instance correctness, completeness and minimality achieved in a certain system. Table \ref{DataQuality} \cite{Dataquality} shows data quality added from the view of data mining.
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|p{3cm}|p{5cm}|p{7cm}|}
+		\hline
+		\textbf{Requirement} & \textbf{Explanation} & \textbf{Dirty Data Examples} 
+	\\ \hline
+		Correctness   & Data reflect its true reality             & Age=120 or input birthday= "11/11/1911" when birthday is unknown\\ \hline
+		
+	Completeness   & Data sets contain all data mining needs & Lack lost customers information while mining customer retaining\\ \hline
+	
+	Consistency  & Codes in different systems are consistent; no conflict while
+	integrating  & A customer’s ID in CRM system is "1100", while in POS system is "021233"\\ \hline
+	
+	Minimality  & No repeat records after integration  &A sales record became 3 records after integration\\ \hline
+	
+	Reliability  & Results of integrating stable regardless of who or when did  & Attributes in product table changed between two integrating process resulting in confused sales information\\ \hline		
+	\end{tabular}
+	\caption{Data quality added from the view of data mining}
+	\label{DataQuality}
+\end{table}
+
+Much of the importance within the ODV architecture is given in cleaning the data so that researchers in TK lab implementing Data analysis techniques will deal with high quality of data. In such situation we have found out that Data entires i.e rows from data set needs to be sliced in such a way so that onyl relevant data is moved to next level for analysis. For most experiments we have a certain focus on what kind of data we need and how the quality has to be. To get this focused data we used DataSlicer. As shown in the figure \ref{fig:ODVArchitecture} it takes data from the data base, some options and some filters produces a list with time points where events occur specified by the filter. The goal of filters is to achieve data quality with most of the below mentioned criteria
+\begin{enumerate}
+	\item Accuracy
+	\item Completeness
+	\item Accessibility
+	\item Reliability
+	\item Relevance.
+	\item Consistency across data sources
+	\item Update status
+\end{enumerate}
+
+For most experiments we have a certain focus on what kind of data we need and how the quality has to be. To get this focused data we provide the DataSlicer. As shown in the figure below it takes data from the data base, some options and some filters and produces a list with time points where events occur specified by the filter Figure \ref{fig:Dataslicer}\footnote{https://github.com/OpenDiabetes/OpenDiabetesVault-engine/wiki/Data-Slicing} shows basic outline of Data slicer. Filters can be registered at the DataSlicer and implement the Filter interface. The filters are combined with the logical and paradigm. As shown in the figure below, filters take a data array together with options. The filter will delete not matching data from the array and returns it together with a list of time spans where continuous data is present (this could be used to find the data in the complete array again). 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.7]{Dataslicer.jpg}
+	\caption{Data Slicer}
+	\label{fig:Dataslicer}
+\end{figure}
+
+Most of the work for Data slicer is done by Filters. Data Filtering\footnote{https://github.com/OpenDiabetes/OpenDiabetesVault-engine/wiki/Data-Filtering} are the one who implement different data cleaning and data cluttering methodologies. For data filtering we provide the Filter interface. Filters can be registered at processing services like the DataSlicer and have to implement the Filter interface. Multiple filters are combined with the logical "and" paradigm. As shown in the figure below, filters take a data array together with options. The filter will delete not matching data from the array and returns it together with a list of time spans where continuous data is present (this could be used to find the data in the complete array again).  An overview of Data Filtering is showin in fig \ref{fig:Filters} 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.7]{Filters.jpg}
+	\caption{Data Filtering}
+	\label{fig:Filters}
+\end{figure}
+Filters in our Thesis work can be broadly classified as Time related Filters and
+Threshold related Filters. Time-Related Filters as shown in figure \ref{fig:TimeRelated} consist of Timespan Filter and TimePoint Filter. This kind of filters are used to and a time point or a time span where some kind of event happens or some kind of data is available or not available.
+For instance, if you want to check the basal insulin rate you search for time spans where no bolus is given. Filters of the time point type should provide a margin option enable data observation around the found point. They are used to retrieve data within a given time span or time point.
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.7]{TimeRelated.jpg}
+	\caption{Time Related Filtering}
+	\label{fig:TimeRelated}
+\end{figure}
+
+Moving from Time-Related Filter, there is another type of filer called Threshold-Related Filter as shown in figure \ref{fig:Threshold}. Threshold related filters are used for filtering data within a given Filter type and if that data point is under or threshold value given as input from user. The steps followed to achieve Over or Under Threshold is something like below.
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.7]{Threshold.jpg}
+	\caption{Threshold Filtering}
+	\label{fig:Threshold}
+\end{figure}
+
+\begin{enumerate}
+	\item First check if given data i.e a row from a data set, having column as Type matched with Filter Type mentioned in options(argument from user).
+	\item If the entry set i.e a row matched with a filter type, then this row is sent to check if that row has value under or above Threshold value.
+	\item If it does then entry is added to list with return type as FilterResult.
+	\item FilterResult consist of EntryValue Type and Pair of Date,Date.
+\end{enumerate}
+There conatins a GenericAvailableFilter class which takes VaultEntryType and FilterType as argument. This class is helper class for Threshold class to return datatset which  matched with FilterType value. We have only considered Threshold Filter for Unit testing as they are the one who return the desired SliceEntry type values and is of importance for the Thesis Work. Code snippet for Threshold related filter is shown below. Here a example for OverThresholdFilter is taken into consideration. In a similar fashion UnderThresholdFilter Filter is also tested
 
 \subsection{Unit Testing}
 Unit Testing\cite{EffectivnessofUnitTest} is testing modules of code in isolation with test code. It is a way to test the behavior and functionality of your system. The main goal of our unit testing is to take the smallest piece of software module in the application, isolate it from the remainder of the code, and determine whether it behaves exactly as you expect. Each unit is tested separately before integrating them into modules to test the interfaces between modules. Unit testing has proven its value in that a large percentage of defects are identified during its use. The benefit of unit test cases are:
@@ -445,7 +534,7 @@ Unit Testing\cite{EffectivnessofUnitTest} is testing modules of code in isolatio
 \end{enumerate}
 Performing unit tests are designed to be simple, generally the tests are written in the form of functions that will determine whether a returned value equals the value you were expecting when you wrote the function (or the value you will expect when you eventually write it - this is called Test Driven Development when you write the tests first).Unit testing is not only for testing. By doing unit testing we also force the design of the software into something that is unit testable. Many people are of the opinion that this design is for the most part Good Design regardless of other benefits from testing.So one reason to do unit test is to force your design into something that hopefully will be easier to maintain than what it would be had you not designed it for unit testing.
 
-The sideeffect can be that developers test too large a unit, or might consider a method a unit. This is mostly true if one don't understand Inversion of Control - in which case your unit tests will always turn into end-to-end integration testing. Unit test should test individual behaviors - and most methods have many behaviors.The greatest misconception is that programmers shouldn't test and this isn't true as one Should. Only a programmer can test that his code does what he intended it to do (QA can test edge cases - how code behaves when it's told to do things the programmer didn't intend, and the client can do acceptance test - does the code do what what the client paid for it to do)
+The side effect can be that developers test too large a unit, or might consider a method a unit. This is mostly true if one don't understand Inversion of Control - in which case your unit tests will always turn into end-to-end integration testing. Unit test should test individual behaviors - and most methods have many behaviors.The greatest misconception is that programmers shouldn't test and this isn't true as one Should. Only a programmer can test that his code does what he intended it to do (QA can test edge cases - how code behaves when it's told to do things the programmer didn't intend, and the client can do acceptance test - does the code do what what the client paid for it to do)
 
 
 \clearpage
@@ -830,7 +919,7 @@ A more important distinction is whether the unit you're testing should be sociab
 
 Indeed using sociable unit tests was one of the reasons we were criticized for our use of the term "unit testing". I think that the term "unit testing" is appropriate because these tests are tests of the behavior of a single unit. We write the tests assuming everything other than that unit is working correctly.
 
-With respect to thesis work, The entire project is divided in three main modules. The plan for setting unit testing is bifurcated with respect to module. At the very beginning Crawler module is taken into consideration for testing. This module contains three sub units as Login credentials, Dates for duration of downloading file and Path to save CSV file. For entire testing of a module, all the three sub units ares tested. Login unit is tested with user entered user-name and password. User entered user-name and password are sent to webserver using Jsoup and result is returned as true or false, which is shown in section \ref{subsec:DataCrawler}. If the results yields  true the Test can be considered as Success or fail.
+With respect to thesis work, The entire project is divided in three main modules. The plan for setting unit testing is bifurcated with respect to module. We have highly motivated to test each and every module before deploying it to production. Adding unit testing has not only helped us understanding modules more in depth but also highly improved the code quality. From the very begining, for instance a module for generating CSV file from Carelink website, we have highly used unit test cases. Talking in terms of entire project, at the beginning Crawler module is taken into consideration for testing. This module contains three sub units as Login credentials, Dates for duration of downloading file and Path to save CSV file. For entire testing of a module, all the three sub units ares tested. Login unit is tested with user entered user-name and password. User entered user-name and password are sent to webserver using Jsoup and result is returned as true or false, which is shown in section \ref{subsec:DataCrawler}. If the results yields  true the Test can be considered as Success or fail.
 \begin{lstlisting}
 this.UserName = user; // user entered username
 this.Password = pass; // user entered password
@@ -845,7 +934,6 @@ return false;
 }
 \end{lstlisting}
  In the same module, next step is to test start and end dates for validating correct dates for CSV Download. Rules for correct dates can be derived from section \ref{subsec:DataCrawler}. Test case contains an array of predefined values and their result. A quick example for dates and expected results would be
- \clearpage
 \begin{lstlisting}
 Statdate 	Enddate 	Result
 { "15/05/2015", "20/05/2016", true},
@@ -917,6 +1005,54 @@ A code snippet class for a calling Test method taking login as example is shown 
 System.out.println("Test case Result is : " + result.wasSuccessful());
 }
 \end{lstlisting}
+
+Next module we used for unit Test cases is Data slicer and Filters. Data slicer mainly consist of Filters, Registering filters and slicing retrieved filtered data as per options used. We start by implementing unit test cases for Filters. Filters in our Thesis work can be broadly classified as Time related Filters and Threshold related Filters. At first Time-Related Filters\footnote{https://github.com/OpenDiabetes/OpenDiabetesVault-engine/wiki/Data-Filtering} is tested with unit testing. Time-Related Filters consist of Timespan Filter and TimePoint Filter. This kind of filters are used to find a time point or a time span where some kind of event happens or some kind of data is available or not available. For instance, if you want to check the basal insulin rate you search for time spans where no bolus is given. Filters of the time point type should provide a margin option enable data observation around the found point. They are used to retrieve data within a given time span or time point. Test method is overridden for each of the Time related filter to check the obtained results does return SliceEntry type data. Code snippet for Time related filter is shown below. Here a example for TimeSpanFilter is taken into consideration. In a similar fashion TimePoint Filter is also tested.
+\begin{lstlisting}
+@Test
+public void testTimeSpanData() throws ParseException {
+
+System.out.println("sliceData");
+LocalTime startTime = LocalTime.parse("10:15:30");//  TimestampUtils.createCleanTimestamp("2017.06.29-04:46", "yyyy.MM.dd-HH:mm")
+LocalTime endTime = LocalTime.parse("10:15:30");
+Filter filter = new TimeSpanFilter(startTime, endTime);
+
+DataSlicerOptions options = new DataSlicerOptions(0, 60);
+DataSlicer instance = new DataSlicer(options);
+instance.registerFilter(filter);
+
+List<SliceEntry> expResult =  new ArrayList<>();
+List<SliceEntry> result = instance.sliceData(StaticDataset.getStaticDataset());
+
+ assertEquals(expResult, result);
+}
+\end{lstlisting}
+
+Moving from Time-Related Filter, Threshold-Related Filter\footnote{https://github.com/OpenDiabetes/OpenDiabetesVault-engine/wiki/Data-Filtering} is used for Testing. Threshold related filters are used for filtering data within a given Filter type and if that data point is under or threshold value given as input from user. The steps followed to achieve Over or Under Threshold is something like below.
+\begin{enumerate}
+	\item First check if given data i.e a row from a data set, having column as Type matched with Filter Type mentioned in options(argument from user).
+	\item If the entry set i.e a row matched with a filter type, then this row is sent to check if that row has value under or above Threshold value.
+	\item If it does then entry is added to list with return type as FilterResult.
+	\item FilterResult consist of EntryValue Type and Pair of Date,Date.
+\end{enumerate}
+There conatins a GenericAvailableFilter class which takes VaultEntryType and FilterType as argument. This class is helper class for Threshold class to return datatset which  matched with FilterType value. We have only considered Threshold Filter for Unit testing as they are the one who return the desired SliceEntry type values and is of importance for the Thesis Work. Code snippet for Threshold related filter is shown below. Here a example for OverThresholdFilter is taken into consideration. In a similar fashion UnderThresholdFilter Filter is also tested.
+\begin{lstlisting}
+   @Test
+public void testSliceOverheadTHData() throws ParseException {
+
+System.out.println("sliceData");     
+
+Filter filter = new OverThresholdFilter(VaultEntryType.BASAL_PROFILE ,1.00, FilterType.BASAL_AVAILABLE/* .BASAL_AVAILABLE*/, FilterType.BASAL_TH);
+DataSlicerOptions options = new DataSlicerOptions(0, 60);
+DataSlicer instance = new DataSlicer(options);
+instance.registerFilter(filter);
+
+List<SliceEntry> expResult = new ArrayList<>();
+List<SliceEntry> result = instance.sliceData(StaticDataset.getStaticDataset());
+ assertEquals(expResult, result);
+}
+\end{lstlisting}
+
+There is also another filter used NoneFilter. It does nothing except return for every point in the series a slice entry, i.e it does not filter any data and retruns only within Type of SliceEntry. All the above mentioned filters will at last call Dataslicer class which is where SliceEntry type data is returned. Data slicer class generates a slice file  which will add output stage filter. Output stage filter consist of first of series, last of series, mid point of series. All these steps are tested under Filter Methods.
 
 \cleardoublepage
 \cleardoublepage

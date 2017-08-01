@@ -21,11 +21,6 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
-\bibitem{Javaapplet}
-N.~Figueroa, ``Java applet awareness impacting user web browsing behavior,
-  university of massachusetts boston , college of managment,'' Ph.D.
-  dissertation, Dissertation, 2012.
-
 \bibitem{Webdriver}
 L.~M. Stocco~A and R.~F, ``Why creating web page objects manually if it can be
   done automatically?'' \emph{IEEE/ACM 10th International Workshop on
@@ -45,6 +40,11 @@ Z.~U. Kraft~S, ``Beaqlejs: Html5 and javascript based framework for the
 F.~A. Bao~C and B.~J, ``Perfect power visualization-performance optimization
   with java,'' \emph{IEEE 5th International Conference on Software Engineering
   and Service Science}, pp. 152--165, 2014.
+
+\bibitem{EffectivnessofUnitTest}
+N.~N. Williams~L, Kudrjavets~G, ``On the effectiveness of unit test automation
+  at microsoft,'' \emph{20th International Symposium on Software Reliability
+  Engineering}, pp. 119--133, 2009.
 
 \bibitem{WebCrawlerAReview}
 K.~Khurana1, ``Web crawler: A review,'' \emph{IJCSMS International Journal of
@@ -76,9 +76,8 @@ M.~S. Jagannatha~S, Niranjanamurthy~M and C.~GS, ``Comparative study on
   \emph{International Journal of Computer Science and Mobile Computing}, pp.
   258--267, 2014.
 
-\bibitem{EffectivnessofUnitTest}
-N.~N. Williams~L, Kudrjavets~G, ``On the effectiveness of unit test automation
-  at microsoft,'' \emph{20th International Symposium on Software Reliability
-  Engineering}, pp. 119--133, 2009.
+\bibitem{Dataquality}
+J.~L. Xingsen~Li, Yong~Shi and P.~Zhang, ``Data mining consulting improve data
+  quality,'' \emph{Data Science Journal}, vol.~6, 2007.
 
 \end{thebibliography}
