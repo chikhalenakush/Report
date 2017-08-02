@@ -430,24 +430,23 @@ HTML tags isn't universal, you could be building your pages with parts of the la
 \subsubsection{Extensibility and Flexibility}
 Selenium is highly flexible. Functionality could be added to selenium test scripts and selenium's framework to customize test automation. This particular use case is the greatest strength when compared with other automation tools. One more good point is as selenium is open source, the sourceode can always be downloaded and modified.
 
-\subsection{OpenDiabetesVault Architecture}
-To help understand the motivation for performing Data slicing, it is very important to understand the project OpenDiabetesVault-engine. This is well well illustrated with the help of Architecture Diagram as it is self explanatory. Figure \ref{fig:ODVArchitecture} shows OpenDiabetesVault Architecture. The overall view of Architecture shows that OpenDiabetesVault (ODV) consist of four main moudles as Geathrering, Import, Interpreter and Export which can be furtherer divided into submodules. Revisiting the main goal of ODV is to perform Data analysis on extracted data from different sources. If we take a look at Geathering module, it is subdivided into Medtronics crawler, Google Timeline, Smartband and Glucosio plug-in. For instance Medtronics module has responisibility of extracting data from carelink website and present it in CSV format which is main part of this thesis. Once the data is extracted it gets into import module where all the CSV data is combined with the help of interpreter which act as an type of data coming from which source and how it is related. At the end of module 2 and 3 i.e Import and Interpreter we have a huge dataset containing data bundled from all the available sources and ready for analysis.
-
+\subsection{OpenDiabetesVault Architecture and Data slicing}
+\label{subsec:OpenDiabetesVaultArchitecture}
+To help understand the motivation for performing Data slicing, it is very important to understand the project OpenDiabetesVault-engine. This is well well illustrated with the help of Architecture Diagram as it is self explanatory. Figure \ref{fig:ODVArchitecture} shows OpenDiabetesVault architecture. The overall view of Architecture shows that OpenDiabetesVault (ODV) consist of four main modules as Geathrering, Import, Interpreter and Export which can be furtherer divided into submodules. Revisiting the main goal of ODV is to perform Data analysis on extracted data from different sources. If we take a look at Geathering module, it is subdivided into Medtronics crawler, Google Time-line, Smart band and Glucosio plug-in. For instance Medtronics module has responsibility of extracting data from carelink website and present it in CSV format which is main part of this thesis. Once the data is extracted it gets into import module where all the CSV data is combined with the help of interpreter which act as an type of data coming from which source and how it is related. At the end of module 2 and 3 i.e Import and Interpreter we have a huge dataset containing data bundled from all the available sources and ready for analysis.
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.4]{ODVArchitecture.jpg}
 	\caption{ODV Architecture}
 	\label{fig:ODVArchitecture}
 \end{figure}
-
-Data analysis is the process by which data is evaluated with the help of analytical and logical reasoning of the provided data. Data from various sources is gathered, reviewed and anlyzed to generate pattern or conclusion. But to genrate some conclusion data should be of very high quality. However very rarely data generated from different sources has such quality and hence pre work for "cleaning" / "cluttering" of irrelevant data has to be taken place. For instance "cleaning" is the process of removing invalid data from datasets which are either
+Data analysis is the process by which data is evaluated with the help of analytical and logical reasoning of the provided data. Data from various sources is gathered, reviewed and anlyzed to generate pattern or conclusion. But to generate some conclusion data should be of very high quality. However very rarely data generated from different sources has such quality and hence pre work for "cleaning" / "cluttering" of irrelevant data has to be taken place. For instance "cleaning" is the process of removing invalid data from datasets which are either
 \begin{enumerate}
 	\item Incorrect values for specific variables.
 	\item Cases in the data who met exclusion criteria and shouldn’t be in the study.
 	\item Duplicate cases
 	\item Skip-pattern or logic breakdowns
 \end{enumerate}
-Quality of data mainly involves human judgment to decide which points are valid and which are not, and hence there is a huge chance of valid data points caused by some effect not sufficiently accounted for in the hypothesis/assumption behind the analytical method applied. Data quality measures the amount of consistency, instance correctness, completeness and minimality achieved in a certain system. Table \ref{DataQuality} \cite{Dataquality} shows data quality added from the view of data mining.
+ Quality of data mainly involves human judgment to decide which points are valid and which are not, and hence there is a huge chance of valid data points caused by some effect not sufficiently accounted for in the hypothesis/assumption behind the analytical method applied. Data quality measures the amount of consistency, instance correctness, completeness and minimality achieved in a certain system. Table \ref{DataQuality} \cite{Dataquality} shows data quality added from the view of data mining.
 
 \begin{table}[H]
 	\centering
@@ -470,7 +469,7 @@ Quality of data mainly involves human judgment to decide which points are valid 
 	\label{DataQuality}
 \end{table}
 
-Much of the importance within the ODV architecture is given in cleaning the data so that researchers in TK lab implementing Data analysis techniques will deal with high quality of data. In such situation we have found out that Data entires i.e rows from data set needs to be sliced in such a way so that onyl relevant data is moved to next level for analysis. For most experiments we have a certain focus on what kind of data we need and how the quality has to be. To get this focused data we used DataSlicer. As shown in the figure \ref{fig:ODVArchitecture} it takes data from the data base, some options and some filters produces a list with time points where events occur specified by the filter. The goal of filters is to achieve data quality with most of the below mentioned criteria
+A lot of data analysis time is spent data cleaning and preparing data, up to 80 percent \cite{TinyData} of the time and  ODV architecture is no different. Much of the importance within the ODV architecture is given in cleaning the data so that researchers in TK lab implementing Data analysis techniques will deal with high quality of data. The objective is to structure the data to facilitate the data analysis you set out to perform. In such situation we have found out that Data entires i.e rows from data set needs to be sliced in such a way so that onyl relevant data is moved to next level for analysis. For most experiments we have a certain focus on what kind of data we need and how the quality has to be. To get this focused data we used DataSlicer. As shown in the figure \ref{fig:ODVArchitecture} it takes data from the data base, some options and some filters produces a list with time points where events occur specified by the filter. The goal of filters is to achieve data quality with most of the below mentioned criteria
 \begin{enumerate}
 	\item Accuracy
 	\item Completeness
@@ -481,7 +480,7 @@ Much of the importance within the ODV architecture is given in cleaning the data
 	\item Update status
 \end{enumerate}
 
-For most experiments we have a certain focus on what kind of data we need and how the quality has to be. To get this focused data we provide the DataSlicer. As shown in the figure below it takes data from the data base, some options and some filters and produces a list with time points where events occur specified by the filter Figure \ref{fig:Dataslicer}\footnote{https://github.com/OpenDiabetes/OpenDiabetesVault-engine/wiki/Data-Slicing} shows basic outline of Data slicer. Filters can be registered at the DataSlicer and implement the Filter interface. The filters are combined with the logical and paradigm. As shown in the figure below, filters take a data array together with options. The filter will delete not matching data from the array and returns it together with a list of time spans where continuous data is present (this could be used to find the data in the complete array again). 
+For most experiments we have a certain focus on what kind of data we need and how the quality has to be. To get this focused data we provide the DataSlicer. As shown in the figure \ref{fig:Dataslicer}\footnote{https://github.com/OpenDiabetes/OpenDiabetesVault-engine/wiki/Data-Slicing} it takes data from the data base, some options and some filters which is a type of complex Event process \cite{EventProcessing} and produces a list with time points where events occur specified by the filter. Filters can be registered at the DataSlicer and implement the Filter interface. The filters are combined with the logical and paradigm. As shown in the figure below, filters take a data array together with options. The filter will delete not matching data from the array and returns it together with a list of time spans where continuous data is present (this could be used to find the data in the complete array again). 
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.7]{Dataslicer.jpg}
@@ -489,7 +488,7 @@ For most experiments we have a certain focus on what kind of data we need and ho
 	\label{fig:Dataslicer}
 \end{figure}
 
-Most of the work for Data slicer is done by Filters. Data Filtering\footnote{https://github.com/OpenDiabetes/OpenDiabetesVault-engine/wiki/Data-Filtering} are the one who implement different data cleaning and data cluttering methodologies. For data filtering we provide the Filter interface. Filters can be registered at processing services like the DataSlicer and have to implement the Filter interface. Multiple filters are combined with the logical "and" paradigm. As shown in the figure below, filters take a data array together with options. The filter will delete not matching data from the array and returns it together with a list of time spans where continuous data is present (this could be used to find the data in the complete array again).  An overview of Data Filtering is showin in fig \ref{fig:Filters} 
+Most of the work for Data slicer is done with the help of Filters. Data Filtering\footnote{https://github.com/OpenDiabetes/OpenDiabetesVault-engine/wiki/Data-Filtering} are the one who implement different data cleaning and data cluttering methodologies. For data filtering we provide the Filter interface. Filters can be registered at processing services like the DataSlicer and have to implement the Filter interface. Multiple filters are combined with the logical "and" paradigm. As shown in the figure below, filters take a data array together with options. The filter will delete not matching data from the array and returns it together with a list of time spans where continuous data is present (this could be used to find the data in the complete array again).  An overview of Data Filtering is showin in figure \ref{fig:Filters} 
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.7]{Filters.jpg}
@@ -520,7 +519,7 @@ Moving from Time-Related Filter, there is another type of filer called Threshold
 	\item If it does then entry is added to list with return type as FilterResult.
 	\item FilterResult consist of EntryValue Type and Pair of Date,Date.
 \end{enumerate}
-There conatins a GenericAvailableFilter class which takes VaultEntryType and FilterType as argument. This class is helper class for Threshold class to return datatset which  matched with FilterType value. We have only considered Threshold Filter for Unit testing as they are the one who return the desired SliceEntry type values and is of importance for the Thesis Work. Code snippet for Threshold related filter is shown below. Here a example for OverThresholdFilter is taken into consideration. In a similar fashion UnderThresholdFilter Filter is also tested
+There conatins a GenericAvailableFilter class which takes VaultEntryType and FilterType as argument. This class is helper class for Threshold class to return datatset which  matched with FilterType value. We have only considered Threshold Filter for Unit testing as they are the one who return the desired SliceEntry type values and is of importance for the Thesis Work. Code snippet for Threshold related filter is shown below.
 
 \subsection{Unit Testing}
 Unit Testing\cite{EffectivnessofUnitTest} is testing modules of code in isolation with test code. It is a way to test the behavior and functionality of your system. The main goal of our unit testing is to take the smallest piece of software module in the application, isolate it from the remainder of the code, and determine whether it behaves exactly as you expect. Each unit is tested separately before integrating them into modules to test the interfaces between modules. Unit testing has proven its value in that a large percentage of defects are identified during its use. The benefit of unit test cases are:
@@ -532,13 +531,24 @@ Unit Testing\cite{EffectivnessofUnitTest} is testing modules of code in isolatio
 	\item Indicated code that are tightly coupled
 	\item Provide a means to use your API and look for difficulties early on 
 \end{enumerate}
-Performing unit tests are designed to be simple, generally the tests are written in the form of functions that will determine whether a returned value equals the value you were expecting when you wrote the function (or the value you will expect when you eventually write it - this is called Test Driven Development when you write the tests first).Unit testing is not only for testing. By doing unit testing we also force the design of the software into something that is unit testable. Many people are of the opinion that this design is for the most part Good Design regardless of other benefits from testing.So one reason to do unit test is to force your design into something that hopefully will be easier to maintain than what it would be had you not designed it for unit testing.
+Performing unit tests are designed to be simple, generally the tests are written in the form of functions that will determine whether a returned value equals the value you were expecting when you wrote the function (or the value you will expect when you eventually write it - this is called Test Driven Development when you write the tests first).Unit testing is not only for testing. Figure \ref{fig:Testingmethodologies} shows different Testing methodologies and the hierarchy of their usage
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.7]{Testing.jpg}
+	\caption{Testing Methodologies}
+	\label{fig:Testingmethodologies}
+\end{figure}
+ By doing unit testing we also force the design of the software into something that is unit testable. Many people are of the opinion that this design is for the most part Good Design regardless of other benefits from testing. So one reason to do unit test is to force your design into something that hopefully will be easier to maintain than what it would be had you not designed it for unit testing. It is that level of software testing where units/ components of a software are tested. Most of the time unit testing is performed using the White Box Testing. Software developers themselves or their peers perform Unit Testing. Sometimes it can also be performed by independent software testers. Figure \ref{fig:UnitTesting} shows different Testing methodologies and the hierarchy of their usage
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{UnitTesting.jpg}
+	\caption{Unit Testing}
+	\label{fig:UnitTesting}
+\end{figure}
 
 The side effect can be that developers test too large a unit, or might consider a method a unit. This is mostly true if one don't understand Inversion of Control - in which case your unit tests will always turn into end-to-end integration testing. Unit test should test individual behaviors - and most methods have many behaviors.The greatest misconception is that programmers shouldn't test and this isn't true as one Should. Only a programmer can test that his code does what he intended it to do (QA can test edge cases - how code behaves when it's told to do things the programmer didn't intend, and the client can do acceptance test - does the code do what what the client paid for it to do)
-
-
 \clearpage
-
+\clearpage
 \section{Implementation}
 In this section, we discuss in detail about the implementation of our proposed solution. First we discuss the technologies used to solve our problem and reason for selecting it , then we proceed with the pre-configuration requirements for our implementations. This include using the IDE, using the external libraries and installing the .Exe file to run the software. Then we divide the problem definition into sub parts and describe the solution in detail for each of the part separately. This section also includes the algorithms and assumptions used for solving the problem.
 
@@ -576,7 +586,10 @@ JavaFX application code can refrence APIs from any java library. JavaFx applicai
 
 Simultaneously there is a task to run entire program using Command line. The idea behind command line program is to run different modules depending on which flags is set. For example to run crawler flag will be something like "java -jar xyz.jar -u username -p password -c". Same way to run applet wrapper it will be something like  "java -jar xyz.jar -u username -p password -a" and so on for data slicing and Unit Test cases. To accomplish the task of command line flas, Apache Commons CLI\footnote{https://commons.apache.org/proper/commons-cli/} library was chosen because it provides an API for parsing command line options passed to programs. It is also able to print help messages de fotailing the options available for a command line tool. The Commons Proper is a place for collaboration and sharing, where developers from throughout the Apache community can work together on projects to be shared by Apache projects and Apache users. The Apache Commons is a project of the Apache Software Foundation. Its purpose is to provide reusable, open source Java software. The Commons is composed of three parts: proper, sandbox, and dormant. It is dedicated to creating and maintaining reusable Java components. Commons CLI comes under proper.
 
-We also have a task of providing Unit test cases before our code pushes to production. There are numerous unit test frameworks available with respect to java such as TestNG, easyb, RSpec, Canoo, Selenium, JBehave. We have used Junit as a Test framework. Junit\footnote{http://junit.org/junit4/} is important in the development of test-driven deployment and is one of a family of unit testing frameworks. Junit is linked as a JAR at compile time; the framework resides under package org.junit for Junit4. We have used Junit4 for our testing purpose. A JUnit test fixture is a Java object. With older versions of JUnit, fixtures had to inherit from junit.framework.TestCase, but the new tests using JUnit 4 should not do this. Test methods must be annotated by the @Test annotation. If the situation requires it, it is also possible to define a method to execute before  each of the test methods with the @Before (or @After) and @BeforeClass (or @AfterClass) annotations
+The last step of thesis work is to implement Data slicing. Data slicing is used to generate high quality data which will be further used for analysing and generating patters. For most experiments we have a certain focus on what kind of data we need and how the quality has to be. To get this focused data we provide the DataSlicer. Data slicer takes data from the data base, some options and some filters and produces a list with time points where events occur specified by the filter. Filters can be registered at the DataSlicer and implement the Filter interface. The filters are combined with the logical and paradigm. Filters take a data array together with options. The filter will delete not matching data from the array and returns it together with a list of time spans where continuous data is present (this could be used to find the data in the complete array again). For data  slicing, algorithm is built in Java and uses JDBC and sql with pub sub complex event system for recognition of events. For complex event system in Java JMS (Java messaging service) is used. JMS is a Java Message Oriented Middleware (MOM) API for sending messages between two or more clients. It is an implementation to handle the Producer-consumer problem.
+
+We also have a task of providing Unit test cases before our code pushes to production. There are numerous unit test frameworks available with respect to java such as TestNG, easyb, RSpec, Canoo, Selenium, JBehave. We have used Junit as a Test framework. Junit\footnote{http://junit.org/junit4/} is important in the development of test-driven deployment and is one of a family of unit testing frameworks. Junit is linked as a JAR at compile time; the framework resides under package org.junit for Junit4. We have used Junit4 for our testing purpose. A JUnit test fixture is a Java object. With older versions of JUnit, fixtures had to inherit from junit.framework.TestCase, but the new tests using JUnit 4 should not do this. Test methods must be annotated by the @Test annotation. If the situation requires it, it is also possible to define a method to execute before  each of the test methods with the @Before (or @After) and @BeforeClass (or @AfterClass) annotations. Unit Testng is heavily used to debug and implement Filtering functionalities.
+\clearpage
 
 \subsection{Configuration of external libraries and drivers}
 In this section we discuss about the basic configurations and prerequisites required for our implementation.
@@ -644,8 +657,6 @@ If user login entered yields positive result, program will move to next step for
 \item Start date and end date shall not be greater than Today's date.
 \item Start date and end date should be valid
 \end{enumerate}
-\clearpage
-
 Here particular URL is fetched from the DOM object which was extracted after login. User agent is added which will bypass browser dependency and help in accessing correct dom objects. Get method is used here to get result from Sever. All this process is take care without user opening web browser. Below is the code snippet for above mentioned steps. 
 
 \begin{lstlisting}
@@ -678,7 +689,6 @@ String userHome = "PathforCSV";
 			pw1.close();
 			System.out.println("Export Sucessfull!");
 \end{lstlisting}
-
 \begin{center}
 \begin{tikzpicture}[node distance=1.5cm]
 \node (start) [startstop] {Start};
@@ -721,8 +731,6 @@ String userHome = "PathforCSV";
 \node (pro7) [process, right of=dec5, xshift=3cm] {Enter End date};
 \node (conn3) [connector,below of=dec5,yshift=-2.5cm] {B};
 
-
-
 \draw [arrow] (conn2) -- (in3);
 \draw [arrow] (in3) -- (dec3);
 \draw [arrow] (dec3) -- node [anchor=east] {yes} (dec4);
@@ -736,7 +744,6 @@ String userHome = "PathforCSV";
 \draw [arrow] (dec5) -- (conn3);
 \end{tikzpicture}
 \end{center}
-
 \begin{center}
 \begin{tikzpicture}[node distance=1.5cm]
 \node (conn4) [connector] {B};
@@ -758,7 +765,6 @@ String userHome = "PathforCSV";
   \label{fig:CrawlerCSVAlgorithm}
 \end{figure}
 \end{center}
-
 \subsubsection{Applet Wrapper}
 \label{subsec:AppletWrapper}
 To help automating process of uploading data from local system/USB to server, Browser automation is used in our work, i.e the process of uploading data from local system to server of Carelink via browser. Ideal situation could have been taking applet out of browser and running standalone direct with Java Native libraries, but there lies the road block as applet uses signed certificate with login cookies from browser and this cannot be performed running applet out of the browser. Alternative approach is rather making end user go through tiring process of opening browser every second time and adding changes required to upload data, We have emulated user behavior programatically and selenium will help us in performing browser steps i.e uploading data to server. 
@@ -779,7 +785,6 @@ Flowchart in figure \ref{fig:AppletwrapperAlgorithm} shows  program logic for au
 \node (pro3) [process, right of=dec2, xshift=3cm] {Enter SN};
 \node (pro4) [process, right of=dec3, xshift=3cm] {Enter Device};
 \node (conn1) [connector, below of=dec3, yshift=-2cm] {A};
-
 \draw [arrow] (start) -- (in1);
 \draw [arrow] (in1) -- (dec1);
 \draw [arrow] (dec1) -- node [anchor=east] {yes} (pro1);
@@ -797,7 +802,6 @@ Flowchart in figure \ref{fig:AppletwrapperAlgorithm} shows  program logic for au
 \end{tikzpicture}
 \end{center}
 
-
 \begin{center}
 \begin{tikzpicture}[node distance=1.5cm]
 \node (conn2) [connector] {A};
@@ -808,7 +812,6 @@ Flowchart in figure \ref{fig:AppletwrapperAlgorithm} shows  program logic for au
 \node (pro8) [process, below of=pro7, yshift=-0.5cm] {Run IE webdriver};
 \node (pro9) [process, below of=pro8, yshift=-0.5cm] {Programatically control browser and run applet};
 \node (stop) [startstop, below of=pro9] {Stop};
-
 \draw [arrow] (conn2) -- (pro5);
 \draw [arrow] (pro5) -- (dec4);
 \draw [arrow] (dec4) -- node [anchor=east] {yes} (pro7);
@@ -902,8 +905,76 @@ driver.findElement(By.id("upload")).sendKeys(Keys.ENTER);
 
 
 \subsubsection{Data slicing}
+In section \ref{subsec:OpenDiabetesVaultArchitecture} background of Data slicing and OpenDiabetesVault architecture is described. For most experiments we have a certain focus on what kind of data we need and how the quality has to be. To get this focused data we provide the DataSlicer. Data slicer takes data from the data base, some options and some filters and produces a list with time points where events occur specified by the filter. Filters can be registered at the DataSlicer and implement the Filter interface. The filters are combined with the logical and paradigm. Filters take a data array together with options. The filter will delete not matching data from the array and returns it together with a list of time spans where continuous data is present (this could be used to find the data in the complete array again).  Most of the cluttering/cleaning of data is implemented with the help of Filters. There are basically two main Types of Filters. Time Realted Filters and Threshold related Filter.
 
-\subsubsection{Unit Test cases}
+Time-Related Filter: This kind of filters are used to find a time point or a time span where some kind of event happend or some kind of data is available or not available. For instance, if you want to check the basal insulin rate you search for time spans where no bolus is given. Filters of the time point type should provide a margin option enable data observation around the found point. Time related filters can be further divided into Time span and Time point Filter. Threshold-Related Filter: This kind of filter are used to find data over or under a certain threshold. Threshold related filter can be further divided into Overhead Threshold and Under Threshold.
+To implement Data slicing, Overview of implementation steps is in following sequence:
+\begin{enumerate}
+	\item Create Filters such as TimeSpan, TimePoint, OverHead and Under Threshold
+	\item Within these Threshold check if the data entry is of particualr type mentioned in options 
+	\item If it does entry is added as EntryValue type and Date type in FilterResult
+	\item This FilterResult is furthure reduced to return data of SliceEntry Type
+\end{enumerate}
+Looking into further details of Filter, for instance taking into consideration Overhead Threshold. At the very begining, series of data which is of type ValueEntry type is check if it contians a type of a particular option such as BOLUS\_AVAILABLE, BASAL\_AVAILABLE, BG\_AVAILABLE, CGM\_AVAILABLE, HR\_AVAILABLE and so on. If it does match the type which is of FilterType, that particular data entry is returned and added to check if it is above or below a particular threshold value. If the data entry matched both the criteria it is added to the return type of FilterResult which contians Filteredata of list<VaultEntry> and TimeSeries of List<Pair<Date, Date>>. Below is the code snippet for Overhead Threshold.
+\begin{lstlisting}
+@Override
+public FilterResult filter(List<VaultEntry> data) {
+// List<Pair<Date, Date>> timeSeries = new ArrayList<>();
+List<VaultEntry> filteredData = new ArrayList<>();
+List<Pair<Date, Date>> timeSeries = new ArrayList<>();
+Date startOfCuttenTimeSeries = null;
+Date lastTimeStamp = null;
+for (VaultEntry entry : filter.filter(data).filteredData) {
+if(entry.getValue() > thresholdValue)
+{               
+filteredData.add(entry);
+if (startOfCuttenTimeSeries == null) {
+startOfCuttenTimeSeries = entry.getTimestamp();
+}
+lastTimeStamp = entry.getTimestamp();
+}
+else if (startOfCuttenTimeSeries != null) {
+timeSeries.add(new Pair<>(startOfCuttenTimeSeries, lastTimeStamp));
+startOfCuttenTimeSeries = null;
+}
+}
+if (startOfCuttenTimeSeries != null) {
+timeSeries.add(new Pair<>(startOfCuttenTimeSeries, lastTimeStamp));
+}
+return new FilterResult(filteredData, timeSeries); 
+\end{lstlisting}
+ This return type Filteresut is further returned with SliceEntry type which consist of Date and Long type. Final Data slicing will return output stage filter with first of series, last of series, mid point of series. This is the data which is of our interest which will be furthure sent to Researchers at TK lab. This filtered data shall be useful for implementing Data analysis techniques\cite{DatananlysisandTechniques}. Below is the code snippet for actual implementation for Data slicer.
+ \begin{lstlisting}
+ public List<SliceEntry> sliceData(List<VaultEntry> data) {
+ List<SliceEntry> retVal = new ArrayList<>();
+ FilterResult lastResult = null;
+ 
+ for (Filter filter : registeredFilter) {
+ if (lastResult == null) {
+ lastResult = filter.filter(data);
+ } else {
+ lastResult = filter.filter(lastResult.filteredData);
+ }
+ 
+ }
+ Long StartDuration = null,EndDuration = null;
+ Date Timestart = null, TimeEnd = null; 
+ if(!((registeredFilter.get(0)).toString().contains("NoneFilter") || (registeredFilter.get(0)).toString().contains("TimePointFilter"))){
+ if (lastResult.filteredData != null && lastResult.timeSeries != null ) {
+ StartDuration = lastResult.timeSeries.get(0).getKey().getTime();
+ Timestart = lastResult.filteredData.get(0).getTimestamp();
+ EndDuration = lastResult.timeSeries.get(0).getValue().getTime();
+ TimeEnd = lastResult.filteredData.get(lastResult.filteredData .size()- 1).getTimestamp();
+ retVal.add(new SliceEntry(Timestart, StartDuration));
+ retVal.add(new SliceEntry(TimeEnd, EndDuration)); 
+ }
+ } 
+ return retVal;
+ \end{lstlisting}
+ \clearpage
+ 
+ 
+\section{Unit Test cases}
 Unit Testing\cite{EffectivnessofUnitTest} is used for testing modules of code in isolation with test code. It is a way to test the functionality and behavior of your system. The main goal of unit testing is to deal with the smallest piece of software module in the application, isolate it from the remaining of the code, and determine whether it behaves exactly as you expect. Each unit is tested separately before integrating them into modules to test the interfaces between modules. Unit testing is valuable where large percentage of defects are identified during its use. Few of the benefits of unit test cases are listed below:
 \begin{enumerate}
 \item Properly unit tested code can be cleaned up with little chance of breaking anything without noticing it.
@@ -913,7 +984,7 @@ Unit Testing\cite{EffectivnessofUnitTest} is used for testing modules of code in
 \item Indicates code that are tightly coupled
 \item Provide a means to use your API and look for difficulties early on 
 \end{enumerate}
-Unit test cases are designed in such a way that they are simple. The tests are written in the form of functions that will determine whether a returned value equals the value you were expecting when you wrote the function (or the value you will expect when you eventually write it - this is called Test Driven Development when you write the tests first). Unit testing is not only for testing. We force the design of the software into something that is unit testable by performing unit testing. Many are of the opinion that this design is for the most part Good Design regardless of other benefits from testing. So one reason to do unit test is to force your design into something that hopefully will be easier to maintain than what it would be had you not designed it for unit testing.
+Unit test cases are designed in such a way that they are simple\cite{JMLandJUnit}. The tests are written in the form of functions that will determine whether a returned value equals the value you were expecting when you wrote the function (or the value you will expect when you eventually write it - this is called Test Driven Development when you write the tests first). Unit testing is not only for testing. We force the design of the software into something that is unit testable by performing unit testing. Many are of the opinion that this design is for the most part Good Design regardless of other benefits from testing. So one reason to do unit test is to force your design into something that hopefully will be easier to maintain than what it would be had you not designed it for unit testing.
 
 A more important distinction is whether the unit you're testing should be sociable or solitary. For example testing an order class's price method. The price method needs to invoke some functions on the product and customer classes. If unit tests to be solitary, we don't want to use the real product or customer classes, as a fault in the customer class would cause the order class's tests to fail. But not all unit testers use solitary unit tests. We didn't find it difficult to track down the actual fault, even if it caused neighboring tests to fail. So we felt allowing our tests to be sociable didn't lead to problems in practice.
 
@@ -957,7 +1028,6 @@ return false;
 }
 \end{lstlisting}
  Important point to note is that password is always masked while running from both command line and through IDE, so it does not appear in clear text.
- 
  
 Next moudule used for Testing is Applet wrapper. Applet wrapper consist of three main parts.
  \begin{enumerate}
@@ -1051,9 +1121,7 @@ List<SliceEntry> result = instance.sliceData(StaticDataset.getStaticDataset());
  assertEquals(expResult, result);
 }
 \end{lstlisting}
-
 There is also another filter used NoneFilter. It does nothing except return for every point in the series a slice entry, i.e it does not filter any data and retruns only within Type of SliceEntry. All the above mentioned filters will at last call Dataslicer class which is where SliceEntry type data is returned. Data slicer class generates a slice file  which will add output stage filter. Output stage filter consist of first of series, last of series, mid point of series. All these steps are tested under Filter Methods.
-
 \cleardoublepage
 \cleardoublepage
 \bibliographystyle{IEEEtran}

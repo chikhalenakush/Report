@@ -47,7 +47,7 @@ N.~N. Williams~L, Kudrjavets~G, ``On the effectiveness of unit test automation
   Engineering}, pp. 119--133, 2009.
 
 \bibitem{WebCrawlerAReview}
-K.~Khurana1, ``Web crawler: A review,'' \emph{IJCSMS International Journal of
+K.~Khurana, ``Web crawler a review,'' \emph{IJCSMS International Journal of
   Computer Science & Management Studies}, 2012.
 
 \bibitem{Graphstructure}
@@ -79,5 +79,17 @@ M.~S. Jagannatha~S, Niranjanamurthy~M and C.~GS, ``Comparative study on
 \bibitem{Dataquality}
 J.~L. Xingsen~Li, Yong~Shi and P.~Zhang, ``Data mining consulting improve data
   quality,'' \emph{Data Science Journal}, vol.~6, 2007.
+
+\bibitem{TinyData}
+H.~Wickham, ``Tiny data,'' \emph{Journal of statical software}, vol.~10, 2014.
+
+\bibitem{DatananlysisandTechniques}
+K.~J.~D. Elizabeth H.~Bradley, Leslie A.~Curry, ``Qualitative data analysis for
+  health services research developing taxonomy, themes, and theory,''
+  \emph{Health Research Journal}, pp. 1439--1476, 2001.
+
+\bibitem{JMLandJUnit}
+G.~T.~L. Yoonsik~Cheon, ``A simple and practical approach to unit testing: The
+  jml and junit way,'' \emph{Computer Science Technical Reports}, p. 181, 2007.
 
 \end{thebibliography}

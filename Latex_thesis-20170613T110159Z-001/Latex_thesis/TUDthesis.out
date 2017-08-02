@@ -15,7 +15,7 @@
 \BOOKMARK [3][-]{subsubsection.2.3.5}{Layers and Javascript}{subsection.2.3}% 15
 \BOOKMARK [3][-]{subsubsection.2.3.6}{Different Browsers}{subsection.2.3}% 16
 \BOOKMARK [3][-]{subsubsection.2.3.7}{Extensibility and Flexibility}{subsection.2.3}% 17
-\BOOKMARK [2][-]{subsection.2.4}{OpenDiabetesVault Architecture}{section.2}% 18
+\BOOKMARK [2][-]{subsection.2.4}{OpenDiabetesVault Architecture and Data slicing}{section.2}% 18
 \BOOKMARK [2][-]{subsection.2.5}{Unit Testing}{section.2}% 19
 \BOOKMARK [1][-]{section.3}{Implementation}{}% 20
 \BOOKMARK [2][-]{subsection.3.1}{Technologies}{section.3}% 21
@@ -25,4 +25,4 @@
 \BOOKMARK [3][-]{subsubsection.3.3.1}{Data Crawler}{subsection.3.3}% 25
 \BOOKMARK [3][-]{subsubsection.3.3.2}{Applet Wrapper}{subsection.3.3}% 26
 \BOOKMARK [3][-]{subsubsection.3.3.3}{Data slicing}{subsection.3.3}% 27
-\BOOKMARK [3][-]{subsubsection.3.3.4}{Unit Test cases}{subsection.3.3}% 28
+\BOOKMARK [1][-]{section.4}{Unit Test cases}{}% 28
