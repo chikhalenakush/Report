@@ -644,6 +644,82 @@ If user login entered yields positive result, program will move to next step for
 \item Start date and end date shall not be greater than Today's date.
 \item Start date and end date should be valid
 \end{enumerate}
+\begin{center}
+	\begin{tikzpicture}[node distance=1.5cm]
+	\node (start) [startstop] {Start};
+	\node (in1) [io, below of=start] {User Credentials};
+	\node (dec1) [decision, below of=in1, yshift=-0.5cm] {Cred ok?};
+	\node (pro1) [process, below of=dec1, yshift=-0.5cm] {Login};
+	\node (pro2) [process, right of=dec1,, xshift=2cm] {Start};
+	\node (in2) [io, below of=pro1] {Enter Start date};
+	\node (dec2) [decision, below of=in2, yshift=-1.5cm] {S.date  format ok?};
+	\node (dec3) [decision, below of=dec2, yshift=-3.5cm] {S.date>01/01/1988?};
+	\node (pro3) [process, right of=dec2, xshift=3cm] {Enter Start date};
+	\node (pro4) [process, right of=dec3, xshift=3cm] {Enter Start date};
+	\node (conn1) [connector, below of=dec3, yshift=-3cm] {A};
+	
+	\draw [arrow] (start) -- (in1);
+	\draw [arrow] (in1) -- (dec1);
+	\draw [arrow] (dec1) -- node [anchor=east] {yes} (pro1);
+	\draw [arrow] (dec1) -- node [anchor=south] {no} (pro2);
+	\draw [arrow] (pro2) |- (start);
+	\draw [arrow] (pro1) -- (in2);
+	\draw [arrow] (in2) -- (dec2);
+	\draw [arrow] (dec2) -- node [anchor=east] {yes} (dec3);
+	\draw [arrow] (dec2) -- node [anchor=south] {no} (pro3);
+	\draw [arrow] (pro3) |- (in2);
+	\draw [arrow] (dec3) -- node [anchor=south] {no} (pro4);
+	\draw [arrow] (pro4) -- (pro3);
+	\draw [arrow] (dec3) -- node [anchor=east] {yes} (conn1);
+	\end{tikzpicture}
+\end{center}
+\begin{center}
+	
+	\begin{tikzpicture}[node distance=1.5cm]
+	\node (conn2) [connector] {A};
+	\node (in3) [io, below of=conn2] {Enter End date};
+	\node (dec3) [decision, below of=in3, yshift=-1.5cm] {E.date format ok?};
+	\node (dec4) [decision, below of=dec3, yshift=-3.5cm] {E.date>01/01/1988?};
+	\node (pro5) [process, right of=dec3, xshift=3cm] {Enter End date};
+	\node (pro6) [process, right of=dec4, xshift=3cm] {Enter End date};
+	\node (dec5) [decision, below of=dec4, yshift=-3.5cm] {E.date>start date?};
+	\node (pro7) [process, right of=dec5, xshift=3cm] {Enter End date};
+	\node (conn3) [connector,below of=dec5,yshift=-2.5cm] {B};
+	
+	\draw [arrow] (conn2) -- (in3);
+	\draw [arrow] (in3) -- (dec3);
+	\draw [arrow] (dec3) -- node [anchor=east] {yes} (dec4);
+	\draw [arrow] (dec3) -- node [anchor=south] {no} (pro5);
+	\draw [arrow] (pro5) |- (in3);
+	\draw [arrow] (dec4) -- node [anchor=south] {no} (pro6);
+	\draw [arrow] (pro6) -- (pro5);
+	\draw [arrow] (dec4) -- node [anchor=east] {yes} (dec5);
+	\draw [arrow] (dec5) -- node [anchor=south] {no} (pro7);
+	\draw [arrow] (pro7) -- (pro6);
+	\draw [arrow] (dec5) -- (conn3);
+	\end{tikzpicture}
+\end{center}
+\begin{center}
+	\begin{tikzpicture}[node distance=1.5cm]
+	\node (conn4) [connector] {B};
+	\node (in4) [io, below of=conn4] {Enter CSV Path};
+	\node (dec6) [decision, below of=in4, yshift=-1.5cm] {CSV path correct?};
+	\node (out1) [io, below of=dec6, yshift=-1.5cm] {Download CSV};
+	\node (pro9) [process, right of=dec6, xshift=3cm] {Enter CSV Path};
+	\node (stop) [startstop, below of=out1] {Stop};
+	
+	\draw [arrow] (conn4) -- (in4);
+	\draw [arrow] (in4) -- (dec6);
+	\draw [arrow] (dec6) -- node [anchor=east] {yes} (out1);
+	\draw [arrow] (dec6) -- node [anchor=south] {no} (pro9);
+	\draw [arrow] (pro9) |- (in4);
+	\draw [arrow] (out1) -- (stop);
+	\end{tikzpicture}
+	\begin{figure}[h!]
+		\caption{Crawler CSV Download Flowchart}
+		\label{fig:CrawlerCSVAlgorithm}
+	\end{figure}
+\end{center}
 Here particular URL is fetched from the DOM object which was extracted after login. User agent is added which will bypass browser dependency and help in accessing correct Dom objects. Get method is used here to get result from Sever. All this process is take care without user opening web browser. One point to highlight is the Date Format for Start and end date. When user logged in which has base language as English date format is DD/MM/YYYY and when a user is logged in with base language with German Date format is DD.MM.YYYY. In our turret project we have restricted to support only English and German language. This scenario has been handled in our project and if user has base language different than English and German an error message will be displayed. Below is the code snippet for above mentioned steps. 
 
 \begin{lstlisting}
@@ -676,87 +752,10 @@ String userHome = "PathforCSV";
 			pw1.close();
 			System.out.println("Export Sucessfull!");
 \end{lstlisting}
-\begin{center}
-\begin{tikzpicture}[node distance=1.5cm]
-\node (start) [startstop] {Start};
-\node (in1) [io, below of=start] {User Credentials};
-\node (dec1) [decision, below of=in1, yshift=-0.5cm] {Cred ok?};
-\node (pro1) [process, below of=dec1, yshift=-0.5cm] {Login};
-\node (pro2) [process, right of=dec1,, xshift=2cm] {Start};
-\node (in2) [io, below of=pro1] {Enter Start date};
-\node (dec2) [decision, below of=in2, yshift=-1.5cm] {S.date  format ok?};
-\node (dec3) [decision, below of=dec2, yshift=-3.5cm] {S.date>01/01/1988?};
-\node (pro3) [process, right of=dec2, xshift=3cm] {Enter Start date};
-\node (pro4) [process, right of=dec3, xshift=3cm] {Enter Start date};
-\node (conn1) [connector, below of=dec3, yshift=-3cm] {A};
 
-\draw [arrow] (start) -- (in1);
-\draw [arrow] (in1) -- (dec1);
-\draw [arrow] (dec1) -- node [anchor=east] {yes} (pro1);
-\draw [arrow] (dec1) -- node [anchor=south] {no} (pro2);
-\draw [arrow] (pro2) |- (start);
-\draw [arrow] (pro1) -- (in2);
-\draw [arrow] (in2) -- (dec2);
-\draw [arrow] (dec2) -- node [anchor=east] {yes} (dec3);
-\draw [arrow] (dec2) -- node [anchor=south] {no} (pro3);
-\draw [arrow] (pro3) |- (in2);
-\draw [arrow] (dec3) -- node [anchor=south] {no} (pro4);
-\draw [arrow] (pro4) -- (pro3);
-\draw [arrow] (dec3) -- node [anchor=east] {yes} (conn1);
-\end{tikzpicture}
-\end{center}
-\begin{center}
-
-\begin{tikzpicture}[node distance=1.5cm]
-\node (conn2) [connector] {A};
-\node (in3) [io, below of=conn2] {Enter End date};
-\node (dec3) [decision, below of=in3, yshift=-1.5cm] {E.date format ok?};
-\node (dec4) [decision, below of=dec3, yshift=-3.5cm] {E.date>01/01/1988?};
-\node (pro5) [process, right of=dec3, xshift=3cm] {Enter End date};
-\node (pro6) [process, right of=dec4, xshift=3cm] {Enter End date};
-\node (dec5) [decision, below of=dec4, yshift=-3.5cm] {E.date>start date?};
-\node (pro7) [process, right of=dec5, xshift=3cm] {Enter End date};
-\node (conn3) [connector,below of=dec5,yshift=-2.5cm] {B};
-
-\draw [arrow] (conn2) -- (in3);
-\draw [arrow] (in3) -- (dec3);
-\draw [arrow] (dec3) -- node [anchor=east] {yes} (dec4);
-\draw [arrow] (dec3) -- node [anchor=south] {no} (pro5);
-\draw [arrow] (pro5) |- (in3);
-\draw [arrow] (dec4) -- node [anchor=south] {no} (pro6);
-\draw [arrow] (pro6) -- (pro5);
-\draw [arrow] (dec4) -- node [anchor=east] {yes} (dec5);
-\draw [arrow] (dec5) -- node [anchor=south] {no} (pro7);
-\draw [arrow] (pro7) -- (pro6);
-\draw [arrow] (dec5) -- (conn3);
-\end{tikzpicture}
-\end{center}
-\begin{center}
-\begin{tikzpicture}[node distance=1.5cm]
-\node (conn4) [connector] {B};
-\node (in4) [io, below of=conn4] {Enter CSV Path};
-\node (dec6) [decision, below of=in4, yshift=-1.5cm] {CSV path correct?};
-\node (out1) [io, below of=dec6, yshift=-1.5cm] {Download CSV};
-\node (pro9) [process, right of=dec6, xshift=3cm] {Enter CSV Path};
-\node (stop) [startstop, below of=out1] {Stop};
-
-\draw [arrow] (conn4) -- (in4);
-\draw [arrow] (in4) -- (dec6);
-\draw [arrow] (dec6) -- node [anchor=east] {yes} (out1);
-\draw [arrow] (dec6) -- node [anchor=south] {no} (pro9);
-\draw [arrow] (pro9) |- (in4);
-\draw [arrow] (out1) -- (stop);
-\end{tikzpicture}
-\begin{figure}[h!]
-  \caption{Crawler CSV Download Flowchart}
-  \label{fig:CrawlerCSVAlgorithm}
-\end{figure}
-\end{center}
 \subsubsection{Applet Wrapper}
 \label{subsec:AppletWrapper}
-To help automating process of uploading data from local system/USB to server, Browser automation is used in our work, i.e the process of uploading data from local system to server of Carelink via browser. Ideal situation could have been taking applet out of browser and running standalone direct with Java Native libraries, but there lies the road block as applet uses signed certificate with login cookies from browser and this cannot be performed running applet out of the browser. Alternative approach is rather making end user go through tiring process of opening browser every second time and adding changes required to upload data, We have emulated user behavior programatically and selenium will help us in performing browser steps i.e uploading data to server. 
-
-Flowchart in figure \ref{fig:AppletwrapperAlgorithm} shows  program logic for automating web browser for applet wrapper.
+To help automating process of uploading data from local system/USB to server, Browser automation is used in our thesis work, i.e the process of uploading data from local system to server of Carelink via browser. Ideal situation could have been taking applet out of browser and running standalone direct with Java Native libraries, but there lies the road block as applet uses signed certificate with login cookies from browser and this cannot be performed running applet out of the browser. Alternative approach is rather making end user go through tiring process of opening browser every second time and adding changes required to upload data but we have emulated user behaviour programatically with the help of selenium which help us in performing browser steps i.e uploading data to server. Flowchart in figure \ref{fig:AppletwrapperAlgorithm} shows  program logic for automating web browser for applet wrapper.
 
 \begin{center}
 \begin{tikzpicture}[node distance=1.5cm]
@@ -813,21 +812,19 @@ Flowchart in figure \ref{fig:AppletwrapperAlgorithm} shows  program logic for au
   \label{fig:AppletwrapperAlgorithm}
 \end{figure}
 \end{center}
-As stated in section \ref{subsec:AppletWrapper} Applet runs only on IE browsers with new versions, therefore User emulation has to be performed only on IE. Selenium has dedicated IE webdriver which will help ease the task of automation. To run IEwebdriver, IEWebdriver.exe file has to be available on every system running browser simulation. In normal case user should have before hand IEWebdriver.exe file saved in local system, but it would create one more dependency from end user point of view. We have made efforts to run this project as less dependent on external technologies as possible with adding IEWebdriver.exe file either in IDE project folder or into zipped Jar file. The overall logic here is, If end user run this project from IDE such as Eclipse, Netbeans or so on, IEWebdriver.exe file would be available in folder structure and user can straight a way run the project. Programm will itself take file path and run the IEWebdriver.exe file. But if user chooses to run Jar version of the project i.e command line, then Jar file i.e Zip file contains IEwebdriver.exe file and during running of the program, jar file will be unzipped with folder name "extractjar" which contain the IEWebdriver.exe file and will be available for use within Java program.
+As stated in section \ref{subsec:AppletWrapper} with recent upgade of browser, Applet now a days runs only on IE browsers with new versions, therefore User i.e browser automation has to be performed only on IE. Selenium has dedicated IE webdriver  exe file which will help ease the task of automation. To run IEwebdriver, IEWebdriver.exe file has to be available on every system running browser simulation. In Ideal case user should have before hand IEWebdriver.exe file saved in local system, but it would create one more dependency from end user point of view. We have made efforts to run this project as less dependent on external technologies as possible with adding IEWebdriver.exe file either in IDE project folder or into zipped Jar file. The overall logic here is, If end user run this project from IDE such as Eclipse, Netbeans or so on, IEWebdriver.exe file would be available in folder structure and user can straight a way run the project. Programm will itself take file path and run the IEWebdriver.exe file. But if user chooses to run Jar version of the project i.e command line, then Jar file i.e Zip file contains IEwebdriver.exe file and during running of the program, jar file will be unzipped with folder name "extractjar" which contain the IEWebdriver.exe file and will be available for use within Java program.
 
 Sometimes there might be case with IE browser, running automation slow or occurring unexpected behavior. This basically happened after Microsoft made efforts to reduce the attack surface presented by malicious web sites, IE7 introduced something called protected mode, which leveraged Mandatory Integrity Control in Windows Vista to prevent actions initiated IE, usually initiated by Java Script, from being able to access the operating system the way it could in prior releases. While this was generally a welcome development for most users of IE, it created all manner of problems for automating IE.
 
-Once the above prerequisite for getting IEwebdriver.exe file is successful, For running Applet wrapper, User login credentials are checked in similar fashion to CSV data download module. If the login credentials are correct further SN Number is checked. The criteria for correct SN number is
+Once the above prerequisite for getting IEwebdriver.exe file is successful, For running Applet wrapper, User login credentials are checked in similar fashion to CSV data download module. If the login credentials are correct Device is checked, The criteria for correct Device is will be as Device should be either "bgdevice" or "stick". If the Device conditions holds true pump has to be checked, the criteria for correct Pump is Device should be either "minimed" or "paradigm".  Further if the previous conditions holds true SN Number is checked. The criteria for correct SN number is
 \begin{enumerate}
-\item SN number should be of 10 digits.
-\item SN number should be alpha numeric.
-\end{enumerate}
-If the above conditions holds true then Device is checked,The criteria for correct Device is 
-\begin{enumerate}
-\item Device should be either "bgdevice" or "stick".
+\item If pump is chosen as "minimed", SN number should  be of 10 digits.
+\item  If pump is chosen as "paradigm", SN number should  be of 6 digits.
+\item  If "minimed" is chosen SN number should be alpha numeric and if "paradigm" is chosen pump should be only numeric.
 \end{enumerate}
 
-Using IEwebdriver Browser automation is performed. Following steps are performed one after another  for browser automation especially for Applet. All these setps are performed programatically
+Using IEwebdriver Browser automation is performed. Following steps are performed one after another for browser automation especially for Applet. The steps are performed programatically are of Opening IE browser, entering Login credentials, navigating to upload section and performing click of button depending on parameters passed to program.
+\iffalse
 \begin{enumerate}
 \item Open Internet Explorer.
 \item Enter website https://carelink.minimed.eu/
@@ -846,8 +843,8 @@ Using IEwebdriver Browser automation is performed. Following steps are performed
 \item Repeat step 10 and 11 to select any of user desired (Entered) device.
 \item Click on finish using ALT+F.
 \end{enumerate}
-
-Below code snippet shows how IE webdriver helps to open a particualr website, In this case Carelink
+\fi
+Below code snippet shows how IE webdriver helps to open a particualr website, In this case Carelink and adding login credentials
 \begin{lstlisting}
 System.setProperty("webdriver.ie.driver", fileWhereIEDriverislocated.getAbsolutePath());
 
@@ -855,14 +852,11 @@ System.setProperty("webdriver.ie.driver", fileWhereIEDriverislocated.getAbsolute
 
 					driver.manage().window().maximize();
 					driver.get("https://carelink.minimed.eu/patient/entry.jsp?bhcp=1");
-\end{lstlisting}
-User credentials which are earlier validated using Jsoup are entered
-\begin{lstlisting}
 driver.findElement(By.id("j_username")).sendKeys(loginName);
 				driver.findElement(By.id("j_password")).sendKeys(loginPassword);
 driver.findElement(By.id("j_password")).sendKeys(Keys.ENTER);
 \end{lstlisting}
-To find DOM object of a particualr page, here Upload section is being clicked.
+Once the login is passed, next DOM object of a particular page is extracted, here for example Upload section is being clicked and hence it's dom is first checked and clicked.
 \begin{lstlisting}
 driver.findElement(By.id("upload")).sendKeys(Keys.ENTER);
 \end{lstlisting}
@@ -873,21 +867,9 @@ driver.findElement(By.id("upload")).sendKeys(Keys.ENTER);
 		robot.keyRelease(KeyEvent.VK_SHIFT);
 		robot.keyRelease(KeyEvent.VK_TAB);
 		robot.keyPress(KeyEvent.VK_DOWN);
-		robot.keyRelease(KeyEvent.VK_DOWN);
 		robot.keyPress(KeyEvent.VK_ALT);
 		robot.keyPress(replacmentForN);
-		robot.keyRelease(replacmentForN);
-		robot.keyRelease(replacmentForN);
-		robot.keyRelease(replacmentForN);
-		robot.keyRelease(KeyEvent.VK_ALT);
-		robot.keyRelease(KeyEvent.VK_ALT);
-		robot.keyRelease(KeyEvent.VK_ALT);
-		robot.keyRelease(KeyEvent.VK_ALT);
-		robot.keyRelease(KeyEvent.VK_ALT);
-		robot.keyRelease(KeyEvent.VK_ALT);
-		robot.keyRelease(KeyEvent.VK_ALT);
-		robot.keyRelease(KeyEvent.VK_ALT);
-		robot.keyRelease(KeyEvent.VK_ALT);
+		robot.keyRelease(KeyEvent.VK_ALT);	
 \end{lstlisting}
 
 
