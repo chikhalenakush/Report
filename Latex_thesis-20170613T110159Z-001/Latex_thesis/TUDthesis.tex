@@ -823,7 +823,7 @@ Once the above prerequisite for getting IEwebdriver.exe file is successful, For 
 \item  If "minimed" is chosen SN number should be alpha numeric and if "paradigm" is chosen pump should be only numeric.
 \end{enumerate}
 
-Using IEwebdriver Browser automation is performed. Following steps are performed one after another for browser automation especially for Applet. The steps are performed programatically are of Opening IE browser, entering Login credentials, navigating to upload section and performing click of button depending on parameters passed to program.
+Using IEwebdriver Browser automation is performed. The steps performed programatically using selenium IE webdriver are of Opening IE browser, entering Login credentials, navigating to upload section and performing click of button depending on parameters passed to program.
 \iffalse
 \begin{enumerate}
 \item Open Internet Explorer.
@@ -874,7 +874,7 @@ driver.findElement(By.id("upload")).sendKeys(Keys.ENTER);
 
 
 \subsubsection{Data slicing}
-In section \ref{subsec:OpenDiabetesVaultArchitecture} background of Data slicing and OpenDiabetesVault architecture is described. For most experiments we have a certain focus on what kind of data we need and how the quality has to be. To get this focused data we provide the DataSlicer. Data slicer takes data from the data base, some options and some filters and produces a list with time points where events occur specified by the filter. Filters can be registered at the DataSlicer and implement the Filter interface. The filters are combined with the logical and paradigm. Filters take a data array together with options. The filter will delete not matching data from the array and returns it together with a list of time spans where continuous data is present (this could be used to find the data in the complete array again).  Most of the cluttering/cleaning of data is implemented with the help of Filters. There are basically two main Types of Filters. Time Realted Filters and Threshold related Filter.
+In section \ref{subsec:OpenDiabetesVaultArchitecture} background of Data slicing and OpenDiabetesVault architecture is described. For most experiments we have a certain focus on what kind of data we need and how the quality has to be. To get this focused data we provide the DataSlicer. Data slicer takes data from the data base, some options and some filters and produces a list with time points where events occur specified by the filter. Filters can be registered at the DataSlicer and implement the Filter interface. The filters are combined with the logical "and" paradigm. Filters take a data array together with options. The filter will delete not matching data from the array and returns it together with a list of time spans where continuous data is present (this could be used to find the data in the complete array again).  Most of the cluttering/cleaning of data is implemented with the help of Filters. There are basically two main Types of Filters. Time Realted Filters and Threshold related Filter.
 
 Time-Related Filter: This kind of filters are used to find a time point or a time span where some kind of event happend or some kind of data is available or not available. For instance, if you want to check the basal insulin rate you search for time spans where no bolus is given. Filters of the time point type should provide a margin option enable data observation around the found point. Time related filters can be further divided into Time span and Time point Filter. Threshold-Related Filter: This kind of filter are used to find data over or under a certain threshold. Threshold related filter can be further divided into Overhead Threshold and Under Threshold.
 To implement Data slicing, Overview of implementation steps is in following sequence:
@@ -912,7 +912,7 @@ timeSeries.add(new Pair<>(startOfCuttenTimeSeries, lastTimeStamp));
 }
 return new FilterResult(filteredData, timeSeries); 
 \end{lstlisting}
- This return type Filteresut is further returned with SliceEntry type which consist of Date and Long type. Final Data slicing will return output stage filter with first of series, last of series, mid point of series. This is the data which is of our interest which will be furthure sent to Researchers at TK lab. This filtered data shall be useful for implementing Data analysis techniques\cite{DatananlysisandTechniques}. Below is the code snippet for actual implementation for Data slicer.
+ Filter implemented will returns Filteresult type data, This result is further filtered to  return SliceEntry type data which is shown in code snipper below. SliceEntry consist of Date and Long type. Final Data slicing will return output stage filter with first of series, last of series, mid point of series which will all be of SlieEntry type. This sliceEntry data is of our interest that will be further sent to Researchers at TK lab. This filtered data shall be useful for implementing Data analysis techniques\cite{DatananlysisandTechniques}. Below is the code snippet for actual implementation for Data slicer.
  \begin{lstlisting}
  public List<SliceEntry> sliceData(List<VaultEntry> data) {
  List<SliceEntry> retVal = new ArrayList<>();
@@ -924,7 +924,6 @@ return new FilterResult(filteredData, timeSeries);
  } else {
  lastResult = filter.filter(lastResult.filteredData);
  }
- 
  }
  Long StartDuration = null,EndDuration = null;
  Date Timestart = null, TimeEnd = null; 
@@ -959,7 +958,7 @@ A more important distinction is whether the unit you're testing should be sociab
 
 Indeed using sociable unit tests was one of the reasons we were criticized for our use of the term "unit testing". I think that the term "unit testing" is appropriate because these tests are tests of the behavior of a single unit. We write the tests assuming everything other than that unit is working correctly.
 
-With respect to thesis work, The entire project is divided in three main modules. The plan for setting unit testing is bifurcated with respect to module. We have highly motivated to test each and every module before deploying it to production. Adding unit testing has not only helped us understanding modules more in depth but also highly improved the code quality. From the very begining, for instance a module for generating CSV file from Carelink website, we have highly used unit test cases. Talking in terms of entire project, at the beginning Crawler module is taken into consideration for testing. This module contains three sub units as Login credentials, Dates for duration of downloading file and Path to save CSV file. For entire testing of a module, all the three sub units ares tested. Login unit is tested with user entered user-name and password. User entered user-name and password are sent to webserver using Jsoup and result is returned as true or false, which is shown in section \ref{subsec:DataCrawler}. If the results yields  true the Test can be considered as Success or fail.
+With respect to thesis work, The entire project is divided in three main modules as Crawler, Uploader and Data slicer. The plan for setting unit testing is bifurcated with respect to module. We are highly motivated to test each and every module before deploying it to production. Adding unit testing has not only helped us understanding modules more in depth but also highly improved the code quality. From the very begining, for instance a module for generating CSV file from Carelink website, we have highly used unit test cases. Talking in terms of entire project, at the beginning Crawler module is taken into consideration for testing. This module contains three sub units as Login credentials, Dates for duration of downloading file and Path to save CSV file. For entire testing of a module, all the three sub units ares tested. The main motivation for adding unit test cases for all the three sub-modules under Crawlers was due to it's function oriented testing and in our project we tried to implement functionality using functions and it is a good idea to test all the small functionality. Login unit is tested with user entered user-name and password. User entered user-name and password are sent to webserver using Jsoup and result is returned as true or false, which is alredy described in section \ref{subsec:DataCrawler}. If the results yields  true the Test can be considered as Success or fail.
 \begin{lstlisting}
 this.UserName = user; // user entered username
 this.Password = pass; // user entered password
@@ -980,7 +979,7 @@ Statdate 	Enddate 	Result
 { "18-05/2015", "15/05/2015",false},
 { "15-05/2015", "20/05/2016",false}
 \end{lstlisting}
- Within the same module CSV path will also be tested so that the entire module for Crawler (Downloading CSV file) is completely tested and ready for deployment. CSV file path is something where Java program has rights to place the file and at the same time path is in valid format. This has to checked with actual file trying to be placed. If the file could be successfully placed at the given location, then it returns success or fail. This can be derived as a result of unit test case for CSV Path. Below code snippet shows test instances of path for CSV and expected results.
+ Within the same module CSV path will also be tested so that the entire module for Crawler (Downloading CSV file) is completely tested and ready for deployment. CSV file path is something where Java program has rights to place the file and at the same time path is in valid format. This has to be checked with actual file trying to be placed. If the file could be successfully placed at the given location, then it returns success or fail. This can be derived as a result of unit test case for CSV Path. Below code snippet shows test instances of path for CSV and expected results.
  \begin{lstlisting}
 	FolderLocation											Result
 {System.getProperty("user.home") + "/RandomFolder", false },
@@ -996,15 +995,13 @@ return true;
 return false;
 }
 \end{lstlisting}
- Important point to note is that password is always masked while running from both command line and through IDE, so it does not appear in clear text.
- 
-Next moudule used for Testing is Applet wrapper. Applet wrapper consist of three main parts.
+Next moudule used for Testing is uploader(Applet wrapper). Applet wrapper consist of three main parts.
  \begin{enumerate}
 \item Login credentials
 \item SN Number and Device validation
 \item Automated browser
 \end{enumerate}
-To test login unit here is optional for the Unit test case scenario, But keeping entire module in context, login unit is most important step to proceed furtherer in testing other sub units and hence considered for testing. Login sub unit is tested same as stated in Crawler module. Thereafter SN Number and Device are tested within module of Applet wrapper. Stated in Section \ref{subsec:AppletWrapper} the correct definition of SN number and Device is being used. Using the same definition SN number and Device are checked as shown below in code snippet. Test case result in success if function returns true or else fail if function returns false.
+To test login function in this module is optional for the Unit test case scenario as crawler module undertakes testing of it, But keeping entire uploader module in context, login unit is most important step to proceed furtherer in testing other sub units and hence considered for testing. Login sub unit is tested same as stated in Crawler module. Thereafter SN Number and Device are tested within module of Applet wrapper. Stated in Section \ref{subsec:AppletWrapper} the correct definition of SN number and Device is being used. Using the same definition SN number and Device are checked as shown below in code snippet. Test case result in success if function returns true or else fail if function returns false.
 
 \begin{lstlisting}
  Device, 	SNNumber, 	Result
@@ -1045,7 +1042,7 @@ System.out.println("Test case Result is : " + result.wasSuccessful());
 }
 \end{lstlisting}
 
-Next module we used for unit Test cases is Data slicer and Filters. Data slicer mainly consist of Filters, Registering filters and slicing retrieved filtered data as per options used. We start by implementing unit test cases for Filters. Filters in our Thesis work can be broadly classified as Time related Filters and Threshold related Filters. At first Time-Related Filters\footnote{https://github.com/OpenDiabetes/OpenDiabetesVault-engine/wiki/Data-Filtering} is tested with unit testing. Time-Related Filters consist of Timespan Filter and TimePoint Filter. This kind of filters are used to find a time point or a time span where some kind of event happens or some kind of data is available or not available. For instance, if you want to check the basal insulin rate you search for time spans where no bolus is given. Filters of the time point type should provide a margin option enable data observation around the found point. They are used to retrieve data within a given time span or time point. Test method is overridden for each of the Time related filter to check the obtained results does return SliceEntry type data. Code snippet for Time related filter is shown below. Here a example for TimeSpanFilter is taken into consideration. In a similar fashion TimePoint Filter is also tested.
+Next module we used for unit Test cases is Data slicer and Filters. Data slicer mainly consist of Filters, Registering them and slicing retrieved filtered data as per options used. We start by implementing unit test cases for Filters. Filters in our Thesis work can be broadly classified as Time related Filters and Threshold related Filters. At first Time-Related Filters\footnote{https://github.com/OpenDiabetes/OpenDiabetesVault-engine/wiki/Data-Filtering} is tested with unit testing. Time-Related Filters consist of Timespan Filter and TimePoint Filter. This kind of filters are used to find a time point or a time span where some kind of event happens or some kind of data is available or not available. For instance, if you want to check the basal insulin rate you search for time spans where no bolus is given. Filters of the time point type should provide a margin option enable data observation around the found point. They are used to retrieve data within a given time span or time point. Test method is overridden for each of the Time related filter to check the obtained results does return SliceEntry type data. Code snippet for Time related filter is shown below. Here a example for TimeSpanFilter is taken into consideration. In a similar fashion TimePoint Filter is also tested.
 \begin{lstlisting}
 @Test
 public void testTimeSpanData() throws ParseException {
@@ -1066,7 +1063,7 @@ List<SliceEntry> result = instance.sliceData(StaticDataset.getStaticDataset());
 }
 \end{lstlisting}
 
-Moving from Time-Related Filter, Threshold-Related Filter\footnote{https://github.com/OpenDiabetes/OpenDiabetesVault-engine/wiki/Data-Filtering} is used for Testing. Threshold related filters are used for filtering data within a given Filter type and if that data point is under or threshold value given as input from user. The steps followed to achieve Over or Under Threshold is something like below.
+Moving from Time-Related Filter, Threshold-Related Filter\footnote{https://github.com/OpenDiabetes/OpenDiabetesVault-engine/wiki/Data-Filtering} is used for Testing. Threshold related filters are used for filtering data within a given Filter type and if that data point is under or above threshold value given as input from user. The steps followed to achieve Over or Under Threshold is something like below.
 \begin{enumerate}
 	\item First check if given data i.e a row from a data set, having column as Type matched with Filter Type mentioned in options(argument from user).
 	\item If the entry set i.e a row matched with a filter type, then this row is sent to check if that row has value under or above Threshold value.
@@ -1077,9 +1074,7 @@ There conatins a GenericAvailableFilter class which takes VaultEntryType and Fil
 \begin{lstlisting}
    @Test
 public void testSliceOverheadTHData() throws ParseException {
-
 System.out.println("sliceData");     
-
 Filter filter = new OverThresholdFilter(VaultEntryType.BASAL_PROFILE ,1.00, FilterType.BASAL_AVAILABLE/* .BASAL_AVAILABLE*/, FilterType.BASAL_TH);
 DataSlicerOptions options = new DataSlicerOptions(0, 60);
 DataSlicer instance = new DataSlicer(options);
@@ -1091,6 +1086,18 @@ List<SliceEntry> result = instance.sliceData(StaticDataset.getStaticDataset());
 }
 \end{lstlisting}
 There is also another filter used NoneFilter. It does nothing except return for every point in the series a slice entry, i.e it does not filter any data and retruns only within Type of SliceEntry. All the above mentioned filters will at last call Dataslicer class which is where SliceEntry type data is returned. Data slicer class generates a slice file  which will add output stage filter. Output stage filter consist of first of series, last of series, mid point of series. All these steps are tested under Filter Methods.
+
+\clearpage
+\section{Conclusion}
+OpenDiabetesVault Framework is widely used in TK lab to generate, upload and filter huge amount of medical data. Due to huge demand of data from various sources for data analysis, modules such as Data gathering from different sources takes more weightage in implementing the program. This generated and filtered data will be further processed with the help of Machine learning mechanism to generate logical conclusion. 
+
+The Thesis presents one of such modules to generate data from various sources. Data generated from the project undertaken during this thesis is from Carelink website. We have implemented different algorithm to generate CSV file from carelink website without actually visiting it. At the same time there was need to also upload data to Carelink server for generating new CSV data. Data uploader is also taken implemented with the help of browser automation Tools.
+
+Data generated from such various modules is huge and most of the time unclean i.e it does contains duplication or misses various field values. Hence to overcome such unclean data and process it to make it clean, Data Slicer is implemented. Data slicer helps to filter irrelevant data from the whole dataset. Defining irrelevant data is done with the help of options defined in slicing class with FilterType. Generated Filtered data using Data slicer is of high quality and used by Researchers at TK labs to implement Machine learning algorithm  for drawing logical conclusion from data.
+
+Unit test cases have been used for all the three modules implemented in this thesis work. From very beginning high importance was given to unit testing in this framework so that modules built would be in small functions and could be separately tested. Unit test case has broadly helped making the thesis implementation smooth and auditable so that in each sprint new module was rigorously tested with the help of unit test cases. Adding all the Tasks together we have reached the goal of our Thesis of generating data from Carelink website and filtering data from Dataset.
+
+
 \cleardoublepage
 \cleardoublepage
 \bibliographystyle{IEEEtran}
