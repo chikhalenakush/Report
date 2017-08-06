@@ -20,10 +20,9 @@
 \BOOKMARK [1][-]{section.3}{Implementation}{}% 20
 \BOOKMARK [2][-]{subsection.3.1}{Technologies}{section.3}% 21
 \BOOKMARK [2][-]{subsection.3.2}{Configuration of external libraries and drivers}{section.3}% 22
-\BOOKMARK [3][-]{subsubsection.3.2.1}{Driver configuration}{subsection.3.2}% 23
-\BOOKMARK [2][-]{subsection.3.3}{Implementation}{section.3}% 24
-\BOOKMARK [3][-]{subsubsection.3.3.1}{Data Crawler}{subsection.3.3}% 25
-\BOOKMARK [3][-]{subsubsection.3.3.2}{Applet Wrapper}{subsection.3.3}% 26
-\BOOKMARK [3][-]{subsubsection.3.3.3}{Data slicing}{subsection.3.3}% 27
-\BOOKMARK [1][-]{section.4}{Unit Test cases}{}% 28
-\BOOKMARK [1][-]{section.5}{Conclusion}{}% 29
+\BOOKMARK [2][-]{subsection.3.3}{Implementation}{section.3}% 23
+\BOOKMARK [3][-]{subsubsection.3.3.1}{Data Crawler}{subsection.3.3}% 24
+\BOOKMARK [3][-]{subsubsection.3.3.2}{Applet Wrapper}{subsection.3.3}% 25
+\BOOKMARK [3][-]{subsubsection.3.3.3}{Data slicing}{subsection.3.3}% 26
+\BOOKMARK [1][-]{section.4}{Unit Test cases}{}% 27
+\BOOKMARK [1][-]{section.5}{Conclusion}{}% 28

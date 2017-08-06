@@ -24,7 +24,6 @@
 \contentsline {section}{\numberline {3}Implementation}{23}{section.3}
 \contentsline {subsection}{\numberline {3.1}Technologies}{23}{subsection.3.1}
 \contentsline {subsection}{\numberline {3.2}Configuration of external libraries and drivers}{26}{subsection.3.2}
-\contentsline {subsubsection}{\numberline {3.2.1}Driver configuration}{26}{subsubsection.3.2.1}
 \contentsline {subsection}{\numberline {3.3}Implementation}{27}{subsection.3.3}
 \contentsline {subsubsection}{\numberline {3.3.1}Data Crawler}{27}{subsubsection.3.3.1}
 \contentsline {subsubsection}{\numberline {3.3.2}Applet Wrapper}{32}{subsubsection.3.3.2}
