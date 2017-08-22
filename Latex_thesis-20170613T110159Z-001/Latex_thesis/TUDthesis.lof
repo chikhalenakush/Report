@@ -4,8 +4,8 @@
 \select@language {english}
 \contentsline {figure}{\numberline {2.1}{\ignorespaces Crawler Breadth search Flowchart\relax }}{6}{figure.caption.1}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Original IE driver\relax }}{11}{figure.caption.2}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Modified IE driver\relax }}{11}{figure.caption.3}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Firefox Driver Architecture\relax }}{12}{figure.caption.4}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Modified IE driver\relax }}{12}{figure.caption.3}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Firefox Driver Architecture\relax }}{13}{figure.caption.4}
 \contentsline {figure}{\numberline {2.5}{\ignorespaces Layers of Selenium Javascript Library\relax }}{15}{figure.caption.5}
 \contentsline {figure}{\numberline {2.6}{\ignorespaces ODV Architecture\relax }}{17}{figure.caption.7}
 \contentsline {figure}{\numberline {2.7}{\ignorespaces Data Slicer\relax }}{19}{figure.caption.9}

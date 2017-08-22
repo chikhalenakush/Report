@@ -17,10 +17,10 @@
 \BOOKMARK [3][-]{subsubsection.2.3.7}{Extensibility and Flexibility}{subsection.2.3}% 17
 \BOOKMARK [2][-]{subsection.2.4}{OpenDiabetesVault Architecture and Data slicing}{section.2}% 18
 \BOOKMARK [2][-]{subsection.2.5}{Unit Testing}{section.2}% 19
-\BOOKMARK [1][-]{section.3}{Implementation}{}% 20
+\BOOKMARK [1][-]{section.3}{Proof of Concept}{}% 20
 \BOOKMARK [2][-]{subsection.3.1}{Technologies}{section.3}% 21
 \BOOKMARK [2][-]{subsection.3.2}{Configuration of external libraries and drivers}{section.3}% 22
-\BOOKMARK [2][-]{subsection.3.3}{Implementation}{section.3}% 23
+\BOOKMARK [2][-]{subsection.3.3}{Realization}{section.3}% 23
 \BOOKMARK [3][-]{subsubsection.3.3.1}{Data Crawler}{subsection.3.3}% 24
 \BOOKMARK [3][-]{subsubsection.3.3.2}{Applet Wrapper}{subsection.3.3}% 25
 \BOOKMARK [3][-]{subsubsection.3.3.3}{Data slicing}{subsection.3.3}% 26
