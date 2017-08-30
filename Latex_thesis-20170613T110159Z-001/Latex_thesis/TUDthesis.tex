@@ -712,16 +712,24 @@
 		\begin{tikzpicture}[node distance=1.5cm]
 		\node (conn4) [connector] {B};
 		\node (in4) [io, below of=conn4] {Enter CSV Path};
-		\node (dec6) [decision, below of=in4, yshift=-1.5cm] {CSV path correct?};
+		\node (dec7) [decision, below of=in4, yshift=-1.5cm] {CSV path empty?};
+		\node (pro10) [process, right of=dec7, xshift=3.5cm] {Working Dir. as CSV path};
+		
+		\node (dec6) [decision, below of=dec7, yshift=-3cm] {CSV path correct?};
 		\node (out1) [io, below of=dec6, yshift=-1.5cm] {Download CSV};
 		\node (pro9) [process, right of=dec6, xshift=3cm] {Enter CSV Path};
 		\node (stop) [startstop, below of=out1] {Stop};
 		
+		\draw [arrow] (in4) -- (dec7);
+		\draw [arrow] (dec7) -- node [anchor=east] {no} (dec6);
+		\draw [arrow] (dec7) -- node [anchor=south] {yes} (pro10);
+		\draw [dashed, ->] (pro10) |- (out1);
+		
 		\draw [arrow] (conn4) -- (in4);
-		\draw [arrow] (in4) -- (dec6);
+		
 		\draw [arrow] (dec6) -- node [anchor=east] {yes} (out1);
 		\draw [arrow] (dec6) -- node [anchor=south] {no} (pro9);
-		\draw [arrow] (pro9) |- (in4);
+		\draw [dashed, ->] (pro9) |- (in4);
 		\draw [arrow] (out1) -- (stop);
 		\end{tikzpicture}
 		\begin{figure}[h!]
@@ -774,18 +782,39 @@
 		\node (dec1) [decision, below of=in1, yshift=-1cm] {Cred ok?};
 		\node (pro1) [process, below of=dec1, yshift=-1cm] {Login};
 		\node (pro2) [process, right of=dec1, xshift=2cm] {Start};
-		\node (in2) [io, below of=pro1] {Enter SN};
-		\node (dec2) [decision, below of=in2, yshift=-1cm] {SN correct?};
-		\node (in3) [io, below of=dec2, yshift=-1cm] {Enter Device};
-		\node (dec3) [decision, below of=in3, yshift=-1cm] {Device correct?};
-		\node (pro3) [process, right of=dec2, xshift=3cm] {Enter SN};
-		\node (pro4) [process, right of=dec3, xshift=3cm] {Enter Device};
-		\node (conn1) [connector, below of=dec3, yshift=-2cm] {A};
+		
+		\node (in3) [io, below of=pro1, yshift=-0.5cm] {Enter Device};
+		\node (dec2) [decision, below of=in3, yshift=-1cm] {Device correct?};		
+		\node (pro3) [process, right of=dec2, xshift=3cm] {Enter Device};
+		\node (dec3) [decision, below of=dec2, yshift=-2.5cm] {Pump type?};
+		\node (pro4) [process, right of=dec3, xshift=3.3cm] {Enter 6 digit SN};
+		\node (pro5) [process, below of=dec3, yshift=-1.5cm] {Enter 10 digit SN};		
+			\node (conn1) [connector, below of=pro5, yshift=-1.5cm] {A};
+		
+		
+		\draw [arrow] (pro1) -- (in3);
+		\draw [arrow] (in3) -- (dec2);
+		\draw [arrow] (dec2) -- node [anchor=south] {no} (pro3);
+		\draw [arrow] (dec2) -- node [anchor=east] {yes} (dec3);
+		\draw [arrow] (pro3) |- (in3);
+		\draw [arrow] (dec3) -- node [anchor=south] {paradigm} (pro4);
+		\draw [arrow] (dec3) -- node [anchor=east] {minimed} (pro5);
+		\draw [arrow] (pro5) -- (conn1);
+		\draw [arrow] (pro4) |- (conn1);
 		\draw [arrow] (start) -- (in1);
 		\draw [arrow] (in1) -- (dec1);
 		\draw [arrow] (dec1) -- node [anchor=east] {yes} (pro1);
 		\draw [arrow] (dec1) -- node [anchor=south] {no} (pro2);
 		\draw [arrow] (pro2) |- (start);
+		
+	%	\node (in2) [io, below of=pro1] {Enter SN};
+	%	\node (dec2) [decision, below of=in2, yshift=-1cm] {SN correct?};
+	%	\node (in3) [io, below of=dec2, yshift=-1cm] {Enter Device};
+	%	\node (dec3) [decision, below of=in3, yshift=-1cm] {Device correct?};
+	%	\node (pro3) [process, right of=dec2, xshift=3cm] {Enter SN};
+	%	\node (pro4) [process, right of=dec3, xshift=3cm] {Enter Device};
+	%	\node (conn1) [connector, below of=dec3, yshift=-2cm] {A};		
+		\iffalse
 		\draw [arrow] (pro1) -- (in2);
 		\draw [arrow] (in2) -- (dec2);
 		\draw [arrow] (dec2) -- node [anchor=east] {yes} (in3);
@@ -795,20 +824,38 @@
 		\draw [arrow] (dec3) -- node [anchor=south] {no} (pro4);
 		\draw [arrow] (pro4) |- (in3);
 		\draw [arrow] (dec3) -- node [anchor=east] {yes} (conn1);
+		
+		\fi
+		
+		
 		\end{tikzpicture}
 	\end{center}
 	
 	\begin{center}
 		\begin{tikzpicture}[node distance=1.5cm]
 		\node (conn2) [connector] {A};
-		\node (pro5) [process, below of=conn2] {If Program ran from IDE or JRE};
-		\node (dec4) [decision, below of=pro5, yshift=-0.5cm] {IDE?};
+		
+		\node (dec1) [decision, below of=conn2, yshift=-1.5cm] {SN Correct?};
+		
+		
+			\node (pro2) [process, right of=dec1, xshift=3cm] {Enter correct SN};		
+		
+		
+		
+		\node (pro5) [process, below of=dec1,yshift=-1.5cm] {If Program ran from IDE or JRE};
+		\node (dec4) [decision, below of=pro5, yshift=-1cm] {IDE?};
 		\node (pro6) [process, right of=dec4, xshift=3.5cm] {Driver from Extracted JAR};
 		\node (pro7) [process, below of=dec4, yshift=-0.5cm] {Path for Driver fetched from IDE folder};
 		\node (pro8) [process, below of=pro7, yshift=-0.5cm] {Run IE webdriver};
 		\node (pro9) [process, below of=pro8, yshift=-0.5cm] {Programatically control browser and run applet};
 		\node (stop) [startstop, below of=pro9] {Stop};
-		\draw [arrow] (conn2) -- (pro5);
+		
+		
+			\draw [arrow] (conn2) -- (dec1);
+		\draw [arrow] (dec1) -- node [anchor=east] {yes} (pro5);
+		\draw [arrow] (dec1) -- node [anchor=south] {no} (pro2);
+		
+	
 		\draw [arrow] (pro5) -- (dec4);
 		\draw [arrow] (dec4) -- node [anchor=east] {yes} (pro7);
 		\draw [arrow] (dec4) -- node [anchor=south] {no} (pro6);
@@ -816,6 +863,7 @@
 		\draw [arrow] (pro6) |- (pro8);
 		\draw [arrow] (pro8) -- (pro9);
 		\draw [arrow] (pro9) -- (stop);
+		
 		\end{tikzpicture}
 		\begin{figure}[h]
 			\caption{Applet Wrapper Flowchart} 
@@ -1082,13 +1130,11 @@
 	
 	\clearpage
 	\section{Conclusion}
-	OpenDiabetesVault Framework is widely used in TK lab to generate(download), upload and filter huge amount of medical data. Due to huge demand of data from various sources further use for data analysis, modules such as Data gathering from different sources takes more weightage in implementing the project. This generated and filtered data will be further processed with the help of Machine learning mechanism to generate logical conclusion. 
+	OpenDiabetesVault Framework is widely used in TK lab to generate (download), upload and filter huge amount of medical data. This framework is basically built to solve problem of generating huge amount of medical data at bulk without repetitive human efforts. Due to huge demand of data from various sources further use for data analysis, modules such as Data gathering from different sources takes more weightage in implementing the project. This generated and filtered data will be further processed with the help of Machine learning mechanism to generate logical conclusion. 
 	
-	The Thesis presents one of such modules to generate data from various sources. Data generated from the project undertaken during this thesis is from Carelink website. We have implemented different algorithm to generate CSV file from carelink website without actually visiting it. At the same time there was need to also upload data to Carelink server for generating new CSV files. Data uploader is implemented with the help of browser automation Tools.
+	Generating data from website posses challenges such as parsing HTML, checking login user and user's preferred language. Depending on individual parameters, logic has been implemented. For upload of Data from USB to server on carelink website is implemented using Applet. This possessed challenge of bypassing applet and hence browser automation such as selenium was used in combination of Jsoup as HTML Parser. OpenDiabetesVault Framework helps in generating huge amount of data but making this data more relevant for data analysis purpose, Data slicers and filters are implemented. These Filters posses challenge to extract exact information needed using different options and parameters. This has been achieved with creating indigenous Filters relevant for current framework.  In addition Unit test cases have been created for each module and code has been tested before deploying it to production.
 	
-	Data generated from various such modules is in huge amount and most of the time is unclean i.e it does contains duplication or misses various field values. Hence to overcome such unclean data and process it to make it available with more relevant Data for analysis, Data Slicer is implemented. Data slicer helps to filter irrelevant data from the entire generated dataset. Defining irrelevant data is taken care with the help of options defined in slicing class with FilterType. Generated Filtered data using Data slicer is of high quality and used by Researchers at TK labs to implement Machine learning algorithm  for drawing logical conclusion from data.
-	
-	Unit test cases have been used for all the three modules implemented in this thesis work. From very beginning high importance was given to unit testing in this framework so that modules built would be in small functions and could be separately tested. Unit test case has broadly helped making the thesis implementation smooth and auditable so that in each sprint new module was rigorously tested with the help of unit test cases. Adding all the Tasks together we have reached the goal of our Thesis of generating data from Carelink website and filtering data from Dataset.
+	The current Thesis work focuses on extracting and uploading data from/to one particular website. In future if the need to generate data from even more multiple sources, this thesis work can be very well expanded to encapsulate different such sources. In current work Data slicers and Filters restricted to basic assumption that data will be from Carelink Website. By adding one additional layer in between and making data set generalized, data filters and slicers could also be expanded for more generic utilization. Undertaking the current Scenario and need for Research, we have successfully achieved the data extraction, upload and filtering of medical data successfully. We have obtained the expected results on our dataset and we expect the same behaviour on a very large dataset.
 	
 	
 	\cleardoublepage
